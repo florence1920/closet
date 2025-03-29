@@ -139,4 +139,24 @@ table {
 * {
   box-sizing: border-box;
   font-family: "Pretendard", sans-serif;
+}
+* a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  padding: 0 40px;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+main {
+  margin-top: 80px;
 }/*# sourceMappingURL=main.css.map */
