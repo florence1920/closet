@@ -156,7 +156,34 @@ header {
   top: 0;
   left: 0;
 }
+header nav li {
+  margin-bottom: 2px;
+}
+header nav li a {
+  position: relative;
+  padding-bottom: 2px;
+}
+header nav li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000;
+}
+header nav li a.active::after {
+  animation: underline-grow 0.3s forwards;
+}
 
+@keyframes underline-grow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
 main {
   margin-top: 80px;
 }/*# sourceMappingURL=main.css.map */
