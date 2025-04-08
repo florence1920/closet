@@ -2,5 +2,9 @@
 @use "base/typography";
 @use "base/base";
 
+@use "components/buttons";
+
 @use "layout/header";
 @use "layout/content";
+
+@use "pages/home";

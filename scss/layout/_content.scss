@@ -1,6 +1,18 @@
 main {
   width: 94%;
-  max-width: 1840px;
+  max-width: 1600px;
   margin: 0 auto;
   margin-top: 100px;
+  .section-header {
+    padding: 50px 0;
+    display: flex;
+    gap: 10px;
+    &__title {
+      font-size: 32px;
+    }
+    &__icon {
+      width: 14px;
+      height: 14px;
+    }
+  }
 }

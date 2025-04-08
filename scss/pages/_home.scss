@@ -1,0 +1,107 @@
+.closet {
+  .closet__nav {
+    margin-bottom: 36px;
+    button {
+      margin-right: 20px;
+    }
+    .closet__nav-button {
+      border: 1px solid #e0e0e0;
+      font-size: 18px;
+    }
+    .closet__nav-button--active {
+      border: 1px solid #000;
+    }
+  }
+  .closet__box {
+    display: flex;
+    align-items: flex-start;
+    gap: 70px;
+
+    .closet__list {
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 20px;
+      .closet__item {
+        padding: 10px 0;
+        width: 100px;
+        height: 120px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        font-size: 12px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        .closet__item-image {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+
+    .closet__detail {
+      padding: 10px 20px;
+      width: 260px;
+      // height: 420px;
+      border: 1px solid #000;
+      border-radius: 5px;
+
+      font-size: 12px;
+      .closet__detail__header {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        .closet__detail__header-left {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .closet__detail__title {
+            font-size: 16px;
+            font-weight: bold;
+          }
+        }
+      }
+      .closet__detail__info {
+        .closet__detail__info__item {
+          display: flex;
+          margin-bottom: 10px;
+          padding-bottom: 10px;
+          border-bottom: 1px dashed #000;
+          &:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+          }
+          .closet__detail__image {
+            margin: 0 auto;
+            margin-bottom: 8px;
+            width: 64px;
+            height: 64px;
+          }
+          .closet__detail__label {
+            font-weight: bold;
+            width: 70px;
+          }
+          .closet__detail__size-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            .closet__detail__size-label {
+              width: 90px;
+            }
+            .closet__detail__size-value {
+              width: 40px;
+            }
+            .closet__detail__size-icon {
+              width: 8px;
+              height: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
