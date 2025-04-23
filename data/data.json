@@ -1,6 +1,6 @@
 [
   {
-    "category": { "main": "Outer", "sub": "blazer" },
+    "category": { "main": "outer", "sub": "blazer" },
     "color": "black",
     "brand": "무신사 스탠다드",
     "name": "릴렉스드 베이식 블레이저",
@@ -16,7 +16,7 @@
     "note": ""
   },
   {
-    "category": { "main": "Outer", "sub": "cardigan" },
+    "category": { "main": "outer", "sub": "cardigan" },
     "color": "gray",
     "brand": "멘인스토어",
     "name": "회색 가디건",
@@ -32,7 +32,7 @@
     "note": ""
   },
   {
-    "category": { "main": "Outer", "sub": "coat" },
+    "category": { "main": "outer", "sub": "coat" },
     "color": "navy",
     "brand": "파르티멘토",
     "name": "오버사이즈 멜톤 더플 롱 코트 네이비",
@@ -48,7 +48,7 @@
     "note": ""
   },
   {
-    "category": { "main": "Outer", "sub": "jacket" },
+    "category": { "main": "outer", "sub": "jacket" },
     "color": "brown",
     "brand": "상드르",
     "name": "Noir 스웨이드 헤링턴 JK",
@@ -64,7 +64,7 @@
     "note": ""
   },
   {
-    "category": { "main": "Outer", "sub": "jacket" },
+    "category": { "main": "outer", "sub": "jacket" },
     "color": "black",
     "brand": "-",
     "name": "가죽재킷",
@@ -80,7 +80,7 @@
     "note": ""
   },
   {
-    "category": { "main": "Outer", "sub": "padding" },
+    "category": { "main": "outer", "sub": "padding" },
     "color": "black",
     "brand": "지오다노",
     "name": "숏패딩",
@@ -96,7 +96,7 @@
     "note": ""
   },
   {
-    "category": { "main": "Outer", "sub": "padding" },
+    "category": { "main": "outer", "sub": "padding" },
     "color": "black",
     "brand": "marmot",
     "name": "롱패딩",
@@ -112,7 +112,7 @@
     "note": ""
   },
   {
-    "category": { "main": "Outer", "sub": "padding" },
+    "category": { "main": "outer", "sub": "padding" },
     "color": "black",
     "brand": "projectM",
     "name": "경량패딩",
@@ -128,7 +128,7 @@
     "note": ""
   },
   {
-    "category": { "main": "Outer", "sub": "windbreak" },
+    "category": { "main": "outer", "sub": "windbreak" },
     "color": "navy",
     "brand": "토마스 모어",
     "name": "탱커 블루종-네이비",
@@ -144,7 +144,7 @@
     "note": ""
   },
   {
-    "category": { "main": "Outer", "sub": "windbreak" },
+    "category": { "main": "outer", "sub": "windbreak" },
     "color": "black",
     "brand": "유니클로",
     "name": "유니클로 바람막이",
@@ -160,7 +160,7 @@
     "note": ""
   },
   {
-    "category": { "main": "Outer", "sub": "windbreak" },
+    "category": { "main": "outer", "sub": "windbreak" },
     "color": "blue",
     "brand": "노스페이스",
     "name": "노스페이스 바람막이",
@@ -176,10 +176,10 @@
     "note": ""
   },
   {
-    "category": { "main": "Top", "sub": "long-sleeves" },
+    "category": { "main": "tops", "sub": "long-sleeves" },
     "color": "black",
     "brand": "자바나스",
-    "name": "에센셜 피마스판 롱슬리브 1-블랙",
+    "name": "에센셜 피마스판 롱슬리브 1",
     "size": "L",
     "fit": "regular",
     "purchaseDate": "2024-11-28",
@@ -192,10 +192,10 @@
     "note": "좋음"
   },
   {
-    "category": { "main": "Top", "sub": "long-sleeves" },
+    "category": { "main": "tops", "sub": "long-sleeves" },
     "color": "navy",
     "brand": "굿라이프웍스",
-    "name": "오버핏 스트라이프 롱 슬리브 티셔츠 네이비",
+    "name": "오버핏 스트라이프 롱 슬리브",
     "size": "S",
     "fit": "loose",
     "purchaseDate": "-",
@@ -208,7 +208,7 @@
     "note": "살짝 길다"
   },
   {
-    "category": { "main": "Top", "sub": "polo-shirt" },
+    "category": { "main": "tops", "sub": "polo-shirt" },
     "color": "blue",
     "brand": "예일",
     "name": "HERITAGE DAN QUICK DRY PIQUE POLO SHIRT ROYAL BLUE",
@@ -224,103 +224,465 @@
     "note": "좋음"
   },
   {
-    "category": { "main": "Top", "sub": "shirt" },
-    "color": "black",
-    "brand": "무신사 스탠다드",
-    "name": "릴렉스 핏 실키 셔츠",
+    "category": { "main": "tops", "sub": "long-sleeves" },
+    "name": "에센셜 피마스판 롱슬리브 1-블랙",
+    "brand": "자바나스",
     "size": "L",
-    "fit": "slim",
-    "purchaseDate": "2022-05-10",
+    "fit": "regular",
+    "color": "black",
     "detailedSize": {
-      "length": 78,
+      "length": 72,
       "shoulder": 52,
-      "chest": 59,
-      "sleeve": 62
+      "chest": 58,
+      "sleeve": 61.5
     },
-    "note": "총장, 어깨, 가슴 짧음"
+    "note": "좋음",
+    "purchaseDate": "2024-11-28"
   },
   {
-    "category": { "main": "Top", "sub": "shirt" },
-    "color": "white",
-    "brand": "토피",
-    "name": "오버핏 옥스퍼드 셔츠",
-    "size": "L",
+    "category": { "main": "tops", "sub": "long-sleeves" },
+    "name": "오버핏 스트라이프 롱 슬리브 티셔츠 네이비",
+    "brand": "굿라이프웍스",
+    "size": "S",
     "fit": "loose",
-    "purchaseDate": "2024-04-18",
-    "detailedSize": {
-      "length": 78,
-      "shoulder": 61.5,
-      "chest": 67,
-      "sleeve": 59
-    },
-    "note": "좋음"
+    "color": "navy",
+    "detailedSize": { "length": 74, "shoulder": 60, "chest": 60, "sleeve": 60 },
+    "note": "살짝 길다",
+    "purchaseDate": "-"
   },
   {
-    "category": { "main": "Top", "sub": "shirt" },
-    "color": "light-blue",
-    "brand": "토피",
-    "name": "오버핏 옥스퍼드 셔츠",
+    "category": { "main": "tops", "sub": "polo-shirt" },
+    "name": "HERITAGE DAN QUICK DRY PIQUE POLO SHIRT ROYAL BLUE",
+    "brand": "예일",
     "size": "L",
-    "fit": "loose",
-    "purchaseDate": "2024-04-18",
-    "detailedSize": {
-      "length": 78,
-      "shoulder": 61.5,
-      "chest": 67,
-      "sleeve": 59
-    },
-    "note": "좋음"
+    "fit": "regular",
+    "color": "blue",
+    "detailedSize": { "length": 73, "shoulder": 54, "chest": 60, "sleeve": 24 },
+    "note": "좋음",
+    "purchaseDate": "2024-05-21"
   },
   {
-    "category": { "main": "Bottom", "sub": "banding" },
-    "color": "black",
-    "brand": "스위브",
-    "name": "와이드 밴딩 팬츠",
-    "size": "XL",
+    "category": { "main": "tops", "sub": "shirt" },
+    "name": "릴렉스 핏 실키 셔츠",
+    "brand": "무신사 스탠다드",
+    "size": "L",
     "fit": "slim",
-    "purchaseDate": "2024-02-02",
+    "color": "black",
+    "detailedSize": { "length": 78, "shoulder": 52, "chest": 59, "sleeve": 62 },
+    "note": "총장, 어깨, 가슴 짧음",
+    "purchaseDate": "2022-05-10"
+  },
+  {
+    "category": { "main": "tops", "sub": "shirt" },
+    "name": "오버핏 옥스퍼드 셔츠",
+    "brand": "토피",
+    "size": "L",
+    "fit": "loose",
+    "color": "white",
+    "detailedSize": {
+      "length": 78,
+      "shoulder": 61.5,
+      "chest": 67,
+      "sleeve": 59
+    },
+    "note": "좋음",
+    "purchaseDate": "2024-04-18"
+  },
+  {
+    "category": { "main": "tops", "sub": "shirt" },
+    "name": "오버핏 옥스퍼드 셔츠",
+    "brand": "토피",
+    "size": "L",
+    "fit": "loose",
+    "color": "light-blue",
+    "detailedSize": {
+      "length": 78,
+      "shoulder": 61.5,
+      "chest": 67,
+      "sleeve": 59
+    },
+    "note": "좋음",
+    "purchaseDate": "2024-04-18"
+  },
+  {
+    "category": { "main": "tops", "sub": "shirt" },
+    "name": "TE5-SH06 옥스포드 버튼다운 셔츠",
+    "brand": "토마스모어",
+    "size": "L",
+    "fit": "loose",
+    "color": "green",
+    "detailedSize": {
+      "length": 78,
+      "shoulder": 55.5,
+      "chest": 64,
+      "sleeve": 58
+    },
+    "note": "좋음",
+    "purchaseDate": "2024-04-03"
+  },
+  {
+    "category": { "main": "tops", "sub": "shirt" },
+    "name": "TE5-SH06 옥스포드 버튼다운 셔츠",
+    "brand": "토마스모어",
+    "size": "L",
+    "fit": "loose",
+    "color": "yellow",
+    "detailedSize": {
+      "length": 78,
+      "shoulder": 55.5,
+      "chest": 64,
+      "sleeve": 58
+    },
+    "note": "좋음",
+    "purchaseDate": "2024-04-03"
+  },
+  {
+    "category": { "main": "tops", "sub": "shirt" },
+    "name": "TE5-SH08 프렌치 스트라이프 셔츠-네이비",
+    "brand": "토마스모어",
+    "size": "L",
+    "fit": "loose",
+    "color": "navy",
+    "detailedSize": {
+      "length": 78.5,
+      "shoulder": 53,
+      "chest": 63,
+      "sleeve": 65.5
+    },
+    "note": "좋음",
+    "purchaseDate": "2023-09-19"
+  },
+  {
+    "category": { "main": "tops", "sub": "short-sleeves" },
+    "name": "미시간 울버린 피그먼트 반팔티 블랙차콜",
+    "brand": "트래블",
+    "size": "L",
+    "fit": "loose",
+    "color": "charcoal",
+    "detailedSize": {
+      "length": 73,
+      "shoulder": 55,
+      "chest": 58.5,
+      "sleeve": 24
+    },
+    "note": "다 좋음",
+    "purchaseDate": "2022-04-16"
+  },
+  {
+    "category": { "main": "tops", "sub": "short-sleeves" },
+    "name": "세리프 아치 로고 티셔츠 화이트",
+    "brand": "커버낫",
+    "size": "L",
+    "fit": "loose",
+    "color": "white",
+    "detailedSize": {
+      "length": 73,
+      "shoulder": 55,
+      "chest": 57.5,
+      "sleeve": 26
+    },
+    "note": "다 좋음",
+    "purchaseDate": "2022-04-16"
+  },
+  {
+    "category": { "main": "tops", "sub": "short-sleeves" },
+    "name": "미니멀프로젝트 로버스트 헤비 오버핏 반팔티셔츠",
+    "brand": "미니멀프로젝트",
+    "size": "L",
+    "fit": "loose",
+    "color": "black",
+    "detailedSize": { "length": 72, "shoulder": 55, "chest": 58, "sleeve": 23 },
+    "note": "살짝 짧음",
+    "purchaseDate": "2022-04-14"
+  },
+  {
+    "category": { "main": "tops", "sub": "short-sleeves" },
+    "name": "미니멀프로젝트 로버스트 헤비 오버핏 반팔티셔츠",
+    "brand": "미니멀프로젝트",
+    "size": "L",
+    "fit": "loose",
+    "color": "white",
+    "detailedSize": { "length": 72, "shoulder": 55, "chest": 58, "sleeve": 23 },
+    "note": "살짝 짧음",
+    "purchaseDate": "2022-04-14"
+  },
+  {
+    "category": { "main": "tops", "sub": "short-sleeves" },
+    "name": "Border S/S Tee Blue",
+    "brand": "키커스",
+    "size": "L",
+    "fit": "regular",
+    "color": "blue",
+    "detailedSize": { "length": 73, "shoulder": 52, "chest": 59, "sleeve": 26 },
+    "note": "매우 좋음",
+    "purchaseDate": "2024-05-21"
+  },
+  {
+    "category": { "main": "tops", "sub": "short-sleeves" },
+    "name": "[골드라벨] 세미오버핏 크루넥 티셔츠 (기본형)",
+    "brand": "유핑",
+    "size": "XL",
+    "fit": "loose",
+    "color": "white",
+    "detailedSize": { "length": 74, "shoulder": 55, "chest": 57, "sleeve": 24 },
+    "note": "매우 좋음",
+    "purchaseDate": "2024-02-01"
+  },
+  {
+    "category": { "main": "tops", "sub": "short-sleeves" },
+    "name": "[골드라벨] 세미오버핏 크루넥 티셔츠 (기본형)",
+    "brand": "유핑",
+    "size": "XL",
+    "fit": "loose",
+    "color": "black",
+    "detailedSize": { "length": 74, "shoulder": 55, "chest": 57, "sleeve": 24 },
+    "note": "매우 좋음",
+    "purchaseDate": "2024-02-01"
+  },
+  {
+    "category": { "main": "tops", "sub": "short-sleeves" },
+    "name": "[쿨텐션라인] 세미오버핏 크루넥 티셔츠(기본형)",
+    "brand": "유핑",
+    "size": "XL",
+    "fit": "loose",
+    "color": "white",
+    "detailedSize": { "length": 71, "shoulder": 49, "chest": 53, "sleeve": 21 },
+    "note": "좋음",
+    "purchaseDate": "2024-04-18"
+  },
+  {
+    "category": { "main": "tops", "sub": "short-sleeves" },
+    "name": "[쿨텐션라인] 세미오버핏 크루넥 티셔츠(기본형)",
+    "brand": "유핑",
+    "size": "XL",
+    "fit": "loose",
+    "color": "black",
+    "detailedSize": { "length": 71, "shoulder": 49, "chest": 53, "sleeve": 21 },
+    "note": "좋음",
+    "purchaseDate": "2024-04-18"
+  },
+  {
+    "category": { "main": "tops", "sub": "sweater-shirt" },
+    "name": "타미힐피거 크루넥 기모 맨투맨",
+    "brand": "타미힐피거",
+    "size": "L",
+    "fit": "regular",
+    "color": "black",
+    "detailedSize": {
+      "length": "-",
+      "shoulder": "-",
+      "chest": "-",
+      "sleeve": "-"
+    },
+    "note": "작음",
+    "purchaseDate": "-"
+  },
+  {
+    "category": { "main": "bottoms", "sub": "banding" },
+    "name": "린넨 라이크 퍼티그 밴딩 팬츠",
+    "brand": "수아레",
+    "size": "S",
+    "fit": "regular",
+    "color": "khaki",
     "detailedSize": {
       "length": 104,
-      "waist": 40,
-      "hip": 50,
-      "inseam": 73
+      "waist": "33.5~54.5",
+      "thigh": 33.5,
+      "hem": 23.5,
+      "rise": 36.5
     },
-    "note": ""
+    "note": "",
+    "purchaseDate": "2024-05-21"
   },
   {
-    "category": { "main": "Bottom", "sub": "chino" },
-    "color": "gray",
-    "brand": "지오다노",
-    "name": "슬림핏 치노 팬츠",
-    "size": "L",
-    "fit": "slim",
-    "purchaseDate": "-",
-    "detailedSize": {
-      "length": 98,
-      "waist": 40,
-      "hip": 52,
-      "inseam": 73
-    },
-    "note": ""
-  },
-  {
-    "category": { "main": "Bottom", "sub": "jean" },
-    "color": "blue",
+    "category": { "main": "bottoms", "sub": "banding" },
+    "name": "쿨링 딥 턱 와이드 밴딩 팬츠",
     "brand": "무신사 스탠다드",
-    "name": "슬림핏 청바지",
-    "size": "30",
-    "fit": "slim",
-    "purchaseDate": "2024-04-01",
+    "size": "34",
+    "fit": "loose",
+    "color": "black",
     "detailedSize": {
-      "length": 102,
-      "waist": 38,
-      "hip": 46,
-      "inseam": 75
+      "length": 105,
+      "waist": 41.5,
+      "thigh": 33,
+      "hem": 25,
+      "rise": 38.25
     },
-    "note": ""
+    "note": "살짝 길다",
+    "purchaseDate": "2024-04-18"
   },
   {
-    "category": { "main": "Shoes", "sub": "boots" },
+    "category": { "main": "bottoms", "sub": "banding" },
+    "name": "미드웨일 코듀로이 와이드 팬츠",
+    "brand": "페플",
+    "size": "L",
+    "fit": "loose",
+    "color": "green",
+    "detailedSize": {
+      "length": 103,
+      "waist": 38,
+      "thigh": 32,
+      "hem": 23.5,
+      "rise": 38
+    },
+    "note": "좋음",
+    "purchaseDate": "2024-11-19"
+  },
+  {
+    "category": { "main": "bottoms", "sub": "chino" },
+    "name": "롱 와이드 코튼팬츠",
+    "brand": "퍼블릭아이콘",
+    "size": "M",
+    "fit": "loose",
+    "color": "beige",
+    "detailedSize": {
+      "length": 105,
+      "waist": 40.5,
+      "thigh": 29,
+      "hem": 23.5,
+      "rise": 32
+    },
+    "note": "살짝 길다",
+    "purchaseDate": "2023-11-19"
+  },
+  {
+    "category": { "main": "bottoms", "sub": "jean" },
+    "name": "원턱 와이드 라이크 데님 팬츠",
+    "brand": "비긴202",
+    "size": "2_size",
+    "fit": "loose",
+    "color": "black",
+    "detailedSize": {
+      "length": 108,
+      "waist": 40.5,
+      "thigh": 30.5,
+      "hem": 27.5,
+      "rise": 39
+    },
+    "note": "허리 쪼임, 살짝 길다",
+    "purchaseDate": "2024-04-18"
+  },
+  {
+    "category": { "main": "bottoms", "sub": "jean" },
+    "name": "Punk Town - MOD4c",
+    "brand": "모드나인",
+    "size": "32",
+    "fit": "slim",
+    "color": "light-blue",
+    "detailedSize": {
+      "length": 99,
+      "waist": 42,
+      "thigh": 28.5,
+      "hem": 18,
+      "rise": 30.5
+    },
+    "note": "허벅지 좁음",
+    "purchaseDate": "2020-10-27"
+  },
+  {
+    "category": { "main": "bottoms", "sub": "jean" },
+    "name": "이지 와이드 데님 팬츠 라이트 인디고",
+    "brand": "굿라이프웍스",
+    "size": "L",
+    "fit": "loose",
+    "color": "light-blue",
+    "detailedSize": {
+      "length": 105.5,
+      "waist": 43.5,
+      "thigh": "-",
+      "hem": 28,
+      "rise": 37
+    },
+    "note": "다 크다...",
+    "purchaseDate": "2024-04-14"
+  },
+  {
+    "category": { "main": "bottoms", "sub": "shorts" },
+    "name": "기본핏 크리스피 나일론 쇼츠",
+    "brand": "코드그라피",
+    "size": "L",
+    "fit": "regular",
+    "color": "navy",
+    "detailedSize": {
+      "length": 44,
+      "waist": 41,
+      "thigh": 33.5,
+      "hem": 33,
+      "rise": 36.9
+    },
+    "note": "짧고 타이트",
+    "purchaseDate": "2024-04-20"
+  },
+  {
+    "category": { "main": "bottoms", "sub": "shorts" },
+    "name": "소프트 코튼 에센셜 쇼츠",
+    "brand": "코드그라피",
+    "size": "XL",
+    "fit": "regular",
+    "color": "beige",
+    "detailedSize": {
+      "length": 50,
+      "waist": 39,
+      "thigh": 33.5,
+      "hem": 33,
+      "rise": 37.5
+    },
+    "note": "좋음",
+    "purchaseDate": "2024-04-20"
+  },
+  {
+    "category": { "main": "bottoms", "sub": "shorts" },
+    "name": "소프트 코튼 에센셜 쇼츠",
+    "brand": "코드그라피",
+    "size": "XL",
+    "fit": "regular",
+    "color": "khaki",
+    "detailedSize": {
+      "length": 50,
+      "waist": 39,
+      "thigh": 33.5,
+      "hem": 33,
+      "rise": 37.5
+    },
+    "note": "좋음",
+    "purchaseDate": "2024-04-20"
+  },
+  {
+    "category": { "main": "bottoms", "sub": "shorts" },
+    "name": "에센셜 원턱 데님 쇼츠 딥 블루",
+    "brand": "이에스엔",
+    "size": "L",
+    "fit": "loose",
+    "color": "light-blue",
+    "detailedSize": {
+      "length": 52,
+      "waist": 42,
+      "thigh": 34,
+      "hem": 31,
+      "rise": 35
+    },
+    "note": "좋음",
+    "purchaseDate": "2024-04-20"
+  },
+  {
+    "category": { "main": "bottoms", "sub": "slacks" },
+    "name": "테이퍼드 히든 밴딩 크롭 슬랙스",
+    "brand": "무신사 스탠다드",
+    "size": "32",
+    "fit": "regular",
+    "color": "black",
+    "detailedSize": {
+      "length": 94,
+      "waist": 42.5,
+      "thigh": 25,
+      "hem": 18,
+      "rise": 31
+    },
+    "note": "살짝 타이트, 조금 짧음 나머지 굿",
+    "purchaseDate": "2020-10-27"
+  },
+  {
+    "category": { "main": "shoes", "sub": "boots" },
     "color": "black",
     "brand": "닥터마틴",
     "name": "1461 스무스",
@@ -332,7 +694,7 @@
     }
   },
   {
-    "category": { "main": "Shoes", "sub": "loafers" },
+    "category": { "main": "shoes", "sub": "loafers" },
     "color": "black",
     "brand": "마이애미프로젝트",
     "name": "0891 코즈웨이 베이직 페니 로퍼 밴타블랙",
@@ -344,7 +706,7 @@
     }
   },
   {
-    "category": { "main": "Shoes", "sub": "sneakers" },
+    "category": { "main": "shoes", "sub": "sneakers" },
     "color": "red",
     "brand": "아디다스",
     "name": "가젤 인도어",
@@ -356,7 +718,7 @@
     }
   },
   {
-    "category": { "main": "Shoes", "sub": "sneakers" },
+    "category": { "main": "shoes", "sub": "sneakers" },
     "color": "blue",
     "brand": "컨버스",
     "name": "척 70 시즈널 컬러나이스 블루",
@@ -368,7 +730,7 @@
     }
   },
   {
-    "category": { "main": "Shoes", "sub": "sneakers" },
+    "category": { "main": "shoes", "sub": "sneakers" },
     "color": "brown",
     "brand": "아디다스",
     "name": "토바코 그루엔",
@@ -380,7 +742,7 @@
     }
   },
   {
-    "category": { "main": "Shoes", "sub": "sneakers" },
+    "category": { "main": "shoes", "sub": "sneakers" },
     "color": "gray",
     "brand": "뉴발란스",
     "name": "993",
@@ -392,7 +754,7 @@
     }
   },
   {
-    "category": { "main": "Shoes", "sub": "sneakers" },
+    "category": { "main": "shoes", "sub": "sneakers" },
     "color": "black",
     "brand": "아이다스",
     "name": "Samba OG Black",
@@ -404,7 +766,7 @@
     }
   },
   {
-    "category": { "main": "Shoes", "sub": "sneakers" },
+    "category": { "main": "shoes", "sub": "sneakers" },
     "color": "brown",
     "brand": "나이키",
     "name": "Air Force 1 WB Flax",
@@ -416,7 +778,7 @@
     }
   },
   {
-    "category": { "main": "Shoes", "sub": "sneakers" },
+    "category": { "main": "shoes", "sub": "sneakers" },
     "color": "gray",
     "brand": "아식스",
     "name": "Gel-1130",
@@ -428,7 +790,7 @@
     }
   },
   {
-    "category": { "main": "Shoes", "sub": "sneakers" },
+    "category": { "main": "shoes", "sub": "sneakers" },
     "color": "green",
     "brand": "나이키",
     "name": "킬샷",

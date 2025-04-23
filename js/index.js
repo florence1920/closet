@@ -3,11 +3,11 @@ import { closetListActive } from "./closetListActive.js";
 import { initializeClosetData } from "./initData.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  initializeClosetData();
+  initializeClosetData().then(() => {
+    const closetData = JSON.parse(localStorage.getItem("closet")) || [];
+    console.log("현재 옷장 데이터:", closetData);
 
-  const closetData = JSON.parse(localStorage.getItem("closet")) || [];
-  console.log("현재 옷장 데이터:", closetData);
+    navHighlight();
+    closetListActive();
+  });
 });
-
-navHighlight();
-closetListActive();

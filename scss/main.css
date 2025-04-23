@@ -280,6 +280,7 @@ main .section-header__icon {
 }
 .closet .closet__box .closet__detail .closet__detail__info .closet__detail__info__item {
   display: flex;
+  gap: 8px;
   margin-bottom: 10px;
   padding-bottom: 10px;
   border-bottom: 1px dashed #000;
@@ -299,18 +300,11 @@ main .section-header__icon {
   font-weight: bold;
   width: 70px;
 }
+.closet .closet__box .closet__detail .closet__detail__info .closet__detail__info__item .closet__detail__value {
+  width: 90%;
+}
 .closet .closet__box .closet__detail .closet__detail__info .closet__detail__info__item .closet__detail__size-item {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
   margin-bottom: 10px;
-}
-.closet .closet__box .closet__detail .closet__detail__info .closet__detail__info__item .closet__detail__size-item .closet__detail__size-label {
-  width: 90px;
-}
-.closet .closet__box .closet__detail .closet__detail__info .closet__detail__info__item .closet__detail__size-item .closet__detail__size-value {
-  width: 40px;
-}
-.closet .closet__box .closet__detail .closet__detail__info .closet__detail__info__item .closet__detail__size-item .closet__detail__size-icon {
-  width: 8px;
-  height: 8px;
 }/*# sourceMappingURL=main.css.map */

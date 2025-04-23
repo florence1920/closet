@@ -1,7 +1,7 @@
 export function initializeClosetData() {
-  if (localStorage.getItem("closet")) return;
+  if (localStorage.getItem("closet")) return Promise.resolve();
 
-  fetch("../data/data.json")
+  return fetch("../data/data.json")
     .then((res) => res.json())
     .then((data) => {
       localStorage.setItem("closet", JSON.stringify(data));
