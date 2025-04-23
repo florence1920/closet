@@ -1,0 +1,442 @@
+[
+  {
+    "category": { "main": "Outer", "sub": "blazer" },
+    "color": "black",
+    "brand": "무신사 스탠다드",
+    "name": "릴렉스드 베이식 블레이저",
+    "size": "XL",
+    "fit": "regular",
+    "purchaseDate": "2022-08-31",
+    "detailedSize": {
+      "length": 75,
+      "shoulder": 45.4,
+      "chest": 60.5,
+      "sleeve": 63
+    },
+    "note": ""
+  },
+  {
+    "category": { "main": "Outer", "sub": "cardigan" },
+    "color": "gray",
+    "brand": "멘인스토어",
+    "name": "회색 가디건",
+    "size": "-",
+    "fit": "regular",
+    "purchaseDate": "-",
+    "detailedSize": {
+      "length": "-",
+      "shoulder": "-",
+      "chest": "-",
+      "sleeve": "-"
+    },
+    "note": ""
+  },
+  {
+    "category": { "main": "Outer", "sub": "coat" },
+    "color": "navy",
+    "brand": "파르티멘토",
+    "name": "오버사이즈 멜톤 더플 롱 코트 네이비",
+    "size": "L",
+    "fit": "loose",
+    "purchaseDate": "2023-11-19",
+    "detailedSize": {
+      "length": 112,
+      "shoulder": 58.5,
+      "chest": 67.5,
+      "sleeve": 60.5
+    },
+    "note": ""
+  },
+  {
+    "category": { "main": "Outer", "sub": "jacket" },
+    "color": "brown",
+    "brand": "상드르",
+    "name": "Noir 스웨이드 헤링턴 JK",
+    "size": "Free",
+    "fit": "slim",
+    "purchaseDate": "2024-11-11",
+    "detailedSize": {
+      "length": 66,
+      "shoulder": 56,
+      "chest": 63,
+      "sleeve": 62
+    },
+    "note": ""
+  },
+  {
+    "category": { "main": "Outer", "sub": "jacket" },
+    "color": "black",
+    "brand": "-",
+    "name": "가죽재킷",
+    "size": "-",
+    "fit": "slim",
+    "purchaseDate": "-",
+    "detailedSize": {
+      "length": "-",
+      "shoulder": "-",
+      "chest": "-",
+      "sleeve": "-"
+    },
+    "note": ""
+  },
+  {
+    "category": { "main": "Outer", "sub": "padding" },
+    "color": "black",
+    "brand": "지오다노",
+    "name": "숏패딩",
+    "size": "L",
+    "fit": "slim",
+    "purchaseDate": "-",
+    "detailedSize": {
+      "length": "-",
+      "shoulder": "-",
+      "chest": "-",
+      "sleeve": "-"
+    },
+    "note": ""
+  },
+  {
+    "category": { "main": "Outer", "sub": "padding" },
+    "color": "black",
+    "brand": "marmot",
+    "name": "롱패딩",
+    "size": "L",
+    "fit": "regular",
+    "purchaseDate": "-",
+    "detailedSize": {
+      "length": "-",
+      "shoulder": "-",
+      "chest": "-",
+      "sleeve": "-"
+    },
+    "note": ""
+  },
+  {
+    "category": { "main": "Outer", "sub": "padding" },
+    "color": "black",
+    "brand": "projectM",
+    "name": "경량패딩",
+    "size": "L",
+    "fit": "regular",
+    "purchaseDate": "-",
+    "detailedSize": {
+      "length": "-",
+      "shoulder": "-",
+      "chest": "-",
+      "sleeve": "-"
+    },
+    "note": ""
+  },
+  {
+    "category": { "main": "Outer", "sub": "windbreak" },
+    "color": "navy",
+    "brand": "토마스 모어",
+    "name": "탱커 블루종-네이비",
+    "size": "L",
+    "fit": "loose",
+    "purchaseDate": "2024-04-03",
+    "detailedSize": {
+      "length": 68,
+      "shoulder": "-",
+      "chest": 70.5,
+      "sleeve": 92.5
+    },
+    "note": ""
+  },
+  {
+    "category": { "main": "Outer", "sub": "windbreak" },
+    "color": "black",
+    "brand": "유니클로",
+    "name": "유니클로 바람막이",
+    "size": "XL",
+    "fit": "regular",
+    "purchaseDate": "-",
+    "detailedSize": {
+      "length": "-",
+      "shoulder": "-",
+      "chest": "-",
+      "sleeve": "-"
+    },
+    "note": ""
+  },
+  {
+    "category": { "main": "Outer", "sub": "windbreak" },
+    "color": "blue",
+    "brand": "노스페이스",
+    "name": "노스페이스 바람막이",
+    "size": "2XL(110)",
+    "fit": "regular",
+    "purchaseDate": "-",
+    "detailedSize": {
+      "length": "-",
+      "shoulder": "-",
+      "chest": "-",
+      "sleeve": "-"
+    },
+    "note": ""
+  },
+  {
+    "category": { "main": "Top", "sub": "long-sleeves" },
+    "color": "black",
+    "brand": "자바나스",
+    "name": "에센셜 피마스판 롱슬리브 1-블랙",
+    "size": "L",
+    "fit": "regular",
+    "purchaseDate": "2024-11-28",
+    "detailedSize": {
+      "length": 72,
+      "shoulder": 52,
+      "chest": 58,
+      "sleeve": 61.5
+    },
+    "note": "좋음"
+  },
+  {
+    "category": { "main": "Top", "sub": "long-sleeves" },
+    "color": "navy",
+    "brand": "굿라이프웍스",
+    "name": "오버핏 스트라이프 롱 슬리브 티셔츠 네이비",
+    "size": "S",
+    "fit": "loose",
+    "purchaseDate": "-",
+    "detailedSize": {
+      "length": 74,
+      "shoulder": 60,
+      "chest": 60,
+      "sleeve": 60
+    },
+    "note": "살짝 길다"
+  },
+  {
+    "category": { "main": "Top", "sub": "polo-shirt" },
+    "color": "blue",
+    "brand": "예일",
+    "name": "HERITAGE DAN QUICK DRY PIQUE POLO SHIRT ROYAL BLUE",
+    "size": "L",
+    "fit": "regular",
+    "purchaseDate": "2024-05-21",
+    "detailedSize": {
+      "length": 73,
+      "shoulder": 54,
+      "chest": 60,
+      "sleeve": 24
+    },
+    "note": "좋음"
+  },
+  {
+    "category": { "main": "Top", "sub": "shirt" },
+    "color": "black",
+    "brand": "무신사 스탠다드",
+    "name": "릴렉스 핏 실키 셔츠",
+    "size": "L",
+    "fit": "slim",
+    "purchaseDate": "2022-05-10",
+    "detailedSize": {
+      "length": 78,
+      "shoulder": 52,
+      "chest": 59,
+      "sleeve": 62
+    },
+    "note": "총장, 어깨, 가슴 짧음"
+  },
+  {
+    "category": { "main": "Top", "sub": "shirt" },
+    "color": "white",
+    "brand": "토피",
+    "name": "오버핏 옥스퍼드 셔츠",
+    "size": "L",
+    "fit": "loose",
+    "purchaseDate": "2024-04-18",
+    "detailedSize": {
+      "length": 78,
+      "shoulder": 61.5,
+      "chest": 67,
+      "sleeve": 59
+    },
+    "note": "좋음"
+  },
+  {
+    "category": { "main": "Top", "sub": "shirt" },
+    "color": "light-blue",
+    "brand": "토피",
+    "name": "오버핏 옥스퍼드 셔츠",
+    "size": "L",
+    "fit": "loose",
+    "purchaseDate": "2024-04-18",
+    "detailedSize": {
+      "length": 78,
+      "shoulder": 61.5,
+      "chest": 67,
+      "sleeve": 59
+    },
+    "note": "좋음"
+  },
+  {
+    "category": { "main": "Bottom", "sub": "banding" },
+    "color": "black",
+    "brand": "스위브",
+    "name": "와이드 밴딩 팬츠",
+    "size": "XL",
+    "fit": "slim",
+    "purchaseDate": "2024-02-02",
+    "detailedSize": {
+      "length": 104,
+      "waist": 40,
+      "hip": 50,
+      "inseam": 73
+    },
+    "note": ""
+  },
+  {
+    "category": { "main": "Bottom", "sub": "chino" },
+    "color": "gray",
+    "brand": "지오다노",
+    "name": "슬림핏 치노 팬츠",
+    "size": "L",
+    "fit": "slim",
+    "purchaseDate": "-",
+    "detailedSize": {
+      "length": 98,
+      "waist": 40,
+      "hip": 52,
+      "inseam": 73
+    },
+    "note": ""
+  },
+  {
+    "category": { "main": "Bottom", "sub": "jean" },
+    "color": "blue",
+    "brand": "무신사 스탠다드",
+    "name": "슬림핏 청바지",
+    "size": "30",
+    "fit": "slim",
+    "purchaseDate": "2024-04-01",
+    "detailedSize": {
+      "length": 102,
+      "waist": 38,
+      "hip": 46,
+      "inseam": 75
+    },
+    "note": ""
+  },
+  {
+    "category": { "main": "Shoes", "sub": "boots" },
+    "color": "black",
+    "brand": "닥터마틴",
+    "name": "1461 스무스",
+    "size": 265,
+    "purchaseDate": "-",
+    "detailedSize": {
+      "footWidth": "좁음",
+      "outsole": "편함"
+    }
+  },
+  {
+    "category": { "main": "Shoes", "sub": "loafers" },
+    "color": "black",
+    "brand": "마이애미프로젝트",
+    "name": "0891 코즈웨이 베이직 페니 로퍼 밴타블랙",
+    "size": 260,
+    "purchaseDate": "2022-05-10",
+    "detailedSize": {
+      "footWidth": "맞음",
+      "outsole": "편함"
+    }
+  },
+  {
+    "category": { "main": "Shoes", "sub": "sneakers" },
+    "color": "red",
+    "brand": "아디다스",
+    "name": "가젤 인도어",
+    "size": 265,
+    "purchaseDate": "2024-04-18",
+    "detailedSize": {
+      "footWidth": "맞음",
+      "outsole": "편함"
+    }
+  },
+  {
+    "category": { "main": "Shoes", "sub": "sneakers" },
+    "color": "blue",
+    "brand": "컨버스",
+    "name": "척 70 시즈널 컬러나이스 블루",
+    "size": 265,
+    "purchaseDate": "2024-04-18",
+    "detailedSize": {
+      "footWidth": "살짝 좁음",
+      "outsole": "살짝 딱딱"
+    }
+  },
+  {
+    "category": { "main": "Shoes", "sub": "sneakers" },
+    "color": "brown",
+    "brand": "아디다스",
+    "name": "토바코 그루엔",
+    "size": 265,
+    "purchaseDate": "2023-11-19",
+    "detailedSize": {
+      "footWidth": "맞음",
+      "outsole": "딱딱"
+    }
+  },
+  {
+    "category": { "main": "Shoes", "sub": "sneakers" },
+    "color": "gray",
+    "brand": "뉴발란스",
+    "name": "993",
+    "size": 265,
+    "purchaseDate": "2022-04-15",
+    "detailedSize": {
+      "footWidth": "편함",
+      "outsole": "편함"
+    }
+  },
+  {
+    "category": { "main": "Shoes", "sub": "sneakers" },
+    "color": "black",
+    "brand": "아이다스",
+    "name": "Samba OG Black",
+    "size": 270,
+    "purchaseDate": "2024-05-17",
+    "detailedSize": {
+      "footWidth": "편함",
+      "outsole": "편함"
+    }
+  },
+  {
+    "category": { "main": "Shoes", "sub": "sneakers" },
+    "color": "brown",
+    "brand": "나이키",
+    "name": "Air Force 1 WB Flax",
+    "size": 265,
+    "purchaseDate": "2024-05-17",
+    "detailedSize": {
+      "footWidth": "편함",
+      "outsole": "편함"
+    }
+  },
+  {
+    "category": { "main": "Shoes", "sub": "sneakers" },
+    "color": "gray",
+    "brand": "아식스",
+    "name": "Gel-1130",
+    "size": 265,
+    "purchaseDate": "-",
+    "detailedSize": {
+      "footWidth": "편함",
+      "outsole": "편함"
+    }
+  },
+  {
+    "category": { "main": "Shoes", "sub": "sneakers" },
+    "color": "green",
+    "brand": "나이키",
+    "name": "킬샷",
+    "size": 265,
+    "purchaseDate": "-",
+    "detailedSize": {
+      "footWidth": "좁음",
+      "outsole": "딱딱"
+    }
+  }
+]

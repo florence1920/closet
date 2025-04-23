@@ -7,6 +7,7 @@
     .closet__nav-button {
       border: 1px solid #e0e0e0;
       font-size: 18px;
+      cursor: pointer;
     }
     .closet__nav-button--active {
       border: 1px solid #000;
@@ -19,9 +20,12 @@
 
     .closet__list {
       flex-grow: 1;
-      display: grid;
+      display: none;
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
       gap: 20px;
+      &--active {
+        display: grid;
+      }
       .closet__item {
         padding: 10px 0;
         width: 100px;
