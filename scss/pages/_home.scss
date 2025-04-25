@@ -21,15 +21,15 @@
     .closet__list {
       flex-grow: 1;
       display: none;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       gap: 20px;
       &--active {
         display: grid;
       }
       .closet__item {
         padding: 10px 0;
-        width: 100px;
-        height: 120px;
+        width: 120px;
+        height: 140px;
         border: 1px solid #000;
         border-radius: 5px;
         font-size: 12px;
@@ -39,9 +39,19 @@
         align-items: center;
         justify-content: space-between;
 
+        cursor: pointer;
+        .closet__item-name {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 90%;
+        }
         .closet__item-image {
           width: 40px;
           height: 40px;
+        }
+        &.closet__item--active {
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 8px 10px;
         }
       }
     }
@@ -56,15 +66,28 @@
       font-size: 12px;
       .closet__detail__header {
         margin-bottom: 20px;
-        display: flex;
-        justify-content: space-between;
+        // display: flex;
+        // justify-content: space-between;
+        .closet__detail__header-right {
+          text-align: right;
+          margin-bottom: 10px;
+        }
         .closet__detail__header-left {
           display: flex;
           flex-direction: column;
-          align-items: center;
+          // align-items: center;
+          .closet__detail__color {
+            margin-top: 10px;
+            width: 80px;
+            height: 24px;
+          }
           .closet__detail__title {
             font-size: 16px;
             font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 210px;
           }
         }
       }

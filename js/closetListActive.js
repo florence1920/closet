@@ -38,7 +38,7 @@ export function closetListActive() {
           return item.category?.main === category.toLowerCase();
         });
         console.log("📁 필터링된 데이터:", filtered);
-        filtered.forEach((item) => {
+        filtered.forEach((item, idx) => {
           const li = document.createElement("li");
           li.className = "closet__item";
           li.innerHTML = `
@@ -46,11 +46,139 @@ export function closetListActive() {
             <img class="closet__item-image" src="/img/clothes/${item.category.sub}.png" alt="옷 이미지" />
             <img class="closet__item-line" src="/img/line/${item.color}.png" alt="옷 색상" />
           `;
+          li.addEventListener("click", () => {
+            // 기존 active 해제
+            list
+              .querySelectorAll(".closet__item")
+              .forEach((el) => el.classList.remove("closet__item--active"));
+            li.classList.add("closet__item--active");
+            renderClosetDetail(item);
+          });
           list.appendChild(li);
+          // 첫 번째 아이템 자동 선택
+          if (idx === 0) {
+            li.classList.add("closet__item--active");
+            renderClosetDetail(item);
+          }
         });
       }
     });
   });
 
   navButtons[0].click();
+}
+
+function renderClosetDetail(item) {
+  const detailEl = document.querySelector(".closet__detail");
+
+  const {
+    name,
+    brand,
+    color,
+    size,
+    fit,
+    category,
+    purchaseDate,
+    detailedSize,
+    note,
+  } = item;
+  const imgPath = `/img/clothes/${category.sub}.png`;
+  const colorImg = `/img/line/${color}.png`;
+
+  // 공통 상단 영역
+  const headerHTML = `
+    <div class="closet__detail__header">
+    <p class="closet__detail__header-right closet__detail__category">
+        ${category.main} > ${category.sub}
+      </p>
+      <div class="closet__detail__header-left">
+        <p class="closet__detail__title">${name}</p>
+        <img class="closet__detail__color" src="${colorImg}" alt="옷 색상" />
+      </div>
+      
+    </div>
+  `;
+
+  // 공통 브랜드, 구매일, 사이즈, 핏
+  let infoHTML = `
+    <li class="closet__detail__info__item">
+      <img class="closet__detail__image" src="${imgPath}" alt="옷 이미지" />
+    </li>
+    <li class="closet__detail__info__item">
+      <p class="closet__detail__label">브랜드</p>
+      <p class="closet__detail__value">${brand || "-"}</p>
+    </li>
+    <li class="closet__detail__info__item">
+      <p class="closet__detail__label">구매일</p>
+      <p class="closet__detail__value">${purchaseDate || "-"}</p>
+    </li>
+    <li class="closet__detail__info__item">
+      <p class="closet__detail__label">사이즈</p>
+      <p class="closet__detail__value">${size}</p>
+    </li>
+  `;
+
+  if (fit) {
+    infoHTML += `
+      <li class="closet__detail__info__item">
+        <p class="closet__detail__label">핏</p>
+        <p class="closet__detail__value">${fit}</p>
+      </li>
+    `;
+  }
+
+  // 카테고리별 상세사이즈
+  const sizeMap = {
+    tops: ["총기장", "어깨 넓이", "가슴 단면", "소매길이"],
+    outer: ["총기장", "어깨 넓이", "가슴 단면", "소매길이"],
+    bottoms: ["총기장", "허리", "허벅지", "밑단", "밑위"],
+    shoes: ["발볼", "밑창"],
+  };
+
+  const keyMap = {
+    tops: ["length", "shoulder", "chest", "sleeve"],
+    outer: ["length", "shoulder", "chest", "sleeve"],
+    bottoms: ["length", "waist", "thigh", "hem", "rise"],
+    shoes: ["footWidth", "outsole"],
+  };
+
+  const labels = sizeMap[category.main];
+  const keys = keyMap[category.main];
+
+  const sizeList = keys
+    .map((key, idx) => {
+      const value = detailedSize?.[key];
+      return value !== undefined
+        ? `<li class="closet__detail__size-item">
+            <p class="closet__detail__size-label">${labels[idx]}</p>
+            <p class="closet__detail__size-value">${value}${
+            typeof value === "number" ? "cm" : ""
+          }</p>
+          </li>`
+        : "";
+    })
+    .join("");
+
+  infoHTML += `
+    <li class="closet__detail__info__item">
+      <p class="closet__detail__label">상세사이즈</p>
+      <ul class="closet__detail__value">
+        ${sizeList}
+      </ul>
+    </li>
+  `;
+
+  // Note가 있다면 추가
+  if (note) {
+    infoHTML += `
+      <li class="closet__detail__info__item">
+        <p class="closet__detail__label">비고</p>
+        <p class="closet__detail__value">${note}</p>
+      </li>
+    `;
+  }
+
+  // 최종 렌더링
+  detailEl.innerHTML =
+    headerHTML + `<ul class="closet__detail__info">${infoHTML}</ul>`;
 }
