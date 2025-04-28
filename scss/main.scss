@@ -2,7 +2,9 @@
 @use "base/typography";
 @use "base/base";
 
+@use "components/input";
 @use "components/buttons";
+@use "components/select";
 
 @use "layout/header";
 @use "layout/content";

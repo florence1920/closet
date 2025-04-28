@@ -2,6 +2,8 @@ export function closetListActive() {
   const navButtons = document.querySelectorAll(".closet__nav-button");
   const lists = document.querySelectorAll(".closet__list");
 
+  if (navButtons.length === 0) return;
+
   const closetData = JSON.parse(localStorage.getItem("closet")) || [];
 
   const categoryMap = {

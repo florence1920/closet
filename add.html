@@ -21,15 +21,44 @@
       </nav>
     </header>
     <main>
-      <section class="closet">
+      <section class="add">
         <div class="section-header">
           <h1 class="section-header__title">옷 등록</h1>
           <img
             class="section-header__icon"
             src="/img/icon/add.png"
-            alt="closet-image"
+            alt="add-image"
           />
         </div>
+        <form>
+          <div class="custom-select" id="main-category-select">
+            <div class="custom-select__selected">
+              대분류 선택
+              <img src="/img/icon/arrow.png" alt="sub-category-icon" />
+            </div>
+            <ul class="custom-select__options">
+              <li class="custom-select__option" data-value="outer">Outer</li>
+              <li class="custom-select__option" data-value="tops">Tops</li>
+              <li class="custom-select__option" data-value="bottoms">
+                Bottoms
+              </li>
+              <li class="custom-select__option" data-value="shoes">Shoes</li>
+            </ul>
+            <input
+              type="hidden"
+              name="category-main"
+              id="main-category-hidden"
+            />
+          </div>
+
+          <div class="custom-select" id="sub-category-select">
+            <div class="custom-select__selected">
+              <img src="/img/icon/arrow.png" alt="sub-category-icon" />
+            </div>
+            <ul class="custom-select__options"></ul>
+            <input type="hidden" name="category-sub" id="sub-category-hidden" />
+          </div>
+        </form>
       </section>
     </main>
   </body>

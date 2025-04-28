@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html,
 body,
 div,
@@ -150,6 +151,59 @@ button {
   padding: 0 20px;
   background-color: #fff;
   border-radius: 50px;
+}
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.custom-select + .custom-select {
+  margin-left: 30px;
+}
+.custom-select__selected {
+  width: 230px;
+  height: 50px;
+  padding: 0 20px;
+  line-height: 50px;
+  border-radius: 10px;
+  border: 1px dashed #000;
+  display: flex;
+  justify-content: space-between; /* 왼쪽은 텍스트, 오른쪽은 화살표 */
+  align-items: center;
+}
+.custom-select__selected.disabled {
+  color: #aaa; /* 회색으로 표시 */
+  cursor: default; /* 커서 스타일 변경 */
+}
+.custom-select__options {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background: #fff;
+  border: 1px dashed #000;
+  border-radius: 10px;
+  display: none; /* 기본적으로 숨김 */
+}
+.custom-select__options:empty {
+  border: none;
+  padding: 0;
+  height: 0;
+}
+.custom-select__options.open {
+  display: block; /* .open 클래스가 추가되면 보여짐 */
+}
+.custom-select__options .custom-select__option {
+  padding: 10px 10px;
+  cursor: pointer;
+}
+.custom-select.open .custom-select__options {
+  display: block; /* .open이 추가되면 드롭다운을 보여줌 */
+}
+.custom-select.open .custom-select__selected.disabled + .custom-select__options {
+  display: none;
 }
 
 header {

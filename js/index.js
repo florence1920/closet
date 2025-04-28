@@ -1,6 +1,7 @@
 import { navHighlight } from "./navHighlight.js";
 import { closetListActive } from "./closetListActive.js";
 import { initializeClosetData } from "./initData.js";
+import { setupCategorySelect } from "./categorySelect.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initializeClosetData().then(() => {
@@ -8,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("현재 옷장 데이터:", closetData);
 
     navHighlight();
+    setupCategorySelect();
     closetListActive();
   });
 });
