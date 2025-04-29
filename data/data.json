@@ -686,11 +686,9 @@
     "color": "black",
     "brand": "닥터마틴",
     "name": "1461 스무스",
-    "size": 265,
     "purchaseDate": "-",
     "detailedSize": {
-      "footWidth": "좁음",
-      "outsole": "편함"
+      "size": 265
     }
   },
   {
@@ -698,11 +696,9 @@
     "color": "black",
     "brand": "마이애미프로젝트",
     "name": "0891 코즈웨이 베이직 페니 로퍼 밴타블랙",
-    "size": 260,
     "purchaseDate": "2022-05-10",
     "detailedSize": {
-      "footWidth": "맞음",
-      "outsole": "편함"
+      "size": 260
     }
   },
   {
@@ -710,11 +706,9 @@
     "color": "red",
     "brand": "아디다스",
     "name": "가젤 인도어",
-    "size": 265,
     "purchaseDate": "2024-04-18",
     "detailedSize": {
-      "footWidth": "맞음",
-      "outsole": "편함"
+      "size": 265
     }
   },
   {
@@ -722,11 +716,9 @@
     "color": "blue",
     "brand": "컨버스",
     "name": "척 70 시즈널 컬러나이스 블루",
-    "size": 265,
     "purchaseDate": "2024-04-18",
     "detailedSize": {
-      "footWidth": "살짝 좁음",
-      "outsole": "살짝 딱딱"
+      "size": 265
     }
   },
   {
@@ -734,11 +726,9 @@
     "color": "brown",
     "brand": "아디다스",
     "name": "토바코 그루엔",
-    "size": 265,
     "purchaseDate": "2023-11-19",
     "detailedSize": {
-      "footWidth": "맞음",
-      "outsole": "딱딱"
+      "size": 265
     }
   },
   {
@@ -746,11 +736,9 @@
     "color": "gray",
     "brand": "뉴발란스",
     "name": "993",
-    "size": 265,
     "purchaseDate": "2022-04-15",
     "detailedSize": {
-      "footWidth": "편함",
-      "outsole": "편함"
+      "size": 265
     }
   },
   {
@@ -758,11 +746,9 @@
     "color": "black",
     "brand": "아이다스",
     "name": "Samba OG Black",
-    "size": 270,
     "purchaseDate": "2024-05-17",
     "detailedSize": {
-      "footWidth": "편함",
-      "outsole": "편함"
+      "size": 270
     }
   },
   {
@@ -770,11 +756,9 @@
     "color": "brown",
     "brand": "나이키",
     "name": "Air Force 1 WB Flax",
-    "size": 265,
     "purchaseDate": "2024-05-17",
     "detailedSize": {
-      "footWidth": "편함",
-      "outsole": "편함"
+      "size": 265
     }
   },
   {
@@ -782,11 +766,9 @@
     "color": "gray",
     "brand": "아식스",
     "name": "Gel-1130",
-    "size": 265,
     "purchaseDate": "-",
     "detailedSize": {
-      "footWidth": "편함",
-      "outsole": "편함"
+      "size": 265
     }
   },
   {
@@ -794,11 +776,9 @@
     "color": "green",
     "brand": "나이키",
     "name": "킬샷",
-    "size": 265,
     "purchaseDate": "-",
     "detailedSize": {
-      "footWidth": "좁음",
-      "outsole": "딱딱"
+      "size": 265
     }
   }
 ]

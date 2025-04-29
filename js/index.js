@@ -4,6 +4,7 @@ import { initializeClosetData } from "./initData.js";
 import { setupCategorySelect } from "./categorySelect.js";
 import { setupSizeAndFitSelect } from "./sizeAndFitSelect.js";
 import { setupColorSelect } from "./colorSelect.js";
+import { setupFormValidation } from "./formValidation.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // 페이지 공통 초기화
@@ -20,4 +21,5 @@ document.addEventListener("DOMContentLoaded", () => {
   setupCategorySelect();
   setupSizeAndFitSelect();
   setupColorSelect();
+  setupFormValidation();
 });
