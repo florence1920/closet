@@ -1,7 +1,7 @@
+import { initializeSelectSystem } from "./selectCommon.js";
+
 export function setupCategorySelect() {
-  console.log("Category Select Initialized");
   const mainSelect = document.getElementById("main-category-select");
-  console.log(mainSelect);
   const subSelect = document.getElementById("sub-category-select");
   const mainHiddenInput = document.getElementById("main-category-hidden");
   const subHiddenInput = document.getElementById("sub-category-hidden");
@@ -20,74 +20,48 @@ export function setupCategorySelect() {
     shoes: ["loafers", "sneakers", "boots"],
   };
 
+  const detailSizeOptions = {
+    outer: ["총 기장", "어깨 넓이", "가슴 단면", "소매 길이"],
+    tops: ["총 기장", "어깨 넓이", "가슴 단면", "소매 길이"],
+    bottoms: ["총 기장", "허리 단면", "허벅지 단면", "밑위", "밑단 단면"],
+    shoes: ["사이즈"],
+  };
+
   if (!mainSelect || !subSelect || !mainHiddenInput || !subHiddenInput) return;
+
+  // 초기화
+  initializeSelectSystem();
 
   // 초기 상태에서 소분류 선택 비활성화
   const subSelectedDiv = subSelect.querySelector(".custom-select__selected");
   subSelectedDiv.classList.add("disabled");
 
+  // 대분류 옵션 초기화
+  const mainOptionsList = mainSelect.querySelector(".custom-select__options");
+  if (mainOptionsList) {
+    mainOptionsList.innerHTML = "";
+    Object.keys(categories).forEach((category) => {
+      const li = document.createElement("li");
+      li.className = "custom-select__option";
+      li.dataset.value = category;
+      li.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+      mainOptionsList.appendChild(li);
+    });
+  }
+
   // 공통: 커스텀 셀렉트 열고 닫기
-  function toggleOptions(selectDiv) {
-    console.log(selectDiv);
-    selectDiv.classList.toggle("open");
-  }
-
-  function selectOption(selectDiv, selectedDiv, hiddenInput, value, text) {
-    // 텍스트 노드만 업데이트하기
-    const textNode = selectedDiv.childNodes[0];
-    if (textNode && textNode.nodeType === Node.TEXT_NODE) {
-      textNode.textContent = text;
-    } else {
-      // 텍스트 노드가 없다면 첫 번째 자식 앞에 새 텍스트 노드 추가
-      selectedDiv.prepend(document.createTextNode(text));
-    }
-
-    hiddenInput.value = value;
-    selectDiv.classList.remove("open");
-  }
-
-  // 메인 카테고리 선택
-  mainSelect.addEventListener("click", (e) => {
-    if (e.target.classList.contains("custom-select__selected")) {
-      toggleOptions(mainSelect);
-    } else if (e.target.classList.contains("custom-select__option")) {
-      const value = e.target.dataset.value;
-      const text = e.target.textContent;
-      selectOption(
-        mainSelect,
-        mainSelect.querySelector(".custom-select__selected"),
-        mainHiddenInput,
-        value,
-        text
-      );
-
-      // 소분류 초기화
-      const subOptionsList = subSelect.querySelector(".custom-select__options");
-      subOptionsList.innerHTML = "";
-
-      if (categories[value]) {
-        subSelectedDiv.classList.remove("disabled");
-
-        categories[value].forEach((sub) => {
-          const li = document.createElement("li");
-          li.className = "custom-select__option";
-          li.dataset.value = sub;
-          li.textContent = sub;
-          subOptionsList.appendChild(li);
-        });
-
-        const textNode = subSelectedDiv.childNodes[0];
-        if (textNode && textNode.nodeType === Node.TEXT_NODE) {
-          textNode.textContent = "소분류 선택";
-        } else {
-          subSelectedDiv.prepend(document.createTextNode("소분류 선택"));
-        }
-        subHiddenInput.value = "";
+  function toggleMainOptions() {
+    const allSelects = document.querySelectorAll(".custom-select");
+    allSelects.forEach((select) => {
+      if (select !== mainSelect) {
+        select.classList.remove("open");
       }
-    }
-  });
-  // 서브 카테고리 선택
-  subSelect.addEventListener("click", (e) => {
+    });
+
+    mainSelect.classList.toggle("open");
+  }
+
+  function toggleSubOptions() {
     if (
       mainHiddenInput.value === "" ||
       subSelectedDiv.classList.contains("disabled")
@@ -95,28 +69,133 @@ export function setupCategorySelect() {
       return;
     }
 
-    if (e.target.classList.contains("custom-select__selected")) {
-      toggleOptions(subSelect);
+    const allSelects = document.querySelectorAll(".custom-select");
+    allSelects.forEach((select) => {
+      if (select !== subSelect) {
+        select.classList.remove("open");
+      }
+    });
+
+    subSelect.classList.toggle("open");
+  }
+
+  function updateDetailSizeOptions(category) {
+    const detailSizeList = document.querySelector(".add-form__item-detail");
+    if (!detailSizeList) return;
+
+    const options = detailSizeOptions[category] || [];
+    detailSizeList.innerHTML = options
+      .map(
+        (option) => `
+      <li>
+        <p>${option}</p>
+        <input type="text" placeholder="cm" class="input-detail" />
+      </li>
+    `
+      )
+      .join("");
+  }
+
+  function updateSizeAndFitVisibility(category) {
+    const sizeSelect = document.getElementById("size-select");
+    const fitSelect = document.getElementById("fit-select");
+    const sizeSelectedDiv = sizeSelect?.querySelector(
+      ".custom-select__selected"
+    );
+    const fitSelectedDiv = fitSelect?.querySelector(".custom-select__selected");
+
+    if (category === "shoes") {
+      // shoes 선택 시 비활성화
+      sizeSelectedDiv?.classList.add("disabled");
+      fitSelectedDiv?.classList.add("disabled");
+    } else {
+      // 다른 카테고리 선택 시 활성화
+      sizeSelectedDiv?.classList.remove("disabled");
+      fitSelectedDiv?.classList.remove("disabled");
+    }
+  }
+
+  function selectMainOption(value, text) {
+    const selectedDiv = mainSelect.querySelector(".custom-select__selected");
+    const textNode = selectedDiv.childNodes[0];
+    if (textNode && textNode.nodeType === Node.TEXT_NODE) {
+      textNode.textContent = text;
+    } else {
+      selectedDiv.prepend(document.createTextNode(text));
+    }
+
+    mainHiddenInput.value = value;
+    mainSelect.classList.remove("open");
+
+    // 상세 사이즈 옵션 업데이트
+    updateDetailSizeOptions(value);
+
+    // 사이즈와 핏 선택 visibility 업데이트
+    updateSizeAndFitVisibility(value);
+
+    // 소분류 초기화
+    const subOptionsList = subSelect.querySelector(".custom-select__options");
+    subOptionsList.innerHTML = "";
+
+    if (categories[value]) {
+      subSelectedDiv.classList.remove("disabled");
+
+      categories[value].forEach((sub) => {
+        const li = document.createElement("li");
+        li.className = "custom-select__option";
+        li.dataset.value = sub;
+        li.textContent = sub;
+        subOptionsList.appendChild(li);
+      });
+
+      const textNode = subSelectedDiv.childNodes[0];
+      if (textNode && textNode.nodeType === Node.TEXT_NODE) {
+        textNode.textContent = "소분류 선택";
+      } else {
+        subSelectedDiv.prepend(document.createTextNode("소분류 선택"));
+      }
+      subHiddenInput.value = "";
+    }
+  }
+
+  function selectSubOption(value, text) {
+    const selectedDiv = subSelect.querySelector(".custom-select__selected");
+    const textNode = selectedDiv.childNodes[0];
+    if (textNode && textNode.nodeType === Node.TEXT_NODE) {
+      textNode.textContent = text;
+    } else {
+      selectedDiv.prepend(document.createTextNode(text));
+    }
+
+    subHiddenInput.value = value;
+    subSelect.classList.remove("open");
+  }
+
+  // 메인 카테고리 선택
+  mainSelect.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    const selectedDiv = e.target.closest(".custom-select__selected");
+    if (selectedDiv) {
+      toggleMainOptions();
     } else if (e.target.classList.contains("custom-select__option")) {
       const value = e.target.dataset.value;
       const text = e.target.textContent;
-      selectOption(
-        subSelect,
-        subSelect.querySelector(".custom-select__selected"),
-        subHiddenInput,
-        value,
-        text
-      );
+      selectMainOption(value, text);
     }
   });
 
-  // 다른 곳 클릭하면 닫히게
-  document.addEventListener("click", (e) => {
-    if (!mainSelect.contains(e.target)) {
-      mainSelect.classList.remove("open");
-    }
-    if (!subSelect.contains(e.target)) {
-      subSelect.classList.remove("open");
+  // 서브 카테고리 선택
+  subSelect.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    const selectedDiv = e.target.closest(".custom-select__selected");
+    if (selectedDiv) {
+      toggleSubOptions();
+    } else if (e.target.classList.contains("custom-select__option")) {
+      const value = e.target.dataset.value;
+      const text = e.target.textContent;
+      selectSubOption(value, text);
     }
   });
 }

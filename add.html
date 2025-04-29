@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,33 +30,228 @@
             alt="add-image"
           />
         </div>
-        <form>
-          <div class="custom-select" id="main-category-select">
-            <div class="custom-select__selected">
-              대분류 선택
-              <img src="/img/icon/arrow.png" alt="sub-category-icon" />
+        <form class="add-form">
+          <div class="add-form__left">
+            <div class="add-form__item">
+              <div class="custom-select" id="main-category-select">
+                <p class="add-form__item-title">카테고리 선택</p>
+                <div class="custom-select__selected">
+                  대분류 선택
+                  <img src="/img/icon/arrow.png" alt="sub-category-icon" />
+                </div>
+                <ul class="custom-select__options">
+                  <li class="custom-select__option" data-value="outer">
+                    Outer
+                  </li>
+                  <li class="custom-select__option" data-value="tops">Tops</li>
+                  <li class="custom-select__option" data-value="bottoms">
+                    Bottoms
+                  </li>
+                  <li class="custom-select__option" data-value="shoes">
+                    Shoes
+                  </li>
+                </ul>
+                <input
+                  type="hidden"
+                  name="category-main"
+                  id="main-category-hidden"
+                />
+              </div>
+
+              <div class="custom-select" id="sub-category-select">
+                <div class="custom-select__selected">
+                  소분류 선택
+                  <img src="/img/icon/arrow.png" alt="sub-category-icon" />
+                </div>
+                <ul class="custom-select__options"></ul>
+                <input
+                  type="hidden"
+                  name="category-sub"
+                  id="sub-category-hidden"
+                />
+              </div>
             </div>
-            <ul class="custom-select__options">
-              <li class="custom-select__option" data-value="outer">Outer</li>
-              <li class="custom-select__option" data-value="tops">Tops</li>
-              <li class="custom-select__option" data-value="bottoms">
-                Bottoms
-              </li>
-              <li class="custom-select__option" data-value="shoes">Shoes</li>
-            </ul>
-            <input
-              type="hidden"
-              name="category-main"
-              id="main-category-hidden"
-            />
+
+            <div class="add-form__item">
+              <p class="add-form__item-title">색상 선택</p>
+              <div class="color-select">
+                <button
+                  type="button"
+                  class="color-select__item"
+                  data-color="black"
+                  style="background-color: #000"
+                ></button>
+                <button
+                  type="button"
+                  class="color-select__item"
+                  data-color="white"
+                  style="background-color: #fff"
+                ></button>
+                <button
+                  type="button"
+                  class="color-select__item"
+                  data-color="charcoal"
+                  style="background-color: #585858"
+                ></button>
+                <button
+                  type="button"
+                  class="color-select__item"
+                  data-color="gray"
+                  style="background-color: #cecece"
+                ></button>
+                <button
+                  type="button"
+                  class="color-select__item"
+                  data-color="beige"
+                  style="background-color: #f4d4a0"
+                ></button>
+
+                <button
+                  type="button"
+                  class="color-select__item"
+                  data-color="khaki"
+                  style="background-color: #197727"
+                ></button>
+                <button
+                  type="button"
+                  class="color-select__item"
+                  data-color="light-blue"
+                  style="background-color: #a8aff8"
+                ></button>
+                <button
+                  type="button"
+                  class="color-select__item"
+                  data-color="navy"
+                  style="background-color: #2a11b8"
+                ></button>
+                <button
+                  type="button"
+                  class="color-select__item"
+                  data-color="brown"
+                  style="background-color: #8f6b31"
+                ></button>
+                <button
+                  type="button"
+                  class="color-select__item"
+                  data-color="red"
+                  style="background-color: #ff0004"
+                ></button>
+                <button
+                  type="button"
+                  class="color-select__item"
+                  data-color="blue"
+                  style="background-color: #4d00ff"
+                ></button>
+                <button
+                  type="button"
+                  class="color-select__item"
+                  data-color="yellow"
+                  style="background-color: #fff600"
+                ></button>
+                <button
+                  type="button"
+                  class="color-select__item"
+                  data-color="green"
+                  style="background-color: #17d033"
+                ></button>
+                <input type="hidden" name="color" id="color-hidden" />
+              </div>
+            </div>
+
+            <div class="add-form__item add-form__items">
+              <div>
+                <p class="add-form__item-title">브랜드</p>
+                <input type="text" placeholder="브랜드를 입력해주세요" />
+              </div>
+              <div>
+                <p class="add-form__item-title">닉네임</p>
+                <input type="text" placeholder="닉네임을 입력해주세요" />
+              </div>
+            </div>
+
+            <div class="add-form__item">
+              <p class="add-form__item-title">구매일</p>
+              <input type="date" />
+            </div>
           </div>
 
-          <div class="custom-select" id="sub-category-select">
-            <div class="custom-select__selected">
-              <img src="/img/icon/arrow.png" alt="sub-category-icon" />
+          <div class="add-form__right">
+            <div class="add-form__item add-form__items">
+              <div>
+                <p class="add-form__item-title">표기 사이즈</p>
+                <div class="custom-select" id="size-select">
+                  <div class="custom-select__selected">
+                    사이즈 선택
+                    <img src="/img/icon/arrow.png" alt="size-icon" />
+                  </div>
+                  <ul class="custom-select__options">
+                    <li class="custom-select__option" data-value="s">S</li>
+                    <li class="custom-select__option" data-value="m">M</li>
+                    <li class="custom-select__option" data-value="l">L</li>
+                    <li class="custom-select__option" data-value="xl">XL</li>
+                    <li class="custom-select__option" data-value="xxl">XXL</li>
+                    <li class="custom-select__option" data-value="free">
+                      FREE
+                    </li>
+                  </ul>
+                  <input type="hidden" name="size" id="size-hidden" />
+                </div>
+              </div>
+              <div>
+                <p class="add-form__item-title">핏</p>
+                <div class="custom-select" id="fit-select">
+                  <div class="custom-select__selected">
+                    핏 선택
+                    <img src="/img/icon/arrow.png" alt="fit-icon" />
+                  </div>
+                  <ul class="custom-select__options">
+                    <li class="custom-select__option" data-value="slim">
+                      Slim
+                    </li>
+                    <li class="custom-select__option" data-value="regular">
+                      Regular
+                    </li>
+                    <li class="custom-select__option" data-value="loose">
+                      Loose
+                    </li>
+                  </ul>
+                  <input type="hidden" name="fit" id="fit-hidden" />
+                </div>
+              </div>
             </div>
-            <ul class="custom-select__options"></ul>
-            <input type="hidden" name="category-sub" id="sub-category-hidden" />
+
+            <div class="add-form__item">
+              <p class="add-form__item-title">상세 사이즈</p>
+              <ul class="add-form__item-detail">
+                <li>
+                  <p>총 기장</p>
+                  <input type="text" placeholder="cm" class="input-detail" />
+                </li>
+                <li>
+                  <p>어깨 넓이</p>
+                  <input type="text" placeholder="cm" class="input-detail" />
+                </li>
+                <li>
+                  <p>가슴 단면</p>
+                  <input type="text" placeholder="cm" class="input-detail" />
+                </li>
+                <li>
+                  <p>소매 길이</p>
+                  <input type="text" placeholder="cm" class="input-detail" />
+                </li>
+              </ul>
+            </div>
+
+            <div class="add-form__item">
+              <p class="add-form__item-title">옷 설명</p>
+              <textarea
+                name="description"
+                id="description"
+                placeholder="옷 설명을 입력해주세요"
+              ></textarea>
+            </div>
+
+            <button type="submit">등록하기</button>
           </div>
         </form>
       </section>

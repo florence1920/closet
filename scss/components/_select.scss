@@ -4,11 +4,11 @@
   cursor: pointer;
 
   & + & {
-    margin-left: 30px; // 원하는 간격으로 조정 가능
+    margin-left: 26px; // 원하는 간격으로 조정 가능
   }
 
   &__selected {
-    width: 230px;
+    width: 260px;
     height: 50px;
     padding: 0 20px;
     line-height: 50px;
@@ -27,15 +27,20 @@
 
   &__options {
     position: absolute;
-    top: 110%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 100%;
+    left: 0;
     width: 100%;
-    // padding: 0 20px;
+    margin-top: 8px;
+    padding: 4px 0;
     background: #fff;
     border: 1px dashed #000;
     border-radius: 10px;
-    display: none; /* 기본적으로 숨김 */
+    z-index: 100;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: auto;
+    transition: all 0.2s ease;
 
     // 빈 옵션 목록 스타일 추가
     &:empty {
@@ -43,26 +48,30 @@
       padding: 0;
       height: 0;
     }
+  }
 
-    &.open {
-      display: block; /* .open 클래스가 추가되면 보여짐 */
-    }
+  &__option {
+    padding: 10px 20px;
+    cursor: pointer;
 
-    .custom-select__option {
-      padding: 10px 10px;
-      cursor: pointer;
-      // &:hover {
-      //   background: #f0f0f0;
-      // }
+    &:hover {
+      background: #f5f5f5;
     }
   }
+}
 
-  &.open .custom-select__options {
-    display: block; /* .open이 추가되면 드롭다운을 보여줌 */
-  }
+// 열린 상태일 때 옵션 표시 - 별도의 선택자로 분리
+.custom-select.open .custom-select__options {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
 
-  // 비활성화 상태에서는 옵션 목록이 열리지 않도록 추가
-  &.open .custom-select__selected.disabled + .custom-select__options {
-    display: none;
-  }
+// 비활성화된 상태에서는 옵션 숨기기 - 별도의 선택자로 분리
+.custom-select.open
+  .custom-select__selected.disabled
+  + .custom-select__options {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }

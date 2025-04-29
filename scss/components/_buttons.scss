@@ -3,4 +3,16 @@ button {
   padding: 0 20px;
   background-color: #fff;
   border-radius: 50px;
+  cursor: pointer;
+
+  &[type="submit"] {
+    height: 50px;
+    padding: 10px 40px;
+    border: 1px solid #3881f1;
+    color: #3881f1;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin-left: auto;
+  }
 }

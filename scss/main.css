@@ -146,11 +146,62 @@ table {
   color: inherit;
 }
 
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  width: 260px;
+  height: 50px;
+  padding: 12px 20px;
+  border: 1px dashed #000;
+  border-radius: 8px;
+  font-size: 16px;
+}
+input::-moz-placeholder {
+  color: #aaa;
+}
+input::placeholder {
+  color: #aaa;
+}
+
+.add-form__item-detail > li {
+  height: 40px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.add-form__item-detail > li > p {
+  width: 74px;
+}
+.add-form__item-detail .input-detail {
+  width: 50px;
+  height: 40px;
+  padding: 10px 0 0 0;
+  text-align: center;
+  border: none;
+  border-bottom: 1px dashed #000;
+  border-radius: 0;
+}
+
 button {
   height: 40px;
   padding: 0 20px;
   background-color: #fff;
   border-radius: 50px;
+  cursor: pointer;
+}
+button[type=submit] {
+  height: 50px;
+  padding: 10px 40px;
+  border: 1px solid #3881f1;
+  color: #3881f1;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  margin-left: auto;
 }
 
 .custom-select {
@@ -159,10 +210,10 @@ button {
   cursor: pointer;
 }
 .custom-select + .custom-select {
-  margin-left: 30px;
+  margin-left: 26px;
 }
 .custom-select__selected {
-  width: 230px;
+  width: 260px;
   height: 50px;
   padding: 0 20px;
   line-height: 50px;
@@ -178,32 +229,61 @@ button {
 }
 .custom-select__options {
   position: absolute;
-  top: 110%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 100%;
+  left: 0;
   width: 100%;
+  margin-top: 8px;
+  padding: 4px 0;
   background: #fff;
   border: 1px dashed #000;
   border-radius: 10px;
-  display: none; /* 기본적으로 숨김 */
+  z-index: 100;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: auto;
+  transition: all 0.2s ease;
 }
 .custom-select__options:empty {
   border: none;
   padding: 0;
   height: 0;
 }
-.custom-select__options.open {
-  display: block; /* .open 클래스가 추가되면 보여짐 */
-}
-.custom-select__options .custom-select__option {
-  padding: 10px 10px;
+.custom-select__option {
+  padding: 10px 20px;
   cursor: pointer;
 }
-.custom-select.open .custom-select__options {
-  display: block; /* .open이 추가되면 드롭다운을 보여줌 */
+.custom-select__option:hover {
+  background: #f5f5f5;
 }
+
+.custom-select.open .custom-select__options {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .custom-select.open .custom-select__selected.disabled + .custom-select__options {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+textarea {
+  resize: none;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: none;
+  width: 100%;
+  height: 100px;
+  padding: 12px;
+  border: 1px dashed #000;
+  border-radius: 8px;
+}
+textarea:focus {
+  outline: none;
 }
 
 header {
@@ -381,4 +461,48 @@ main .section-header__icon {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+}
+
+.add-form {
+  display: flex;
+  gap: 10rem;
+}
+.add-form .add-form__item {
+  margin-bottom: 28px;
+}
+.add-form .add-form__item:last-child {
+  margin-bottom: 0;
+}
+.add-form .add-form__item .add-form__item-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+.add-form .add-form__items {
+  display: flex;
+  gap: 26px;
+}
+
+.color-select {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.color-select__item {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+.color-select__item[data-color=white] {
+  border: 1px solid #000000;
+}
+.color-select__item:hover {
+  transform: scale(1.1);
+}
+.color-select__item.selected {
+  box-shadow: rgba(0, 0, 0, 0.55) 0px 4px 8px;
 }/*# sourceMappingURL=main.css.map */

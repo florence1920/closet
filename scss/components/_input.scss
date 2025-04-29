@@ -1,0 +1,40 @@
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+
+  width: 260px;
+  height: 50px;
+  padding: 12px 20px;
+  border: 1px dashed #000;
+  border-radius: 8px;
+  font-size: 16px;
+
+  &::placeholder {
+    color: #aaa;
+  }
+}
+
+.add-form__item-detail {
+  > li {
+    height: 40px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    > p {
+      width: 74px;
+    }
+  }
+  .input-detail {
+    width: 50px;
+    height: 40px;
+    padding: 10px 0 0 0;
+    text-align: center;
+    border: none;
+    border-bottom: 1px dashed #000;
+    border-radius: 0;
+  }
+}

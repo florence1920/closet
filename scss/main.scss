@@ -5,8 +5,10 @@
 @use "components/input";
 @use "components/buttons";
 @use "components/select";
+@use "components/textarea";
 
 @use "layout/header";
 @use "layout/content";
 
 @use "pages/home";
+@use "pages/add";
