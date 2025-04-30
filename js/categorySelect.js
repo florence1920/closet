@@ -7,16 +7,16 @@ export function setupCategorySelect() {
   const subHiddenInput = document.getElementById("sub-category-hidden");
 
   const categories = {
-    outer: ["coat", "blazer", "cardigan", "padding", "windbreaker", "jacket"],
+    outer: ["coat", "blazer", "cardigan", "padding", "windbreak", "jacket"],
     tops: [
       "long-sleeves",
       "short-sleeves",
-      "sweatshirt",
+      "sweater-shirt",
       "shirt",
       "hoodie",
       "polo-shirt",
     ],
-    bottoms: ["jeans", "shorts", "chino", "banding"],
+    bottoms: ["jean", "shorts", "chino", "banding", "slacks"],
     shoes: ["loafers", "sneakers", "boots"],
   };
 

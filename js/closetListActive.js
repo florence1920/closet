@@ -101,6 +101,10 @@ function renderClosetDetail(item) {
     </div>
   `;
 
+  // 사이즈 값 결정 - 신발 카테고리인 경우 detailedSize.size 사용
+  const displaySize =
+    category.main === "shoes" && detailedSize?.size ? detailedSize.size : size;
+
   // 공통 브랜드, 구매일, 사이즈, 핏
   let infoHTML = `
     <li class="closet__detail__info__item">
@@ -116,7 +120,7 @@ function renderClosetDetail(item) {
     </li>
     <li class="closet__detail__info__item">
       <p class="closet__detail__label">사이즈</p>
-      <p class="closet__detail__value">${size}</p>
+      <p class="closet__detail__value">${displaySize}</p>
     </li>
   `;
 
@@ -129,52 +133,54 @@ function renderClosetDetail(item) {
     `;
   }
 
-  // 카테고리별 상세사이즈
-  const sizeMap = {
-    tops: ["총기장", "어깨 넓이", "가슴 단면", "소매길이"],
-    outer: ["총기장", "어깨 넓이", "가슴 단면", "소매길이"],
-    bottoms: ["총기장", "허리", "허벅지", "밑단", "밑위"],
-    shoes: ["발볼", "밑창"],
-  };
+  // 카테고리별 상세사이즈 - 신발 카테고리인 경우 표시하지 않음
+  if (category.main !== "shoes") {
+    const sizeMap = {
+      tops: ["총기장", "어깨 넓이", "가슴 단면", "소매길이"],
+      outer: ["총기장", "어깨 넓이", "가슴 단면", "소매길이"],
+      bottoms: ["총기장", "허리", "허벅지", "밑단", "밑위"],
+    };
 
-  const keyMap = {
-    tops: ["length", "shoulder", "chest", "sleeve"],
-    outer: ["length", "shoulder", "chest", "sleeve"],
-    bottoms: ["length", "waist", "thigh", "hem", "rise"],
-    shoes: ["footWidth", "outsole"],
-  };
+    const keyMap = {
+      tops: ["length", "shoulder", "chest", "sleeve"],
+      outer: ["length", "shoulder", "chest", "sleeve"],
+      bottoms: ["length", "waist", "thigh", "hem", "rise"],
+    };
 
-  const labels = sizeMap[category.main];
-  const keys = keyMap[category.main];
+    const labels = sizeMap[category.main];
+    const keys = keyMap[category.main];
 
-  const sizeList = keys
-    .map((key, idx) => {
-      const value = detailedSize?.[key];
-      return value !== undefined
-        ? `<li class="closet__detail__size-item">
-            <p class="closet__detail__size-label">${labels[idx]}</p>
-            <p class="closet__detail__size-value">${value}${
-            typeof value === "number" ? "cm" : ""
-          }</p>
-          </li>`
-        : "";
-    })
-    .join("");
+    if (labels && keys) {
+      const sizeList = keys
+        .map((key, idx) => {
+          const value = detailedSize?.[key];
+          return value !== undefined
+            ? `<li class="closet__detail__size-item">
+                <p class="closet__detail__size-label">${labels[idx]}</p>
+                <p class="closet__detail__size-value">${value}${
+                typeof value === "number" ? "cm" : ""
+              }</p>
+              </li>`
+            : "";
+        })
+        .join("");
 
-  infoHTML += `
-    <li class="closet__detail__info__item">
-      <p class="closet__detail__label">상세사이즈</p>
-      <ul class="closet__detail__value">
-        ${sizeList}
-      </ul>
-    </li>
-  `;
+      infoHTML += `
+        <li class="closet__detail__info__item">
+          <p class="closet__detail__label">상세사이즈</p>
+          <ul class="closet__detail__value">
+            ${sizeList}
+          </ul>
+        </li>
+      `;
+    }
+  }
 
   // Note가 있다면 추가
   if (note) {
     infoHTML += `
       <li class="closet__detail__info__item">
-        <p class="closet__detail__label">비고</p>
+        <p class="closet__detail__label">노트</p>
         <p class="closet__detail__value">${note}</p>
       </li>
     `;
