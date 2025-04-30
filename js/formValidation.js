@@ -102,16 +102,10 @@ export function setupFormValidation() {
       }
     });
 
-    // 구매일 선택 시
+    // 구매일 선택 시 (선택 사항으로 변경)
     purchaseDate.addEventListener("change", () => {
-      if (!isFirstValidation) {
-        const element = purchaseDate.previousElementSibling;
-        if (purchaseDate.value) {
-          removeError(element);
-        } else {
-          showError(element);
-        }
-      }
+      // 항상 에러 표시 제거 (필수 항목이 아니므로)
+      removeError(purchaseDate.previousElementSibling);
     });
 
     // 사이즈 선택 시
@@ -213,13 +207,10 @@ export function setupFormValidation() {
       isValid = false;
     }
 
-    // 구매일 검증
-    if (!purchaseDate.value) {
-      const element = purchaseDate.previousElementSibling;
-      showError(element);
-      errorMessages.push("구매일");
-      isValid = false;
-    }
+    // 구매일 검증 (선택 사항으로 변경)
+    // 구매일이 입력되지 않아도 유효성 검사를 통과하도록 제거
+    // 실시간 검증에서 에러 표시 제거
+    removeError(purchaseDate.previousElementSibling);
 
     // shoes가 아닌 경우에만 사이즈와 핏 검증
     if (mainCategory === "shoes") {

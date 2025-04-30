@@ -74,6 +74,7 @@ function renderClosetDetail(item) {
   const detailEl = document.querySelector(".closet__detail");
 
   const {
+    id,
     name,
     brand,
     color,
@@ -86,6 +87,8 @@ function renderClosetDetail(item) {
   } = item;
   const imgPath = `/img/clothes/${category.sub}.png`;
   const colorImg = `/img/line/${color}.png`;
+
+  detailEl.dataset.itemId = id || "";
 
   // 공통 상단 영역
   const headerHTML = `
@@ -185,6 +188,18 @@ function renderClosetDetail(item) {
       </li>
     `;
   }
+
+  // 수정/삭제 버튼 추가
+  infoHTML += `
+    <li class="closet__detail__info__item button-group">
+      <button>
+        수정 <img src="/img/icon/edit.png" alt="수정하기" />
+      </button>
+      <button>
+        삭제 <img src="/img/icon/delete.png" alt="삭제하기" />
+      </button>
+    </li>
+  `;
 
   // 최종 렌더링
   detailEl.innerHTML =

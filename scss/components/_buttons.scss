@@ -16,3 +16,19 @@ button {
     margin-left: auto;
   }
 }
+
+.button-group {
+  justify-content: center;
+  button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    height: 30px;
+    padding: 0 24px;
+    border: 1px solid #000;
+    img {
+      width: 14px;
+    }
+  }
+}

@@ -256,5 +256,13 @@
         </form>
       </section>
     </main>
+    <script type="module">
+      import { checkEditMode } from "./js/editModeInit.js";
+
+      // 페이지 로드 시 수정 모드 확인 및 초기화
+      document.addEventListener("DOMContentLoaded", () => {
+        checkEditMode();
+      });
+    </script>
   </body>
 </html>

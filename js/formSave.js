@@ -2,6 +2,22 @@ export function setupFormSave() {
   const form = document.querySelector(".add-form");
   if (!form) return;
 
+  // 수정 모드 확인용 변수
+  let editMode = { isEditMode: false, itemId: null };
+
+  // URL에서 수정 모드 확인 (외부 함수에서 가져올 수 있음)
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const mode = urlParams.get("mode");
+    const itemId = urlParams.get("id");
+
+    if (mode === "edit" && itemId) {
+      editMode = { isEditMode: true, itemId };
+    }
+  } catch (error) {
+    console.error("URL 파라미터 확인 중 오류:", error);
+  }
+
   form.addEventListener("submit", (e) => {
     // 폼 데이터 수집
     const mainCategory = document.getElementById("main-category-hidden").value;
@@ -14,7 +30,18 @@ export function setupFormSave() {
       'input[placeholder="닉네임을 입력해주세요"]'
     ).value;
     const purchaseDate = form.querySelector('input[type="date"]').value;
-    const size = document.getElementById("size-hidden").value;
+
+    // 사이즈 값을 대문자로 변환
+    let size = document.getElementById("size-hidden").value;
+    // 사이즈 값이 s, m, l, xl, xxl과 같은 경우 대문자로 변환
+    if (size) {
+      if (size.toLowerCase() === "free") {
+        size = "FREE";
+      } else {
+        size = size.toUpperCase();
+      }
+    }
+
     const fit = document.getElementById("fit-hidden").value;
 
     // 상세 사이즈 수집
@@ -34,9 +61,9 @@ export function setupFormSave() {
     // 옷 설명 수집
     const description = document.getElementById("description").value || "";
 
-    // 데이터 객체 생성 - 고유 ID 추가
+    // 데이터 객체 생성
     const newItem = {
-      id: crypto.randomUUID(),
+      id: editMode.isEditMode ? editMode.itemId : crypto.randomUUID(),
       category: { main: mainCategory, sub: subCategory },
       color: color,
       brand: brand,
@@ -48,23 +75,39 @@ export function setupFormSave() {
       note: description,
     };
 
-    saveItemToLocalStorage(newItem);
+    saveItemToLocalStorage(newItem, editMode.isEditMode);
   });
 }
 
-function saveItemToLocalStorage(newItem) {
+function saveItemToLocalStorage(newItem, isEditMode) {
   try {
     // 기존 데이터 불러오기
     const closetData = JSON.parse(localStorage.getItem("closet")) || [];
 
-    // 새 아이템 추가
-    closetData.push(newItem);
+    if (isEditMode) {
+      // 수정 모드: 기존 아이템 찾아서 업데이트
+      const itemIndex = closetData.findIndex((item) => item.id === newItem.id);
 
-    // 업데이트된 데이터 저장
-    localStorage.setItem("closet", JSON.stringify(closetData));
+      if (itemIndex === -1) {
+        alert("수정할 아이템을 찾을 수 없습니다.");
+        return;
+      }
 
-    alert("옷이 성공적으로 등록되었습니다!");
+      // 아이템 업데이트
+      closetData[itemIndex] = newItem;
 
+      // 업데이트된 데이터 저장
+      localStorage.setItem("closet", JSON.stringify(closetData));
+
+      alert("옷이 성공적으로 수정되었습니다!");
+    } else {
+      // 신규 추가 모드
+      closetData.push(newItem);
+      localStorage.setItem("closet", JSON.stringify(closetData));
+      alert("옷이 성공적으로 등록되었습니다!");
+    }
+
+    // 홈 페이지로 리디렉션
     window.location.href = "/index.html";
   } catch (error) {
     console.error("데이터 저장 중 오류 발생:", error);
