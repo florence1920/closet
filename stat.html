@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./scss/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="./js/index.js" defer></script>
   </head>
   <body>
@@ -21,16 +27,52 @@
       </nav>
     </header>
     <main>
-      <section class="closet">
-        <div class="section-header">
-          <h1 class="section-header__title">옷 통계</h1>
-          <img
-            class="section-header__icon"
-            src="/img/icon/stat1.png"
-            alt="closet-image"
-          />
+      <section class="statistics">
+        <nav class="statistics__nav">
+          <ul>
+            <li class="statistics__nav-item selected">
+              <button>
+                <img src="/img/icon/stat1.png" alt="" />
+                <p class="statistics__nav-item-title">옷 통계</p>
+              </button>
+            </li>
+            <li class="statistics__nav-item">
+              <button>
+                <img src="/img/icon/stat2.png" alt="" />
+                <p class="statistics__nav-item-title">베스트 핏</p>
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="statistics__container clothes">
+          <div class="chart-container">
+            <h2>색상별 분포</h2>
+            <div class="chart-wrapper">
+              <canvas id="colorChart"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-container">
+            <h2>카테고리별 분포</h2>
+            <div class="chart-wrapper">
+              <canvas id="categoryChart"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-container">
+            <h2>브랜드별 분포</h2>
+            <div class="chart-wrapper">
+              <canvas id="brandChart"></canvas>
+            </div>
+          </div>
         </div>
+
+        <div class="statistics__container bestfit">bestfit</div>
       </section>
     </main>
+
+    <!-- 통계 페이지 전용 JS 파일 -->
+    <script type="module" src="./js/statistics.js"></script>
   </body>
 </html>

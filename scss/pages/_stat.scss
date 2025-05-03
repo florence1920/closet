@@ -1,0 +1,227 @@
+.statistics__nav {
+  padding: 50px 0;
+  ul {
+    display: flex;
+    .statistics__nav-item {
+      padding: 0 0 10px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 4px;
+        background-color: #d9d9d9;
+        transition: width 0.5s ease-in-out;
+      }
+
+      button {
+        padding: 0 10px;
+        border: none;
+        height: auto;
+        color: #d9d9d9;
+
+        img {
+          opacity: 0;
+          transform: translateY(10px);
+          transition: all 0.5s ease-in-out;
+        }
+
+        .statistics__nav-item-title {
+          margin-top: 6px;
+          font-weight: bold;
+          font-size: 32px;
+        }
+      }
+
+      &.selected {
+        color: #000;
+        &::after {
+          width: 100%;
+          background-color: #000;
+        }
+        button {
+          color: #000;
+          img {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+}
+
+.statistics__container {
+  display: none;
+
+  &.active {
+    display: flex;
+  }
+}
+
+.statistics__container.clothes {
+  display: flex;
+  gap: 30px;
+
+  .chart-container {
+    padding: 20px 40px;
+    width: 500px;
+    box-shadow: rgba(4, 20, 65, 0.2) 6px 6px 8px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    h2 {
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+    .chart-wrapper {
+      width: 100%;
+      height: 300px;
+    }
+  }
+}
+
+// 베스트 핏 섹션 스타일
+.statistics__container.bestfit {
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  .no-items {
+    font-size: 18px;
+    color: #666;
+    margin-top: 40px;
+  }
+
+  .bestfit-swiper {
+    width: 100%;
+    padding: 20px 60px;
+    position: relative;
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s;
+      width: auto;
+      margin: 0 10px;
+
+      &-active {
+        transform: scale(1.05);
+      }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #333;
+      background-color: rgba(255, 255, 255, 0.9);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+      &:after {
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+
+    .swiper-button-prev {
+      left: 10px;
+    }
+
+    .swiper-button-next {
+      right: 10px;
+    }
+  }
+
+  .closet__detail {
+    width: 280px;
+    margin: 20px auto;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 12px;
+    background-color: #fff;
+    box-shadow: rgba(4, 20, 65, 0.2) 6px 6px 8px 4px;
+    overflow-y: auto;
+    position: relative;
+
+    .crown-icon {
+      position: absolute;
+      top: 10px;
+      left: 14px;
+      width: 20px;
+      height: 20px;
+    }
+
+    .closet__detail__header {
+      margin-bottom: 20px;
+
+      .closet__detail__header-right {
+        text-align: right;
+        margin-bottom: 10px;
+      }
+
+      .closet__detail__header-left {
+        display: flex;
+        flex-direction: column;
+
+        .closet__detail__color {
+          margin-top: 10px;
+          width: 80px;
+          height: 24px;
+        }
+
+        .closet__detail__title {
+          font-size: 16px;
+          font-weight: bold;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 210px;
+        }
+      }
+    }
+
+    .closet__detail__info {
+      .closet__detail__info__item {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px dashed #000;
+
+        &:last-child {
+          border-bottom: none;
+          margin-bottom: 0;
+          padding-bottom: 0;
+        }
+
+        .closet__detail__image {
+          margin: 0 auto;
+          margin-bottom: 8px;
+          width: 64px;
+          height: 64px;
+        }
+
+        .closet__detail__label {
+          font-weight: bold;
+          width: 70px;
+        }
+
+        .closet__detail__value {
+          width: 90%;
+        }
+
+        .closet__detail__size-item {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

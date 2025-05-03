@@ -1,13 +1,21 @@
+@use "../abstracts/mixins" as mix;
+
 .closet {
   .closet__nav {
     margin-bottom: 36px;
     button {
       margin-right: 20px;
+      @include mix.mobile {
+        margin-right: 10px;
+      }
     }
     .closet__nav-button {
       border: 1px solid #e0e0e0;
       font-size: 18px;
       cursor: pointer;
+      @include mix.mobile {
+        font-size: 12px;
+      }
     }
     .closet__nav-button--active {
       border: 1px solid #000;
@@ -28,7 +36,6 @@
       }
       .closet__item {
         padding: 10px 0;
-        width: 120px;
         height: 140px;
         border: 1px solid #000;
         border-radius: 5px;

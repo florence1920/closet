@@ -2,7 +2,7 @@
   {
     "category": { "main": "outer", "sub": "blazer" },
     "color": "black",
-    "brand": "무신사 스탠다드",
+    "brand": "무신사",
     "name": "릴렉스드 베이식 블레이저",
     "size": "XL",
     "fit": "regular",
@@ -13,7 +13,7 @@
       "chest": 60.5,
       "sleeve": 63
     },
-    "note": ""
+    "note": "좋음"
   },
   {
     "category": { "main": "outer", "sub": "cardigan" },
@@ -264,7 +264,7 @@
   {
     "category": { "main": "tops", "sub": "shirt" },
     "name": "릴렉스 핏 실키 셔츠",
-    "brand": "무신사 스탠다드",
+    "brand": "무신사",
     "size": "L",
     "fit": "slim",
     "color": "black",
@@ -365,7 +365,7 @@
       "chest": 58.5,
       "sleeve": 24
     },
-    "note": "다 좋음",
+    "note": "다 좋음 최고",
     "purchaseDate": "2022-04-16"
   },
   {
@@ -497,7 +497,7 @@
   {
     "category": { "main": "bottoms", "sub": "banding" },
     "name": "쿨링 딥 턱 와이드 밴딩 팬츠",
-    "brand": "무신사 스탠다드",
+    "brand": "무신사",
     "size": "34",
     "fit": "loose",
     "color": "black",
@@ -627,7 +627,7 @@
       "hem": 33,
       "rise": 37.5
     },
-    "note": "좋음",
+    "note": "좋음 최고다",
     "purchaseDate": "2024-04-20"
   },
   {
@@ -667,7 +667,7 @@
   {
     "category": { "main": "bottoms", "sub": "slacks" },
     "name": "테이퍼드 히든 밴딩 크롭 슬랙스",
-    "brand": "무신사 스탠다드",
+    "brand": "무신사",
     "size": "32",
     "fit": "regular",
     "color": "black",

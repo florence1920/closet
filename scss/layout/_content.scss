@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as mix;
+
 main {
   width: 94%;
   max-width: 1600px;
@@ -5,10 +7,16 @@ main {
   margin-top: 100px;
   .section-header {
     padding: 50px 0;
+    @include mix.mobile {
+      padding: 30px 0;
+    }
     display: flex;
     gap: 10px;
     &__title {
       font-size: 32px;
+      @include mix.mobile {
+        font-size: 18px;
+      }
     }
     &__icon {
       width: 14px;

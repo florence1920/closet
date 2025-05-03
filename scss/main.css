@@ -307,6 +307,7 @@ header {
   max-width: 1600px;
   height: 100px;
   border-bottom: 1px dashed #000;
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -314,15 +315,67 @@ header {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 100;
 }
-header nav li {
+@media (max-width: 767px) {
+  header a > img {
+    width: 100px;
+  }
+}
+header nav .mobile-nav-container {
+  display: none;
+  position: relative;
+}
+@media (max-width: 767px) {
+  header nav .mobile-nav-container {
+    display: block;
+  }
+}
+header nav .mobile-nav-container button {
+  padding: 0;
+  border: none;
+}
+header nav .mobile-nav-container .mobile-nav {
+  display: none;
+  width: 200px;
+  background-color: #fff;
+  border: 1px dashed #000;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 104%;
+  right: 0;
+  z-index: 200;
+}
+header nav .mobile-nav-container .mobile-nav > li {
+  padding: 0;
+  cursor: pointer;
+}
+header nav .mobile-nav-container .mobile-nav > li > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 14px 20px;
+}
+header nav .mobile-nav-container .mobile-nav.active {
+  display: block;
+}
+header nav .desktop-nav {
+  display: block;
+}
+@media (max-width: 767px) {
+  header nav .desktop-nav {
+    display: none;
+  }
+}
+header nav .desktop-nav li {
   margin-bottom: 2px;
 }
-header nav li a {
+header nav .desktop-nav li a {
   position: relative;
   padding-bottom: 2px;
 }
-header nav li a::after {
+header nav .desktop-nav li a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -331,7 +384,7 @@ header nav li a::after {
   height: 2px;
   background-color: #000;
 }
-header nav li a.active::after {
+header nav .desktop-nav li a.active::after {
   animation: underline-grow 0.3s forwards;
 }
 
@@ -354,8 +407,18 @@ main .section-header {
   display: flex;
   gap: 10px;
 }
+@media (max-width: 767px) {
+  main .section-header {
+    padding: 30px 0;
+  }
+}
 main .section-header__title {
   font-size: 32px;
+}
+@media (max-width: 767px) {
+  main .section-header__title {
+    font-size: 18px;
+  }
 }
 main .section-header__icon {
   width: 14px;
@@ -368,10 +431,20 @@ main .section-header__icon {
 .closet .closet__nav button {
   margin-right: 20px;
 }
+@media (max-width: 767px) {
+  .closet .closet__nav button {
+    margin-right: 10px;
+  }
+}
 .closet .closet__nav .closet__nav-button {
   border: 1px solid #e0e0e0;
   font-size: 18px;
   cursor: pointer;
+}
+@media (max-width: 767px) {
+  .closet .closet__nav .closet__nav-button {
+    font-size: 12px;
+  }
 }
 .closet .closet__nav .closet__nav-button--active {
   border: 1px solid #000;
@@ -392,7 +465,6 @@ main .section-header__icon {
 }
 .closet .closet__box .closet__list .closet__item {
   padding: 10px 0;
-  width: 120px;
   height: 140px;
   border: 1px solid #000;
   border-radius: 5px;
@@ -520,4 +592,202 @@ main .section-header__icon {
 }
 .color-select__item.selected {
   box-shadow: rgba(0, 0, 0, 0.55) 0px 4px 8px;
+}
+
+.statistics__nav {
+  padding: 50px 0;
+}
+.statistics__nav ul {
+  display: flex;
+}
+.statistics__nav ul .statistics__nav-item {
+  padding: 0 0 10px;
+  position: relative;
+}
+.statistics__nav ul .statistics__nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: #d9d9d9;
+  transition: width 0.5s ease-in-out;
+}
+.statistics__nav ul .statistics__nav-item button {
+  padding: 0 10px;
+  border: none;
+  height: auto;
+  color: #d9d9d9;
+}
+.statistics__nav ul .statistics__nav-item button img {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s ease-in-out;
+}
+.statistics__nav ul .statistics__nav-item button .statistics__nav-item-title {
+  margin-top: 6px;
+  font-weight: bold;
+  font-size: 32px;
+}
+.statistics__nav ul .statistics__nav-item.selected {
+  color: #000;
+}
+.statistics__nav ul .statistics__nav-item.selected::after {
+  width: 100%;
+  background-color: #000;
+}
+.statistics__nav ul .statistics__nav-item.selected button {
+  color: #000;
+}
+.statistics__nav ul .statistics__nav-item.selected button img {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.statistics__container {
+  display: none;
+}
+.statistics__container.active {
+  display: flex;
+}
+
+.statistics__container.clothes {
+  display: flex;
+  gap: 30px;
+}
+.statistics__container.clothes .chart-container {
+  padding: 20px 40px;
+  width: 500px;
+  box-shadow: rgba(4, 20, 65, 0.2) 6px 6px 8px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.statistics__container.clothes .chart-container h2 {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+.statistics__container.clothes .chart-container .chart-wrapper {
+  width: 100%;
+  height: 300px;
+}
+
+.statistics__container.bestfit {
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.statistics__container.bestfit .no-items {
+  font-size: 18px;
+  color: #666;
+  margin-top: 40px;
+}
+.statistics__container.bestfit .bestfit-swiper {
+  width: 100%;
+  padding: 20px 60px;
+  position: relative;
+}
+.statistics__container.bestfit .bestfit-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s;
+  width: auto;
+  margin: 0 10px;
+}
+.statistics__container.bestfit .bestfit-swiper .swiper-slide-active {
+  transform: scale(1.05);
+}
+.statistics__container.bestfit .bestfit-swiper .swiper-button-next,
+.statistics__container.bestfit .bestfit-swiper .swiper-button-prev {
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.statistics__container.bestfit .bestfit-swiper .swiper-button-next:after,
+.statistics__container.bestfit .bestfit-swiper .swiper-button-prev:after {
+  font-size: 18px;
+  font-weight: bold;
+}
+.statistics__container.bestfit .bestfit-swiper .swiper-button-prev {
+  left: 10px;
+}
+.statistics__container.bestfit .bestfit-swiper .swiper-button-next {
+  right: 10px;
+}
+.statistics__container.bestfit .closet__detail {
+  width: 280px;
+  margin: 20px auto;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  background-color: #fff;
+  box-shadow: rgba(4, 20, 65, 0.2) 6px 6px 8px 4px;
+  overflow-y: auto;
+  position: relative;
+}
+.statistics__container.bestfit .closet__detail .crown-icon {
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  width: 20px;
+  height: 20px;
+}
+.statistics__container.bestfit .closet__detail .closet__detail__header {
+  margin-bottom: 20px;
+}
+.statistics__container.bestfit .closet__detail .closet__detail__header .closet__detail__header-right {
+  text-align: right;
+  margin-bottom: 10px;
+}
+.statistics__container.bestfit .closet__detail .closet__detail__header .closet__detail__header-left {
+  display: flex;
+  flex-direction: column;
+}
+.statistics__container.bestfit .closet__detail .closet__detail__header .closet__detail__header-left .closet__detail__color {
+  margin-top: 10px;
+  width: 80px;
+  height: 24px;
+}
+.statistics__container.bestfit .closet__detail .closet__detail__header .closet__detail__header-left .closet__detail__title {
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 210px;
+}
+.statistics__container.bestfit .closet__detail .closet__detail__info .closet__detail__info__item {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #000;
+}
+.statistics__container.bestfit .closet__detail .closet__detail__info .closet__detail__info__item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.statistics__container.bestfit .closet__detail .closet__detail__info .closet__detail__info__item .closet__detail__image {
+  margin: 0 auto;
+  margin-bottom: 8px;
+  width: 64px;
+  height: 64px;
+}
+.statistics__container.bestfit .closet__detail .closet__detail__info .closet__detail__info__item .closet__detail__label {
+  font-weight: bold;
+  width: 70px;
+}
+.statistics__container.bestfit .closet__detail .closet__detail__info .closet__detail__info__item .closet__detail__value {
+  width: 90%;
+}
+.statistics__container.bestfit .closet__detail .closet__detail__info .closet__detail__info__item .closet__detail__size-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }/*# sourceMappingURL=main.css.map */
