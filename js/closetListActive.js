@@ -2,9 +2,25 @@ export function closetListActive() {
   const navButtons = document.querySelectorAll(".closet__nav-button");
   const lists = document.querySelectorAll(".closet__list");
 
+  // 호버용 상세 정보 요소 생성 (모바일 전용 모달용으로만 사용)
+  const hoverDetailEl = document.createElement("div");
+  hoverDetailEl.className = "closet__detail hover-detail";
+  document.querySelector(".closet__box").appendChild(hoverDetailEl);
+
+  // 메인 상세 정보 요소
+  const mainDetailEl = document.querySelector(
+    ".closet__detail:not(.hover-detail)"
+  );
+
+  // 모달 오버레이 요소
+  const modalOverlay = document.querySelector(".modal-overlay");
+
   if (navButtons.length === 0) return;
 
   const closetData = JSON.parse(localStorage.getItem("closet")) || [];
+
+  // 화면 크기 체크 함수
+  const isMobileView = () => window.innerWidth <= 767;
 
   const categoryMap = {
     0: {
@@ -48,19 +64,52 @@ export function closetListActive() {
             <img class="closet__item-image" src="/img/clothes/${item.category.sub}.png" alt="옷 이미지" />
             <img class="closet__item-line" src="/img/line/${item.color}.png" alt="옷 색상" />
           `;
-          li.addEventListener("click", () => {
-            // 기존 active 해제
-            list
-              .querySelectorAll(".closet__item")
-              .forEach((el) => el.classList.remove("closet__item--active"));
-            li.classList.add("closet__item--active");
-            renderClosetDetail(item);
+
+          // 클릭/터치 이벤트 처리
+          li.addEventListener("click", (e) => {
+            // 데스크톱 환경에서는 메인 상세 정보 표시
+            if (!isMobileView()) {
+              // 기존 active 해제
+              list
+                .querySelectorAll(".closet__item")
+                .forEach((el) => el.classList.remove("closet__item--active"));
+              li.classList.add("closet__item--active");
+
+              // 메인 상세 정보 렌더링
+              renderClosetDetail(item, mainDetailEl);
+            }
+            // 모바일 환경에서는 모달 표시 (active 클래스 추가 없음)
+            else {
+              renderClosetDetail(item, hoverDetailEl);
+
+              // 모달 표시
+              hoverDetailEl.classList.add("active");
+              modalOverlay.classList.add("active");
+
+              // 다른 영역 클릭 시 닫기
+              const closeOnClickOutside = (evt) => {
+                if (
+                  !hoverDetailEl.contains(evt.target) &&
+                  !li.contains(evt.target)
+                ) {
+                  hoverDetailEl.classList.remove("active");
+                  modalOverlay.classList.remove("active");
+                  document.removeEventListener("click", closeOnClickOutside);
+                }
+              };
+
+              // 다음 클릭부터 감지
+              setTimeout(() => {
+                document.addEventListener("click", closeOnClickOutside);
+              }, 100);
+            }
           });
+
           list.appendChild(li);
-          // 첫 번째 아이템 자동 선택
-          if (idx === 0) {
+          // 첫 번째 아이템 자동 선택 (모바일에서는 적용 안함)
+          if (idx === 0 && !isMobileView()) {
             li.classList.add("closet__item--active");
-            renderClosetDetail(item);
+            renderClosetDetail(item, mainDetailEl);
           }
         });
       }
@@ -68,10 +117,33 @@ export function closetListActive() {
   });
 
   navButtons[0].click();
+
+  // 모달 오버레이 클릭 이벤트
+  if (modalOverlay) {
+    modalOverlay.addEventListener("click", () => {
+      modalOverlay.classList.remove("active");
+      hoverDetailEl.classList.remove("active");
+    });
+  }
+
+  // 화면 크기 변경 시 모달 닫기
+  window.addEventListener("resize", () => {
+    if (!isMobileView()) {
+      modalOverlay.classList.remove("active");
+      hoverDetailEl.classList.remove("active");
+    }
+  });
 }
 
-function renderClosetDetail(item) {
-  const detailEl = document.querySelector(".closet__detail");
+// 상세 정보 요소를 포인터 위치에 배치하는 함수 - 사용하지 않음
+// 모바일에서는 CSS로 중앙 배치
+function positionDetailElement(detailEl, event) {
+  // 함수는 남겨두지만 사용하지 않음
+}
+
+// 특정 요소에 상세 정보 렌더링
+function renderClosetDetail(item, detailEl) {
+  if (!detailEl) return;
 
   const {
     id,
@@ -193,10 +265,10 @@ function renderClosetDetail(item) {
   infoHTML += `
     <li class="closet__detail__info__item button-group">
       <button>
-        수정 <img src="/img/icon/edit.png" alt="수정하기" />
+        <span>수정</span> <img src="/img/icon/edit.png" alt="수정하기" />
       </button>
       <button>
-        삭제 <img src="/img/icon/delete.png" alt="삭제하기" />
+        <span>삭제</span> <img src="/img/icon/delete.png" alt="삭제하기" />
       </button>
     </li>
   `;

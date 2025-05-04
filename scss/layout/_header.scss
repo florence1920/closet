@@ -3,6 +3,11 @@
 header {
   margin: 0 auto;
   width: 94%;
+  @include mix.mobile {
+    height: 60px;
+    width: 100%;
+    padding: 0 2%;
+  }
   max-width: 1600px;
   height: 100px;
 

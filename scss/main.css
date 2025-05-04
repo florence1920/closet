@@ -212,7 +212,7 @@ button[type=submit] {
   align-items: center;
   gap: 5px;
   height: 30px;
-  padding: 0 24px;
+  padding: 0 14px;
   border: 1px solid #000;
 }
 .button-group button img {
@@ -318,6 +318,13 @@ header {
   z-index: 100;
 }
 @media (max-width: 767px) {
+  header {
+    height: 60px;
+    width: 100%;
+    padding: 0 2%;
+  }
+}
+@media (max-width: 767px) {
   header a > img {
     width: 100px;
   }
@@ -402,6 +409,11 @@ main {
   margin: 0 auto;
   margin-top: 100px;
 }
+@media (max-width: 767px) {
+  main {
+    margin-top: 60px;
+  }
+}
 main .section-header {
   padding: 50px 0;
   display: flex;
@@ -433,7 +445,7 @@ main .section-header__icon {
 }
 @media (max-width: 767px) {
   .closet .closet__nav button {
-    margin-right: 10px;
+    margin-right: 6px;
   }
 }
 .closet .closet__nav .closet__nav-button {
@@ -453,9 +465,23 @@ main .section-header__icon {
   display: flex;
   align-items: flex-start;
   gap: 70px;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .closet .closet__box {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .closet .closet__box .closet__detail {
+    display: none;
+  }
+  .closet .closet__box .closet__detail.active {
+    display: block;
+  }
 }
 .closet .closet__box .closet__list {
   flex-grow: 1;
+  width: 100%;
   display: none;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 20px;
@@ -474,6 +500,7 @@ main .section-header__icon {
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  position: relative;
 }
 .closet .closet__box .closet__list .closet__item .closet__item-name {
   white-space: nowrap;
@@ -490,10 +517,37 @@ main .section-header__icon {
 }
 .closet .closet__box .closet__detail {
   padding: 10px 20px;
-  width: 260px;
+  min-width: 280px;
   border: 1px solid #000;
   border-radius: 5px;
   font-size: 12px;
+  background-color: #fff;
+  z-index: 10;
+}
+.closet .closet__box .closet__detail.hover-detail {
+  position: absolute;
+  display: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.closet .closet__box .closet__detail.hover-detail.active {
+  display: block;
+}
+@media (max-width: 767px) {
+  .closet .closet__box .closet__detail.hover-detail {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    width: 250px;
+    max-height: 90vh;
+    z-index: 103;
+  }
+}
+@media (max-width: 767px) {
+  .closet .closet__box .closet__detail {
+    width: 100%;
+  }
 }
 .closet .closet__box .closet__detail .closet__detail__header {
   margin-bottom: 20px;
@@ -549,7 +603,39 @@ main .section-header__icon {
   justify-content: space-between;
   margin-bottom: 10px;
 }
+@media (max-width: 767px) {
+  .closet .closet__box .closet__detail .closet__detail__info .closet__detail__info__item.button-group button span {
+    display: none;
+  }
+  .closet .closet__box .closet__detail .closet__detail__info .closet__detail__info__item.button-group button img {
+    width: 20px;
+    height: 20px;
+  }
+}
 
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 102;
+}
+.modal-overlay.active {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .closet__detail__info__item.button-group button span {
+    display: none;
+  }
+  .closet__detail__info__item.button-group button img {
+    width: 20px;
+    height: 20px;
+  }
+}
 .add-form {
   display: flex;
   gap: 10rem;
