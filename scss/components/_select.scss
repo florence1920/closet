@@ -1,10 +1,20 @@
+@use "../abstracts/mixins" as mix;
+
 .custom-select {
   position: relative;
   display: inline-block;
   cursor: pointer;
 
+  @include mix.mobile {
+    font-size: 12px;
+  }
+
+  @include mix.tablet {
+    width: 40%;
+  }
+
   & + & {
-    margin-left: 26px; // 원하는 간격으로 조정 가능
+    margin-left: 26px;
   }
 
   &__selected {
@@ -15,13 +25,16 @@
     border-radius: 10px;
     border: 1px dashed #000;
     display: flex;
-    justify-content: space-between; /* 왼쪽은 텍스트, 오른쪽은 화살표 */
+    justify-content: space-between;
     align-items: center;
 
-    // 비활성화된 상태 스타일 추가
     &.disabled {
-      color: #aaa; /* 회색으로 표시 */
-      cursor: default; /* 커서 스타일 변경 */
+      color: #aaa;
+      cursor: default;
+    }
+
+    @include mix.tablet {
+      width: 100%;
     }
   }
 
@@ -42,7 +55,6 @@
     pointer-events: auto;
     transition: all 0.2s ease;
 
-    // 빈 옵션 목록 스타일 추가
     &:empty {
       border: none;
       padding: 0;
@@ -60,14 +72,12 @@
   }
 }
 
-// 열린 상태일 때 옵션 표시 - 별도의 선택자로 분리
 .custom-select.open .custom-select__options {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
 }
 
-// 비활성화된 상태에서는 옵션 숨기기 - 별도의 선택자로 분리
 .custom-select.open
   .custom-select__selected.disabled
   + .custom-select__options {

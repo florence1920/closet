@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as mix;
+
 button {
   height: 40px;
   padding: 0 20px;
@@ -14,6 +16,14 @@ button {
     font-weight: bold;
     display: block;
     margin-left: auto;
+    margin-bottom: 20px;
+    @include mix.tablet {
+      margin-left: 0;
+    }
+    @include mix.mobile {
+      font-size: 14px;
+      padding: 10px 30px;
+    }
   }
 }
 

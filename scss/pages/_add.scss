@@ -1,9 +1,23 @@
+@use "../abstracts/mixins" as mix;
+
 .add-form {
   display: flex;
   gap: 10rem;
 
+  @include mix.tablet {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @include mix.mobile {
+    font-size: 12px;
+  }
+
   .add-form__item {
     margin-bottom: 28px;
+    @include mix.tablet {
+      margin-bottom: 40px;
+    }
     &:last-child {
       margin-bottom: 0;
     }
@@ -11,11 +25,25 @@
       font-size: 24px;
       font-weight: bold;
       margin-bottom: 24px;
+      @include mix.mobile {
+        font-size: 14px;
+      }
     }
   }
   .add-form__items {
     display: flex;
     gap: 26px;
+
+    .custom-select {
+      @include mix.tablet {
+        width: 100%;
+      }
+    }
+    > div {
+      @include mix.tablet {
+        width: 40%;
+      }
+    }
   }
 }
 

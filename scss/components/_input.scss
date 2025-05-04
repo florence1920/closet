@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as mix;
+
 input {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -12,9 +14,21 @@ input {
   border: 1px dashed #000;
   border-radius: 8px;
   font-size: 16px;
-
+  @include mix.mobile {
+    font-size: 12px;
+  }
   &::placeholder {
     color: #aaa;
+    @include mix.mobile {
+      font-size: 12px;
+    }
+  }
+
+  @include mix.tablet {
+    width: 100%;
+  }
+  &[type="date"] {
+    width: 40%;
   }
 }
 

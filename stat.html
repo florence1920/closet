@@ -19,11 +19,31 @@
         <img src="/img/logo.png" alt="logo" />
       </a>
       <nav>
-        <ul>
+        <ul class="desktop-nav">
           <li><a href="/index.html">Home</a></li>
           <li><a href="/add.html">Add</a></li>
           <li><a href="/stat.html">Statistics</a></li>
         </ul>
+
+        <div class="mobile-nav-container">
+          <button class="mobile-nav-toggle">
+            <img
+              class="mobile-nav--open"
+              src="/img/icon/menu.png"
+              alt="메뉴 열기"
+            />
+            <img
+              class="mobile-nav--close"
+              src="/img/icon/close.png"
+              alt="메뉴 닫기"
+            />
+          </button>
+          <ul class="mobile-nav">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/add.html">Add</a></li>
+            <li><a href="/stat.html">Statistics</a></li>
+          </ul>
+        </div>
       </nav>
     </header>
     <main>

@@ -18,9 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // 기존 데이터에 ID 추가 (처음 한 번만 실행)
     addIdsToExistingData();
 
-    closetListActive();
-
-    setupItemActions();
+    // closet__box 요소가 있는 경우에만 closetListActive 함수 실행
+    if (document.querySelector(".closet__box")) {
+      closetListActive();
+      setupItemActions();
+    }
   });
 
   // 폼 관련 초기화

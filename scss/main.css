@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html,
 body,
 div,
@@ -160,11 +159,32 @@ input {
   border-radius: 8px;
   font-size: 16px;
 }
+@media (max-width: 767px) {
+  input {
+    font-size: 12px;
+  }
+}
 input::-moz-placeholder {
   color: #aaa;
 }
 input::placeholder {
   color: #aaa;
+}
+@media (max-width: 767px) {
+  input::-moz-placeholder {
+    font-size: 12px;
+  }
+  input::placeholder {
+    font-size: 12px;
+  }
+}
+@media (max-width: 1439px) {
+  input {
+    width: 100%;
+  }
+}
+input[type=date] {
+  width: 40%;
 }
 
 .add-form__item-detail > li {
@@ -202,6 +222,18 @@ button[type=submit] {
   font-weight: bold;
   display: block;
   margin-left: auto;
+  margin-bottom: 20px;
+}
+@media (max-width: 1439px) {
+  button[type=submit] {
+    margin-left: 0;
+  }
+}
+@media (max-width: 767px) {
+  button[type=submit] {
+    font-size: 14px;
+    padding: 10px 30px;
+  }
 }
 
 .button-group {
@@ -224,6 +256,16 @@ button[type=submit] {
   display: inline-block;
   cursor: pointer;
 }
+@media (max-width: 767px) {
+  .custom-select {
+    font-size: 12px;
+  }
+}
+@media (max-width: 1439px) {
+  .custom-select {
+    width: 40%;
+  }
+}
 .custom-select + .custom-select {
   margin-left: 26px;
 }
@@ -235,12 +277,17 @@ button[type=submit] {
   border-radius: 10px;
   border: 1px dashed #000;
   display: flex;
-  justify-content: space-between; /* 왼쪽은 텍스트, 오른쪽은 화살표 */
+  justify-content: space-between;
   align-items: center;
 }
 .custom-select__selected.disabled {
-  color: #aaa; /* 회색으로 표시 */
-  cursor: default; /* 커서 스타일 변경 */
+  color: #aaa;
+  cursor: default;
+}
+@media (max-width: 1439px) {
+  .custom-select__selected {
+    width: 100%;
+  }
 }
 .custom-select__options {
   position: absolute;
@@ -300,6 +347,16 @@ textarea {
 textarea:focus {
   outline: none;
 }
+@media (max-width: 1439px) {
+  textarea {
+    width: 60%;
+  }
+}
+@media (max-width: 767px) {
+  textarea {
+    width: 80%;
+  }
+}
 
 header {
   margin: 0 auto;
@@ -316,6 +373,12 @@ header {
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
+}
+@media (max-width: 1600px) {
+  header {
+    width: 100%;
+    padding: 0 2%;
+  }
 }
 @media (max-width: 767px) {
   header {
@@ -640,8 +703,24 @@ main .section-header__icon {
   display: flex;
   gap: 10rem;
 }
+@media (max-width: 1439px) {
+  .add-form {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+@media (max-width: 767px) {
+  .add-form {
+    font-size: 12px;
+  }
+}
 .add-form .add-form__item {
   margin-bottom: 28px;
+}
+@media (max-width: 1439px) {
+  .add-form .add-form__item {
+    margin-bottom: 40px;
+  }
 }
 .add-form .add-form__item:last-child {
   margin-bottom: 0;
@@ -651,9 +730,24 @@ main .section-header__icon {
   font-weight: bold;
   margin-bottom: 24px;
 }
+@media (max-width: 767px) {
+  .add-form .add-form__item .add-form__item-title {
+    font-size: 14px;
+  }
+}
 .add-form .add-form__items {
   display: flex;
   gap: 26px;
+}
+@media (max-width: 1439px) {
+  .add-form .add-form__items .custom-select {
+    width: 100%;
+  }
+}
+@media (max-width: 1439px) {
+  .add-form .add-form__items > div {
+    width: 40%;
+  }
 }
 
 .color-select {

@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as mix;
+
 textarea {
   resize: none;
   outline: none;
@@ -14,5 +16,11 @@ textarea {
 
   &:focus {
     outline: none;
+  }
+  @include mix.tablet {
+    width: 60%;
+  }
+  @include mix.mobile {
+    width: 80%;
   }
 }
