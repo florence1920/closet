@@ -3,9 +3,6 @@ export function navSelect() {
 
   // 요소가 존재하지 않으면 함수 종료
   if (!nav) {
-    console.warn(
-      "Navigation element not found. Skipping navSelect initialization."
-    );
     return;
   }
 
@@ -28,6 +25,20 @@ export function navSelect() {
   // 초기 상태 설정
   clothesContainer.style.display = "flex";
   bestfitContainer.style.display = "none";
+
+  // 페이지 로드 시 초기 선택된 탭 확인
+  const initialSelectedItem = nav.querySelector(
+    ".statistics__nav-item.selected"
+  );
+  if (initialSelectedItem) {
+    const isClothesTab =
+      initialSelectedItem.querySelector(".statistics__nav-item-title")
+        .textContent === "옷 통계";
+
+    if (!isClothesTab) {
+      nav.classList.add("no-bottom-padding");
+    }
+  }
 
   // 베스트 핏 아이템 필터링 함수
   function getBestFitItems() {
@@ -82,15 +93,24 @@ export function navSelect() {
     // Swiper 초기화 - 반응형으로 설정
     const swiper = new Swiper(".bestfit-swiper", {
       slidesPerView: "auto",
-      spaceBetween: 60,
+      spaceBetween: 30,
       loop: true,
       centeredSlides: true,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
-      // watchOverflow: true,
       grabCursor: true,
+      // 반응형 설정 추가
+      breakpoints: {
+        400: {
+          slidesPerView: "auto",
+        },
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+      },
     });
   }
 
@@ -247,9 +267,13 @@ export function navSelect() {
     if (isClothesTab) {
       clothesContainer.style.display = "flex";
       bestfitContainer.style.display = "none";
+      // 옷 통계 탭 선택 시 패딩 복원
+      nav.classList.remove("no-bottom-padding");
     } else {
       clothesContainer.style.display = "none";
       bestfitContainer.style.display = "flex";
+      // 베스트핏 탭 선택 시 아래쪽 패딩 제거
+      nav.classList.add("no-bottom-padding");
       renderBestFitItems();
     }
   });

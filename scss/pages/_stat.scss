@@ -1,9 +1,14 @@
+@use "../abstracts/mixins" as mix;
+
 .statistics__nav {
   padding: 50px 0;
+  @include mix.mobile {
+    padding: 20px 0;
+  }
   ul {
     display: flex;
     .statistics__nav-item {
-      padding: 0 0 10px;
+      padding: 0 0 4px;
       position: relative;
 
       &::after {
@@ -12,13 +17,13 @@
         bottom: 0;
         left: 0;
         width: 0;
-        height: 4px;
+        height: 2px;
         background-color: #d9d9d9;
         transition: width 0.5s ease-in-out;
       }
 
       button {
-        padding: 0 10px;
+        padding: 0 6px;
         border: none;
         height: auto;
         color: #d9d9d9;
@@ -33,17 +38,20 @@
           margin-top: 6px;
           font-weight: bold;
           font-size: 32px;
+          @include mix.mobile {
+            font-size: 24px;
+          }
         }
       }
 
       &.selected {
-        color: #000;
+        color: #73a3eb;
         &::after {
           width: 100%;
-          background-color: #000;
+          background-color: #73a3eb;
         }
         button {
-          color: #000;
+          color: #73a3eb;
           img {
             opacity: 1;
             transform: translateY(0);
@@ -51,6 +59,11 @@
         }
       }
     }
+  }
+
+  // 베스트핏 선택 시 아래쪽 패딩 제거
+  &.no-bottom-padding {
+    padding-bottom: 0;
   }
 }
 
@@ -65,11 +78,12 @@
 .statistics__container.clothes {
   display: flex;
   gap: 30px;
+  flex-wrap: wrap;
 
   .chart-container {
     padding: 20px 40px;
     width: 500px;
-    box-shadow: rgba(4, 20, 65, 0.2) 6px 6px 8px;
+    box-shadow: rgba(4, 20, 65, 0.2) 6px 6px 8px 4px;
     border-radius: 10px;
     margin-bottom: 20px;
     h2 {
@@ -79,6 +93,12 @@
     .chart-wrapper {
       width: 100%;
       height: 300px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .chart-container {
+      width: 100%;
     }
   }
 }
@@ -97,8 +117,17 @@
 
   .bestfit-swiper {
     width: 100%;
-    padding: 20px 60px;
     position: relative;
+    padding: 0 60px;
+
+    @include mix.mobile {
+      padding: 60px 20px 20px;
+    }
+
+    // 400px 이하 화면에 대한 추가 스타일
+    @media (max-width: 400px) {
+      padding: 60px 10px 20px;
+    }
 
     .swiper-slide {
       display: flex;
@@ -111,6 +140,12 @@
       &-active {
         transform: scale(1.05);
       }
+
+      // 400px 이하 화면에서는 슬라이드 너비 조정
+      @media (max-width: 400px) {
+        width: 100%;
+        margin: 0;
+      }
     }
 
     .swiper-button-next,
@@ -121,19 +156,36 @@
       height: 50px;
       border-radius: 50%;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-
+      @include mix.mobile {
+        width: 30px;
+        height: 30px;
+        box-shadow: none;
+        background-color: transparent;
+      }
       &:after {
         font-size: 18px;
         font-weight: bold;
+      }
+
+      @include mix.mobile {
+        top: 20px;
       }
     }
 
     .swiper-button-prev {
       left: 10px;
+
+      @include mix.mobile {
+        left: 4px;
+      }
     }
 
     .swiper-button-next {
       right: 10px;
+
+      @include mix.mobile {
+        right: 0;
+      }
     }
   }
 
@@ -148,6 +200,17 @@
     box-shadow: rgba(4, 20, 65, 0.2) 6px 6px 8px 4px;
     overflow-y: auto;
     position: relative;
+
+    @include mix.mobile {
+      width: 240px;
+      margin-top: 0;
+    }
+
+    // 400px 이하 화면에서는 더 좁게 설정
+    @media (max-width: 400px) {
+      width: 100%;
+      max-width: 220px;
+    }
 
     .crown-icon {
       position: absolute;
@@ -203,8 +266,8 @@
         .closet__detail__image {
           margin: 0 auto;
           margin-bottom: 8px;
-          width: 64px;
-          height: 64px;
+          width: 40px;
+          height: 40px;
         }
 
         .closet__detail__label {

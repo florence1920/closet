@@ -33,11 +33,19 @@ function initializeCharts(data) {
 // 카테고리별 분포 차트
 function createCategoryChart(data) {
   // 메인 카테고리별 데이터 집계
-  const mainCategories = {};
+  const mainCategories = {
+    outer: 0,
+    tops: 0,
+    bottoms: 0,
+    shoes: 0,
+  };
 
   data.forEach((item) => {
-    const mainCategory = item.category?.main || "기타";
-    mainCategories[mainCategory] = (mainCategories[mainCategory] || 0) + 1;
+    const mainCategory = item.category?.main;
+    // 유효한 카테고리인 경우에만 카운트
+    if (mainCategory && mainCategories.hasOwnProperty(mainCategory)) {
+      mainCategories[mainCategory] += 1;
+    }
   });
 
   // 차트 데이터 준비
@@ -96,12 +104,17 @@ function createColorChart(data) {
   const colors = {};
 
   data.forEach((item) => {
-    const color = item.color || "기타";
-    colors[color] = (colors[color] || 0) + 1;
+    const color = item.color || "";
+    if (color) {
+      // 빈 값이나 undefined는 무시
+      colors[color] = (colors[color] || 0) + 1;
+    }
   });
 
-  // 데이터 정렬 (모든 색상 표시)
-  const sortedColors = Object.entries(colors).sort((a, b) => b[1] - a[1]);
+  // 데이터 정렬 (상위 10개만 표시)
+  const sortedColors = Object.entries(colors)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10); // 상위 10개만 선택
 
   const labels = sortedColors.map((entry) => entry[0]);
   const counts = sortedColors.map((entry) => entry[1]);

@@ -55,7 +55,6 @@ export function closetListActive() {
         const filtered = closetData.filter((item) => {
           return item.category?.main === category.toLowerCase();
         });
-        console.log("📁 필터링된 데이터:", filtered);
         filtered.forEach((item, idx) => {
           const li = document.createElement("li");
           li.className = "closet__item";
