@@ -58,6 +58,7 @@ export function closetListActive() {
         filtered.forEach((item, idx) => {
           const li = document.createElement("li");
           li.className = "closet__item";
+          li.setAttribute("data-id", item.id || "");
           li.innerHTML = itemTemplate(item);
 
           // 클릭/터치 이벤트 처리
@@ -275,10 +276,8 @@ function renderClosetDetail(item, detailEl) {
 
 const itemTemplate = (item) => {
   return `
-    <li class="closet__item" data-id="${item.id}">
       <p class="closet__item-name">${item.name}</p>
       <img class="closet__item-image" src="./img/clothes/${item.category.sub}.png" alt="옷 이미지" />
       <img class="closet__item-line" src="./img/line/${item.color}.png" alt="옷 색상" />
-    </li>
   `;
 };
