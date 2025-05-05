@@ -63,9 +63,9 @@ function fillFormWithItemData(item) {
   }, 100);
 
   // 텍스트 입력 설정
-  document.querySelector('input[placeholder="브랜드를 입력해주세요"]').value =
+  document.querySelector('input[placeholder="브랜드를 입력"]').value =
     brand || "";
-  document.querySelector('input[placeholder="닉네임을 입력해주세요"]').value =
+  document.querySelector('input[placeholder="닉네임을 입력"]').value =
     name || "";
 
   // 날짜 설정

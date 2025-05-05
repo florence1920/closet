@@ -19,15 +19,22 @@ export function setupFormSave() {
   }
 
   form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // validateForm 함수가 전역으로 노출되어 있으므로 호출
+    if (!window.validateForm()) {
+      return; // 유효성 검사 실패 시 저장 중단
+    }
+
     // 폼 데이터 수집
     const mainCategory = document.getElementById("main-category-hidden").value;
     const subCategory = document.getElementById("sub-category-hidden").value;
     const color = document.getElementById("color-hidden").value;
     const brand = form.querySelector(
-      'input[placeholder="브랜드를 입력해주세요"]'
+      'input[placeholder="브랜드를 입력"]'
     ).value;
     const nickname = form.querySelector(
-      'input[placeholder="닉네임을 입력해주세요"]'
+      'input[placeholder="닉네임을 입력"]'
     ).value;
     const purchaseDate = form.querySelector('input[type="date"]').value;
 
@@ -50,6 +57,7 @@ export function setupFormSave() {
 
     // mainCategory에 따라 다른 상세 사이즈 필드 설정
     if (mainCategory === "shoes") {
+      // 신발 사이즈는 숫자만 저장 (단위는 표시할 때 추가)
       detailedSize.size = detailInputs[0].value || "-";
     } else {
       detailedSize.length = detailInputs[0].value || "-";

@@ -3,51 +3,85 @@
 export function setupItemActions() {
   // MutationObserver를 사용하여 DOM 변경 감지
   const targetNode = document.querySelector(".closet__detail");
-  if (!targetNode) return;
+  const hoverDetailNode = document.querySelector(
+    ".closet__detail.hover-detail"
+  );
+
+  if (!targetNode && !hoverDetailNode) return;
 
   // 페이지 로드 직후 첫번째 아이템의 버튼에 이벤트 리스너 연결
   setTimeout(() => {
     attachEventListenersToButtons();
   }, 500);
 
-  const observer = new MutationObserver(function (mutations) {
-    mutations.forEach(function (mutation) {
-      if (mutation.type === "childList") {
-        attachEventListenersToButtons();
-      }
+  // 메인 상세 정보 관찰
+  if (targetNode) {
+    const observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        if (mutation.type === "childList") {
+          attachEventListenersToButtons();
+        }
+      });
     });
-  });
 
-  // 옵저버 설정 및 시작
-  const config = { childList: true, subtree: true };
-  observer.observe(targetNode, config);
+    // 옵저버 설정 및 시작
+    const config = { childList: true, subtree: true };
+    observer.observe(targetNode, config);
+  }
+
+  // 모바일용 상세 정보 관찰
+  if (hoverDetailNode) {
+    const hoverObserver = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        if (mutation.type === "childList") {
+          attachEventListenersToButtons();
+        }
+      });
+    });
+
+    // 옵저버 설정 및 시작
+    const config = { childList: true, subtree: true };
+    hoverObserver.observe(hoverDetailNode, config);
+  }
 }
 
 // 수정/삭제 버튼에 이벤트 리스너 연결하는 함수 (재사용성을 위해 분리)
 function attachEventListenersToButtons() {
-  // 삭제 버튼에 이벤트 리스너 연결
-  const deleteButton = document.querySelector(
-    ".closet__detail .button-group button:nth-child(2)"
-  );
-  if (deleteButton) {
-    deleteButton.removeEventListener("click", handleDeleteClick);
-    deleteButton.addEventListener("click", handleDeleteClick);
-  }
+  // 모든 .closet__detail 요소에서 버튼 찾기
+  const allDetailNodes = document.querySelectorAll(".closet__detail");
 
-  // 수정 버튼에 이벤트 리스너 연결
-  const editButton = document.querySelector(
-    ".closet__detail .button-group button:nth-child(1)"
-  );
-  if (editButton) {
-    editButton.removeEventListener("click", handleEditClick);
-    editButton.addEventListener("click", handleEditClick);
-  }
+  allDetailNodes.forEach((detailNode) => {
+    // 삭제 버튼에 이벤트 리스너 연결
+    const deleteButton = detailNode.querySelector(
+      ".button-group button:nth-child(2)"
+    );
+    if (deleteButton) {
+      deleteButton.removeEventListener("click", handleDeleteClick);
+      deleteButton.addEventListener("click", handleDeleteClick);
+    }
+
+    // 수정 버튼에 이벤트 리스너 연결
+    const editButton = detailNode.querySelector(
+      ".button-group button:nth-child(1)"
+    );
+    if (editButton) {
+      editButton.removeEventListener("click", handleEditClick);
+      editButton.addEventListener("click", handleEditClick);
+    }
+  });
 }
 
 // 수정 버튼 클릭 처리
 function handleEditClick(event) {
-  // 현재 표시된 아이템의 ID 가져오기
-  const itemId = document.querySelector(".closet__detail").dataset.itemId;
+  // 클릭된 버튼의 상위 detail 요소 찾기
+  const detailEl = event.target.closest(".closet__detail");
+
+  if (!detailEl) {
+    alert("수정할 아이템을 찾을 수 없습니다.");
+    return;
+  }
+
+  const itemId = detailEl.dataset.itemId;
 
   if (!itemId) {
     alert("수정할 아이템을 찾을 수 없습니다.");
@@ -60,8 +94,15 @@ function handleEditClick(event) {
 
 // 삭제 버튼 클릭 처리
 function handleDeleteClick(event) {
-  // 현재 표시된 아이템의 ID 가져오기
-  const itemId = document.querySelector(".closet__detail").dataset.itemId;
+  // 클릭된 버튼의 상위 detail 요소 찾기
+  const detailEl = event.target.closest(".closet__detail");
+
+  if (!detailEl) {
+    alert("삭제할 아이템을 찾을 수 없습니다.");
+    return;
+  }
+
+  const itemId = detailEl.dataset.itemId;
 
   if (!itemId) {
     alert("삭제할 아이템을 찾을 수 없습니다.");

@@ -89,7 +89,9 @@ export function setupCategorySelect() {
         (option) => `
       <li>
         <p>${option}</p>
-        <input type="text" placeholder="cm" class="input-detail" />
+        <input type="text" placeholder="${
+          category === "shoes" ? "mm" : "cm"
+        }" class="input-detail" />
       </li>
     `
       )

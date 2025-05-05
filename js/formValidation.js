@@ -17,12 +17,8 @@ export function setupFormValidation() {
     const mainCategorySelect = document.getElementById("main-category-select");
     const subCategorySelect = document.getElementById("sub-category-select");
     const colorSelect = document.querySelector(".color-select");
-    const brand = form.querySelector(
-      'input[placeholder="브랜드를 입력해주세요"]'
-    );
-    const nickname = form.querySelector(
-      'input[placeholder="닉네임을 입력해주세요"]'
-    );
+    const brand = form.querySelector('input[placeholder="브랜드를 입력"]');
+    const nickname = form.querySelector('input[placeholder="닉네임을 입력"]');
     const purchaseDate = form.querySelector('input[type="date"]');
     const sizeSelect = document.getElementById("size-select");
     const fitSelect = document.getElementById("fit-select");
@@ -151,19 +147,16 @@ export function setupFormValidation() {
     });
   }
 
-  function validateForm() {
+  // validateForm 함수를 모듈 스코프로 이동
+  window.validateForm = function () {
     let isValid = true;
     const errorMessages = [];
 
     const mainCategory = document.getElementById("main-category-hidden").value;
     const subCategory = document.getElementById("sub-category-hidden").value;
     const color = document.getElementById("color-hidden").value;
-    const brand = form.querySelector(
-      'input[placeholder="브랜드를 입력해주세요"]'
-    );
-    const nickname = form.querySelector(
-      'input[placeholder="닉네임을 입력해주세요"]'
-    );
+    const brand = form.querySelector('input[placeholder="브랜드를 입력"]');
+    const nickname = form.querySelector('input[placeholder="닉네임을 입력"]');
     const purchaseDate = form.querySelector('input[type="date"]');
     const size = document.getElementById("size-hidden").value;
     const fit = document.getElementById("fit-hidden").value;
@@ -238,22 +231,15 @@ export function setupFormValidation() {
 
     if (!isValid) {
       alert(`다음 항목을 입력해주세요:\n${errorMessages.join(", ")}`);
+      isFirstValidation = false;
     }
 
     return isValid;
-  }
+  };
 
   // 실시간 검증 이벤트 리스너 설정
   setupRealtimeValidation();
 
-  // 폼 제출 이벤트 처리
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    if (validateForm()) {
-      console.log("폼 검증 성공");
-    } else {
-      isFirstValidation = false;
-    }
-  });
+  // 폼 제출 이벤트 처리 - 이 부분은 더 이상 필요하지 않음
+  // formSave.js에서 검증 결과를 확인하도록 변경할 것이므로 제거
 }
