@@ -139,8 +139,8 @@ export function navSelect() {
       return card;
     }
 
-    const imgPath = `/img/clothes/${category.sub}.png`;
-    const colorImg = `/img/line/${color || "black"}.png`;
+    const imgPath = `./img/clothes/${category.sub}.png`;
+    const colorImg = `./img/line/${color || "black"}.png`;
 
     // 노트에 "최고"가 포함되어 있는지 확인
     const isBest = note?.toLowerCase().includes("최고") || false;
@@ -149,7 +149,7 @@ export function navSelect() {
     const headerHTML = `
       ${
         isBest
-          ? '<img src="/img/icon/crown.png" class="crown-icon" alt="최고 아이템" />'
+          ? '<img src="./img/icon/crown.png" class="crown-icon" alt="최고 아이템" />'
           : ""
       }
       <div class="closet__detail__header">
@@ -239,8 +239,7 @@ export function navSelect() {
     }
 
     if (note) {
-      infoHTML += `
-        <li class="closet__detail__info__item">
+      infoHTML += `        <li class="closet__detail__info__item">
           <p class="closet__detail__label">노트</p>
           <p class="closet__detail__value">${note}</p>
         </li>

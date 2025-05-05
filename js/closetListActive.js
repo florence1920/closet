@@ -58,11 +58,7 @@ export function closetListActive() {
         filtered.forEach((item, idx) => {
           const li = document.createElement("li");
           li.className = "closet__item";
-          li.innerHTML = `
-            <p class="closet__item-name">${item.name}</p>
-            <img class="closet__item-image" src="/img/clothes/${item.category.sub}.png" alt="옷 이미지" />
-            <img class="closet__item-line" src="/img/line/${item.color}.png" alt="옷 색상" />
-          `;
+          li.innerHTML = itemTemplate(item);
 
           // 클릭/터치 이벤트 처리
           li.addEventListener("click", (e) => {
@@ -156,8 +152,8 @@ function renderClosetDetail(item, detailEl) {
     detailedSize,
     note,
   } = item;
-  const imgPath = `/img/clothes/${category.sub}.png`;
-  const colorImg = `/img/line/${color}.png`;
+  const imgPath = "./img/clothes/" + category.sub + ".png";
+  const colorImg = "./img/line/" + color + ".png";
 
   detailEl.dataset.itemId = id || "";
 
@@ -261,18 +257,28 @@ function renderClosetDetail(item, detailEl) {
   }
 
   // 수정/삭제 버튼 추가
-  infoHTML += `
-    <li class="closet__detail__info__item button-group">
-      <button>
-        <span>수정</span> <img src="/img/icon/edit.png" alt="수정하기" />
-      </button>
-      <button>
-        <span>삭제</span> <img src="/img/icon/delete.png" alt="삭제하기" />
-      </button>
-    </li>
-  `;
+  if (document.querySelector(".button-group")) {
+    infoHTML += `<li class="closet__detail__info__item button-group">
+        <button class="edit-button" data-id="${item.id}">
+          <span>수정</span> <img src="./img/icon/edit.png" alt="수정하기" />
+        </button>
+        <button class="delete-button" data-id="${item.id}">
+          <span>삭제</span> <img src="./img/icon/delete.png" alt="삭제하기" />
+        </button>
+      </li>`;
+  }
 
   // 최종 렌더링
   detailEl.innerHTML =
     headerHTML + `<ul class="closet__detail__info">${infoHTML}</ul>`;
 }
+
+const itemTemplate = (item) => {
+  return `
+    <li class="closet__item" data-id="${item.id}">
+      <p class="closet__item-name">${item.name}</p>
+      <img class="closet__item-image" src="./img/clothes/${item.category.sub}.png" alt="옷 이미지" />
+      <img class="closet__item-line" src="./img/line/${item.color}.png" alt="옷 색상" />
+    </li>
+  `;
+};
