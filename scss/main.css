@@ -128,13 +128,17 @@ table {
   font-family: "Pretendard";
   font-weight: 700;
   font-display: swap;
-  src: local("Pretendard Bold"), url(/font/pretendard/Pretendard-Bold.woff2) format("woff2"), url(/font/pretendard/Pretendard-Bold.woff) format("woff");
+  src: local("Pretendard Bold"),
+    url(/font/pretendard/Pretendard-Bold.woff2) format("woff2"),
+    url(/font/pretendard/Pretendard-Bold.woff) format("woff");
 }
 @font-face {
   font-family: "Pretendard";
   font-weight: 400;
   font-display: swap;
-  src: local("Pretendard Regular"), url(/font/pretendard/Pretendard-Regular.woff2) format("woff2"), url(/font/pretendard/Pretendard-Regular.woff) format("woff");
+  src: local("Pretendard Regular"),
+    url(/font/pretendard/Pretendard-Regular.woff2) format("woff2"),
+    url(/font/pretendard/Pretendard-Regular.woff) format("woff");
 }
 * {
   box-sizing: border-box;
@@ -183,7 +187,7 @@ input::placeholder {
     width: 100%;
   }
 }
-input[type=date] {
+input[type="date"] {
   width: 40%;
 }
 
@@ -213,7 +217,7 @@ button {
   border-radius: 50px;
   cursor: pointer;
 }
-button[type=submit] {
+button[type="submit"] {
   height: 50px;
   padding: 10px 40px;
   border: 1px solid #3881f1;
@@ -225,12 +229,12 @@ button[type=submit] {
   margin-bottom: 20px;
 }
 @media (max-width: 1439px) {
-  button[type=submit] {
+  button[type="submit"] {
     margin-left: 0;
   }
 }
 @media (max-width: 767px) {
-  button[type=submit] {
+  button[type="submit"] {
     font-size: 14px;
     padding: 10px 30px;
   }
@@ -325,7 +329,9 @@ button[type=submit] {
   pointer-events: auto;
 }
 
-.custom-select.open .custom-select__selected.disabled + .custom-select__options {
+.custom-select.open
+  .custom-select__selected.disabled
+  + .custom-select__options {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
@@ -646,20 +652,38 @@ main .section-header__icon {
 .closet .closet__box .closet__detail .closet__detail__header {
   margin-bottom: 20px;
 }
-.closet .closet__box .closet__detail .closet__detail__header .closet__detail__header-right {
+.closet
+  .closet__box
+  .closet__detail
+  .closet__detail__header
+  .closet__detail__header-right {
   text-align: right;
   margin-bottom: 10px;
 }
-.closet .closet__box .closet__detail .closet__detail__header .closet__detail__header-left {
+.closet
+  .closet__box
+  .closet__detail
+  .closet__detail__header
+  .closet__detail__header-left {
   display: flex;
   flex-direction: column;
 }
-.closet .closet__box .closet__detail .closet__detail__header .closet__detail__header-left .closet__detail__color {
+.closet
+  .closet__box
+  .closet__detail
+  .closet__detail__header
+  .closet__detail__header-left
+  .closet__detail__color {
   margin-top: 10px;
   width: 80px;
   height: 24px;
 }
-.closet .closet__box .closet__detail .closet__detail__header .closet__detail__header-left .closet__detail__title {
+.closet
+  .closet__box
+  .closet__detail
+  .closet__detail__header
+  .closet__detail__header-left
+  .closet__detail__title {
   font-size: 16px;
   font-weight: bold;
   white-space: nowrap;
@@ -667,41 +691,81 @@ main .section-header__icon {
   text-overflow: ellipsis;
   max-width: 210px;
 }
-.closet .closet__box .closet__detail .closet__detail__info .closet__detail__info__item {
+.closet
+  .closet__box
+  .closet__detail
+  .closet__detail__info
+  .closet__detail__info__item {
   display: flex;
   gap: 8px;
   margin-bottom: 10px;
   padding-bottom: 10px;
   border-bottom: 1px dashed #000;
 }
-.closet .closet__box .closet__detail .closet__detail__info .closet__detail__info__item:last-child {
+.closet
+  .closet__box
+  .closet__detail
+  .closet__detail__info
+  .closet__detail__info__item:last-child {
   border-bottom: none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
-.closet .closet__box .closet__detail .closet__detail__info .closet__detail__info__item .closet__detail__image {
+.closet
+  .closet__box
+  .closet__detail
+  .closet__detail__info
+  .closet__detail__info__item
+  .closet__detail__image {
   margin: 0 auto;
   margin-bottom: 8px;
   width: 64px;
   height: 64px;
 }
-.closet .closet__box .closet__detail .closet__detail__info .closet__detail__info__item .closet__detail__label {
+.closet
+  .closet__box
+  .closet__detail
+  .closet__detail__info
+  .closet__detail__info__item
+  .closet__detail__label {
   font-weight: bold;
   width: 70px;
 }
-.closet .closet__box .closet__detail .closet__detail__info .closet__detail__info__item .closet__detail__value {
+.closet
+  .closet__box
+  .closet__detail
+  .closet__detail__info
+  .closet__detail__info__item
+  .closet__detail__value {
   width: 90%;
 }
-.closet .closet__box .closet__detail .closet__detail__info .closet__detail__info__item .closet__detail__size-item {
+.closet
+  .closet__box
+  .closet__detail
+  .closet__detail__info
+  .closet__detail__info__item
+  .closet__detail__size-item {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
 }
 @media (max-width: 767px) {
-  .closet .closet__box .closet__detail .closet__detail__info .closet__detail__info__item.button-group button span {
+  .closet
+    .closet__box
+    .closet__detail
+    .closet__detail__info
+    .closet__detail__info__item.button-group
+    button
+    span {
     display: none;
   }
-  .closet .closet__box .closet__detail .closet__detail__info .closet__detail__info__item.button-group button img {
+  .closet
+    .closet__box
+    .closet__detail
+    .closet__detail__info
+    .closet__detail__info__item.button-group
+    button
+    img {
     width: 20px;
     height: 20px;
   }
@@ -796,7 +860,7 @@ main .section-header__icon {
   cursor: pointer;
   transition: all 0.1s ease;
 }
-.color-select__item[data-color=white] {
+.color-select__item[data-color="white"] {
   border: 1px solid #000000;
 }
 .color-select__item:hover {
@@ -1024,20 +1088,34 @@ main .section-header__icon {
 .statistics__container.bestfit .closet__detail .closet__detail__header {
   margin-bottom: 20px;
 }
-.statistics__container.bestfit .closet__detail .closet__detail__header .closet__detail__header-right {
+.statistics__container.bestfit
+  .closet__detail
+  .closet__detail__header
+  .closet__detail__header-right {
   text-align: right;
   margin-bottom: 10px;
 }
-.statistics__container.bestfit .closet__detail .closet__detail__header .closet__detail__header-left {
+.statistics__container.bestfit
+  .closet__detail
+  .closet__detail__header
+  .closet__detail__header-left {
   display: flex;
   flex-direction: column;
 }
-.statistics__container.bestfit .closet__detail .closet__detail__header .closet__detail__header-left .closet__detail__color {
+.statistics__container.bestfit
+  .closet__detail
+  .closet__detail__header
+  .closet__detail__header-left
+  .closet__detail__color {
   margin-top: 10px;
   width: 80px;
   height: 24px;
 }
-.statistics__container.bestfit .closet__detail .closet__detail__header .closet__detail__header-left .closet__detail__title {
+.statistics__container.bestfit
+  .closet__detail
+  .closet__detail__header
+  .closet__detail__header-left
+  .closet__detail__title {
   font-size: 16px;
   font-weight: bold;
   white-space: nowrap;
@@ -1045,33 +1123,55 @@ main .section-header__icon {
   text-overflow: ellipsis;
   max-width: 210px;
 }
-.statistics__container.bestfit .closet__detail .closet__detail__info .closet__detail__info__item {
+.statistics__container.bestfit
+  .closet__detail
+  .closet__detail__info
+  .closet__detail__info__item {
   display: flex;
   gap: 8px;
   margin-bottom: 10px;
   padding-bottom: 10px;
   border-bottom: 1px dashed #000;
 }
-.statistics__container.bestfit .closet__detail .closet__detail__info .closet__detail__info__item:last-child {
+.statistics__container.bestfit
+  .closet__detail
+  .closet__detail__info
+  .closet__detail__info__item:last-child {
   border-bottom: none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
-.statistics__container.bestfit .closet__detail .closet__detail__info .closet__detail__info__item .closet__detail__image {
+.statistics__container.bestfit
+  .closet__detail
+  .closet__detail__info
+  .closet__detail__info__item
+  .closet__detail__image {
   margin: 0 auto;
   margin-bottom: 8px;
   width: 40px;
   height: 40px;
 }
-.statistics__container.bestfit .closet__detail .closet__detail__info .closet__detail__info__item .closet__detail__label {
+.statistics__container.bestfit
+  .closet__detail
+  .closet__detail__info
+  .closet__detail__info__item
+  .closet__detail__label {
   font-weight: bold;
   width: 70px;
 }
-.statistics__container.bestfit .closet__detail .closet__detail__info .closet__detail__info__item .closet__detail__value {
+.statistics__container.bestfit
+  .closet__detail
+  .closet__detail__info
+  .closet__detail__info__item
+  .closet__detail__value {
   width: 90%;
 }
-.statistics__container.bestfit .closet__detail .closet__detail__info .closet__detail__info__item .closet__detail__size-item {
+.statistics__container.bestfit
+  .closet__detail
+  .closet__detail__info
+  .closet__detail__info__item
+  .closet__detail__size-item {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */

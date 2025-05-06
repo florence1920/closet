@@ -4,6 +4,7 @@ button {
   height: 40px;
   padding: 0 20px;
   background-color: #fff;
+  color: #000;
   border-radius: 50px;
   cursor: pointer;
 
@@ -33,7 +34,8 @@ button {
     display: flex;
     align-items: center;
     gap: 5px;
-
+    color: #000;
+    background-color: #fff;
     height: 30px;
     padding: 0 14px;
     border: 1px solid #000;
