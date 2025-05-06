@@ -7,6 +7,9 @@ button {
   color: #000;
   border-radius: 50px;
   cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: inherit;
 
   &[type="submit"] {
     height: 50px;
