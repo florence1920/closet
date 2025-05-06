@@ -10,7 +10,15 @@ import { addIdsToExistingData } from "./addIdsToData.js";
 import { setupItemActions } from "./itemActions.js";
 import { navSelect } from "./statNavSelect.js";
 import { menuToggle } from "./menuToggle.js";
+import { setupBaseUrl, fixAllLinks } from "./baseUrlManager.js";
+
 document.addEventListener("DOMContentLoaded", () => {
+  // 배포 환경과 로컬 환경 자동 감지 및 base 태그 설정
+  setupBaseUrl();
+
+  // 환경에 맞게 모든 링크 수정
+  fixAllLinks();
+
   navHighlight();
   navSelect();
   menuToggle();

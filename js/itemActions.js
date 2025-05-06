@@ -1,4 +1,5 @@
 // 옷장 아이템 관리 (삭제, 수정) 기능
+import { getCorrectPath } from "./baseUrlManager.js";
 
 export function setupItemActions() {
   // MutationObserver를 사용하여 DOM 변경 감지
@@ -88,8 +89,11 @@ function handleEditClick(event) {
     return;
   }
 
+  // 환경에 맞는 경로 생성
+  const editUrl = getCorrectPath("add.html") + `?mode=edit&id=${itemId}`;
+
   // add.html 페이지로 이동하면서 수정할 아이템 ID를 쿼리 파라미터로 전달
-  window.location.href = `/add.html?mode=edit&id=${itemId}`;
+  window.location.href = editUrl;
 }
 
 // 삭제 버튼 클릭 처리
