@@ -8,3 +8,30 @@
     color: inherit;
   }
 }
+
+/* iOS Safari 스타일 초기화 */
+html {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* iOS에서 링크와 버튼의 기본 파란색 제거 */
+button,
+a {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  color: #000 !important;
+  -webkit-text-fill-color: #000 !important;
+  background-color: transparent !important;
+  font-size: inherit;
+  font-family: inherit;
+  user-select: none;
+  -webkit-user-select: none;
+  text-decoration: none !important;
+}
+
+/* 모바일 기기에서 tap highlight 제거 */
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  tap-highlight-color: rgba(0, 0, 0, 0);
+}
