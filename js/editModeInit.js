@@ -1,4 +1,5 @@
 // 수정 모드 감지 및 초기화 함수
+import { getCorrectPath } from "./baseUrlManager.js";
 
 export function checkEditMode() {
   // URL에서 쿼리 파라미터 가져오기
@@ -18,7 +19,7 @@ export function checkEditMode() {
 
     if (!item) {
       alert("수정할 아이템을 찾을 수 없습니다.");
-      window.location.href = "/index.html";
+      window.location.href = getCorrectPath("./index.html");
       return false;
     }
 

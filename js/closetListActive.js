@@ -257,17 +257,16 @@ function renderClosetDetail(item, detailEl) {
     `;
   }
 
-  // 수정/삭제 버튼 추가
-  if (document.querySelector(".button-group")) {
-    infoHTML += `<li class="closet__detail__info__item button-group">
-        <button class="edit-button" data-id="${item.id}">
-          <span>수정</span> <img src="./img/icon/edit.png" alt="수정하기" />
-        </button>
-        <button class="delete-button" data-id="${item.id}">
-          <span>삭제</span> <img src="./img/icon/delete.png" alt="삭제하기" />
-        </button>
-      </li>`;
-  }
+  // 수정/삭제 버튼 추가 - 항상 버튼을 추가하도록 조건 제거
+  infoHTML += `<li class="closet__detail__info__item button-group">
+      <button class="edit-button" data-id="${id}">
+        수정 <img src="./img/icon/edit.png" alt="수정하기" />
+      </button>
+      <button class="delete-button" data-id="${id}">
+        삭제
+        <img src="./img/icon/delete.png" alt="삭제하기" />
+      </button>
+    </li>`;
 
   // 최종 렌더링
   detailEl.innerHTML =

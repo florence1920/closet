@@ -26,9 +26,17 @@ export function getCorrectPath(path) {
   const isGitHubPages = window.location.hostname.includes("github.io");
 
   if (isGitHubPages) {
-    return path.startsWith("./")
-      ? `/closet/${path.substring(2)}`
-      : `/closet/${path}`;
+    // 이미 /closet/으로 시작하는 경로는 그대로 반환
+    if (path.startsWith("/closet/")) {
+      return path;
+    }
+
+    // 상대 경로('./xxx.html')나 단순 파일명('xxx.html')을 올바른 GitHub Pages 경로로 변환
+    if (path.startsWith("./")) {
+      return `/closet/${path.substring(2)}`;
+    } else {
+      return `/closet/${path}`;
+    }
   } else {
     return path;
   }
@@ -48,8 +56,10 @@ export function fixAllLinks() {
       .forEach((link) => {
         const href = link.getAttribute("href");
 
+        // 이미 /closet/로 시작하는 링크는 건너뛰기
         if (href.startsWith("/closet/")) return;
 
+        // 상대 경로를 GitHub Pages 형식으로 변환
         if (href.startsWith("./")) {
           link.setAttribute("href", `/closet/${href.substring(2)}`);
         } else {

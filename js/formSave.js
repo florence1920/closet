@@ -1,3 +1,5 @@
+import { getCorrectPath } from "./baseUrlManager.js";
+
 export function setupFormSave() {
   const form = document.querySelector(".add-form");
   if (!form) return;
@@ -115,8 +117,8 @@ function saveItemToLocalStorage(newItem, isEditMode) {
       alert("옷이 성공적으로 등록되었습니다!");
     }
 
-    // 홈 페이지로 리디렉션
-    window.location.href = "/index.html";
+    // 홈 페이지로 리디렉션 (상대 경로 사용 및 getCorrectPath 적용)
+    window.location.href = getCorrectPath("./index.html");
   } catch (error) {
     console.error("데이터 저장 중 오류 발생:", error);
     alert("저장 중 오류가 발생했습니다.");

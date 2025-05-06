@@ -54,7 +54,7 @@ function attachEventListenersToButtons() {
   allDetailNodes.forEach((detailNode) => {
     // 삭제 버튼에 이벤트 리스너 연결
     const deleteButton = detailNode.querySelector(
-      ".button-group button:nth-child(2)"
+      ".button-group .delete-button"
     );
     if (deleteButton) {
       deleteButton.removeEventListener("click", handleDeleteClick);
@@ -62,9 +62,7 @@ function attachEventListenersToButtons() {
     }
 
     // 수정 버튼에 이벤트 리스너 연결
-    const editButton = detailNode.querySelector(
-      ".button-group button:nth-child(1)"
-    );
+    const editButton = detailNode.querySelector(".button-group .edit-button");
     if (editButton) {
       editButton.removeEventListener("click", handleEditClick);
       editButton.addEventListener("click", handleEditClick);
@@ -89,7 +87,7 @@ function handleEditClick(event) {
     return;
   }
 
-  // 환경에 맞는 경로 생성
+  // 환경에 맞는 경로 생성 (쿼리 스트링은 getCorrectPath 이후에 추가)
   const editUrl = getCorrectPath("add.html") + `?mode=edit&id=${itemId}`;
 
   // add.html 페이지로 이동하면서 수정할 아이템 ID를 쿼리 파라미터로 전달
