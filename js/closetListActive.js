@@ -259,10 +259,10 @@ function renderClosetDetail(item, detailEl) {
 
   // 수정/삭제 버튼 추가 - 항상 버튼을 추가하도록 조건 제거
   infoHTML += `<li class="closet__detail__info__item button-group">
-      <button class="edit-button" data-id="${id}">
+      <button class="edit-button" data-id="${id}" style="color: #000 !important; background-color: #fff !important; -webkit-text-fill-color: #000 !important;">
         수정 <img src="./img/icon/edit.png" alt="수정하기" />
       </button>
-      <button class="delete-button" data-id="${id}">
+      <button class="delete-button" data-id="${id}" style="color: #000 !important; background-color: #fff !important; -webkit-text-fill-color: #000 !important;">
         삭제
         <img src="./img/icon/delete.png" alt="삭제하기" />
       </button>
