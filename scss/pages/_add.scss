@@ -62,7 +62,6 @@
     cursor: pointer;
     transition: all 0.1s ease;
 
-    // 흰색 버튼의 경우 테두리 추가
     &[data-color="white"] {
       border: 1px solid #000000;
     }

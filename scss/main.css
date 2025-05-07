@@ -148,32 +148,11 @@ table {
   color: inherit;
 }
 
-/* iOS Safari 스타일 초기화 */
-html {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
 /* iOS에서 링크와 버튼의 기본 파란색 제거 */
-button,
-a {
+button {
   -webkit-appearance: none !important;
   -moz-appearance: none !important;
   appearance: none !important;
-  color: #000 !important;
-  -webkit-text-fill-color: #000 !important;
-  background-color: transparent !important;
-  font-size: inherit;
-  font-family: inherit;
-  -moz-user-select: none;
-       user-select: none;
-  -webkit-user-select: none;
-  text-decoration: none !important;
-}
-
-/* 모바일 기기에서 tap highlight 제거 */
-* {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 input {
@@ -508,30 +487,8 @@ header nav .desktop-nav li a {
   display: flex;
   align-items: center;
 }
-header nav .desktop-nav li a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: #000;
-  transition: width 0.6s ease-in-out 0.6s;
-}
-header nav .desktop-nav li a:hover::after {
-  width: 100%;
-  transition: width 0.4s ease-in-out 0s;
-}
 header nav .desktop-nav li a.active {
   font-weight: bold;
-  transition: all 0s;
-}
-header nav .desktop-nav li a.active::after {
-  width: 100%;
-  transition: width 0.2s ease-in-out 0s;
-}
-header nav .desktop-nav li a:not(:hover)::after {
-  transition: width 0.5s ease-in-out;
 }
 
 main {
