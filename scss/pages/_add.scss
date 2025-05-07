@@ -62,7 +62,9 @@
     cursor: pointer;
     transition: all 0.1s ease;
     position: relative;
-
+    @include mix.mobile {
+      margin-top: 20px;
+    }
     &[data-color="white"] {
       border: 1px solid #000000;
     }

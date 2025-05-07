@@ -818,6 +818,11 @@ main .section-header__icon {
   transition: all 0.1s ease;
   position: relative;
 }
+@media (max-width: 767px) {
+  .color-select__item {
+    margin-top: 20px;
+  }
+}
 .color-select__item[data-color=white] {
   border: 1px solid #000000;
 }
