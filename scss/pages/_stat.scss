@@ -8,6 +8,7 @@
   ul {
     display: flex;
     .statistics__nav-item {
+      
       padding: 0 0 4px;
       position: relative;
 
@@ -23,6 +24,9 @@
       }
 
       button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         padding: 0 6px;
         border: none;
         height: auto;
