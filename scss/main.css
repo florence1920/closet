@@ -816,6 +816,7 @@ main .section-header__icon {
   border: none;
   cursor: pointer;
   transition: all 0.1s ease;
+  position: relative;
 }
 .color-select__item[data-color=white] {
   border: 1px solid #000000;
@@ -826,7 +827,79 @@ main .section-header__icon {
 .color-select__item.selected {
   box-shadow: rgba(0, 0, 0, 0.55) 0px 4px 8px;
 }
+.color-select__item.selected::after {
+  content: attr(data-color);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  color: var(--text-color);
+  animation: textAppear 0.2s forwards, textReveal 1s forwards;
+}
+.color-select__item[data-color=black].selected::after {
+  --text-color: #000000;
+}
+.color-select__item[data-color=white].selected::after {
+  --text-color: #000000;
+}
+.color-select__item[data-color=charcoal].selected::after {
+  --text-color: #585858;
+}
+.color-select__item[data-color=gray].selected::after {
+  --text-color: #cecece;
+}
+.color-select__item[data-color=beige].selected::after {
+  --text-color: #f4d4a0;
+}
+.color-select__item[data-color=khaki].selected::after {
+  --text-color: #197727;
+}
+.color-select__item[data-color=light-blue].selected::after {
+  --text-color: #a8aff8;
+}
+.color-select__item[data-color=navy].selected::after {
+  --text-color: #2a11b8;
+}
+.color-select__item[data-color=brown].selected::after {
+  --text-color: #8f6b31;
+}
+.color-select__item[data-color=red].selected::after {
+  --text-color: #ff0004;
+}
+.color-select__item[data-color=blue].selected::after {
+  --text-color: #4d00ff;
+}
+.color-select__item[data-color=yellow].selected::after {
+  --text-color: #fff600;
+}
+.color-select__item[data-color=green].selected::after {
+  --text-color: #17d033;
+}
 
+@keyframes textAppear {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+@keyframes textReveal {
+  0% {
+    -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+}
 .statistics__nav {
   padding: 50px 0;
 }

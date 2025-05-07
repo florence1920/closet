@@ -61,6 +61,7 @@
     border: none;
     cursor: pointer;
     transition: all 0.1s ease;
+    position: relative;
 
     &[data-color="white"] {
       border: 1px solid #000000;
@@ -72,6 +73,81 @@
 
     &.selected {
       box-shadow: rgba(0, 0, 0, 0.55) 0px 4px 8px;
+
+      &::after {
+        content: attr(data-color);
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 8px;
+        font-size: 14px;
+        white-space: nowrap;
+        opacity: 0;
+        color: var(--text-color);
+        animation: textAppear 0.2s forwards, textReveal 1s forwards;
+      }
     }
+
+    // 각 색상별 텍스트 색상 설정
+    &[data-color="black"].selected::after {
+      --text-color: #000000;
+    }
+    &[data-color="white"].selected::after {
+      --text-color: #000000;
+    }
+    &[data-color="charcoal"].selected::after {
+      --text-color: #585858;
+    }
+    &[data-color="gray"].selected::after {
+      --text-color: #cecece;
+    }
+    &[data-color="beige"].selected::after {
+      --text-color: #f4d4a0;
+    }
+    &[data-color="khaki"].selected::after {
+      --text-color: #197727;
+    }
+    &[data-color="light-blue"].selected::after {
+      --text-color: #a8aff8;
+    }
+    &[data-color="navy"].selected::after {
+      --text-color: #2a11b8;
+    }
+    &[data-color="brown"].selected::after {
+      --text-color: #8f6b31;
+    }
+    &[data-color="red"].selected::after {
+      --text-color: #ff0004;
+    }
+    &[data-color="blue"].selected::after {
+      --text-color: #4d00ff;
+    }
+    &[data-color="yellow"].selected::after {
+      --text-color: #fff600;
+    }
+    &[data-color="green"].selected::after {
+      --text-color: #17d033;
+    }
+  }
+}
+
+@keyframes textAppear {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes textReveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
   }
 }
