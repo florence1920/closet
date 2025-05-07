@@ -158,7 +158,7 @@ export function navSelect() {
         </p>
         <div class="closet__detail__header-left">
           <p class="closet__detail__title">${name || "이름 없음"}</p>
-          <img class="closet__detail__color" src="${colorImg}" alt="옷 색상" />
+          <img class="closet__detail__color" src="${colorImg}" alt="color ${color}" />
         </div>
       </div>
     `;
@@ -171,7 +171,7 @@ export function navSelect() {
     let infoHTML = `
       <ul class="closet__detail__info">
         <li class="closet__detail__info__item">
-          <img class="closet__detail__image" src="${imgPath}" alt="옷 이미지" />
+          <img class="closet__detail__image" src="${imgPath}" alt="${category.sub} icon" />
         </li>
         <li class="closet__detail__info__item">
           <p class="closet__detail__label">브랜드</p>

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
-    <title>Document</title>
+    <title>내 옷장</title>
     <link rel="stylesheet" href="./scss/main.css">
     <script type="module" src="./js/index.js"></script>
   </head>
   <body>
     <header>
       <a href="./index.html">
-        <img src="./img/logo.png" alt="logo">
+        <img src="./img/logo.png" alt="Closet 로고">
       </a>
       <nav>
         <ul class="desktop-nav">
@@ -47,7 +47,7 @@
           <img
             class="section-header__icon"
             src="./img/icon/closet.png"
-            alt="closet-image">
+            alt="">
         </div>
         <nav class="closet__nav">
           <button
@@ -93,138 +93,18 @@
         </nav>
         <div class="closet__box">
           <ul class="closet__list closet__list-outer closet__list--active">
-            <!-- <li class="closet__item">
-              <p class="closet__item-name">자바나스 반팔</p>
-              <img
-                class="closet__item-image"
-                src="/img/clothes/coat.png"
-                alt="옷 이미지"
-              />
-              <img
-                class="closet__item-line"
-                src="/img/line/black.png"
-                alt="옷 색상"
-              />
-            </li> -->
           </ul>
           <ul class="closet__list closet__list-tops">
-            <li class="closet__item">
-              <p class="closet__item-name">자바나스 반팔</p>
-              <img
-                class="closet__item-image"
-                src="./img/clothes/short-sleeves.png"
-                alt="옷 이미지">
-              <img
-                class="closet__item-line"
-                src="./img/line/black.png"
-                alt="옷 색상상">
-            </li>
           </ul>
           <ul class="closet__list closet__list-bottoms">
-            <li class="closet__item">
-              <p class="closet__item-name">자바나스 반팔</p>
-              <img
-                class="closet__item-image"
-                src="./img/clothes/jean.png"
-                alt="옷 이미지">
-              <img
-                class="closet__item-line"
-                src="./img/line/black.png"
-                alt="옷 색상상">
-            </li>
           </ul>
           <ul class="closet__list closet__list-shoes">
-            <li class="closet__item">
-              <p class="closet__item-name">자바나스 반팔</p>
-              <img
-                class="closet__item-image"
-                src="./img/clothes/sneakers.png"
-                alt="옷 이미지">
-              <img
-                class="closet__item-line"
-                src="./img/line/black.png"
-                alt="옷 색상">
-            </li>
           </ul>
           <div class="closet__detail">
-            <!-- 상세 정보 내용은 JavaScript에서 동적으로 생성됩니다 -->
           </div>
         </div>
-        <!-- 모달 배경 오버레이 추가 -->
         <div class="modal-overlay"></div>
       </section>
-      <!-- <div class="closet">
-        <div class="closet__box">
-          <div class="closet__detail">
-            <div class="closet__detail__header">
-              <p class="closet__detail__header-right closet__detail__category">
-                Top > short-sleeves
-              </p>
-              <div class="closet__detail__header-left">
-                <p class="closet__detail__title">자바나스 반팔</p>
-                <img
-                  class="closet__detail__color"
-                  src="./img/line/black.png"
-                  alt="옷 색상">
-              </div>
-            </div>
-            <ul class="closet__detail__info">
-              <li class="closet__detail__info__item">
-                <img
-                  class="closet__detail__image"
-                  src="./img/clothes/coat.png"
-                  alt="옷 이미지">
-              </li>
-              <li class="closet__detail__info__item">
-                <p class="closet__detail__label">브랜드</p>
-                <p class="closet__detail__value">유핑</p>
-              </li>
-              <li class="closet__detail__info__item">
-                <p class="closet__detail__label">구매일</p>
-                <p class="closet__detail__value">2022-02-02</p>
-              </li>
-              <li class="closet__detail__info__item">
-                <p class="closet__detail__label">사이즈</p>
-                <p class="closet__detail__value">L</p>
-              </li>
-              <li class="closet__detail__info__item">
-                <p class="closet__detail__label">핏</p>
-                <p class="closet__detail__value">스탠다드</p>
-              </li>
-              <li class="closet__detail__info__item">
-                <p class="closet__detail__label">상세사이즈</p>
-                <ul class="closet__detail__value">
-                  <li class="closet__detail__size-item">
-                    <p class="closet__detail__size-label">총기장</p>
-                    <p class="closet__detail__size-value">70cm</p>
-                  </li>
-                  <li class="closet__detail__size-item">
-                    <p class="closet__detail__size-label">어깨 넓이</p>
-                    <p class="closet__detail__size-value">20cm</p>
-                  </li>
-                  <li class="closet__detail__size-item">
-                    <p class="closet__detail__size-label">가슴 단면</p>
-                    <p class="closet__detail__size-value">80cm</p>
-                  </li>
-                  <li class="closet__detail__size-item">
-                    <p class="closet__detail__size-label">소매길이</p>
-                    <p class="closet__detail__size-value">12cm</p>
-                  </li>
-                </ul>
-              </li>
-              <li class="closet__detail__info__item button-group">
-                <button>
-                  수정 <img src="./img/icon/edit.png" alt="수정하기">
-                </button>
-                <button>
-                  삭제
-                  <img src="./img/icon/delete.png" alt="삭제하기">
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div> -->
     </main>
   </body>
 </html>

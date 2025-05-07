@@ -166,7 +166,7 @@ function renderClosetDetail(item, detailEl) {
       </p>
       <div class="closet__detail__header-left">
         <p class="closet__detail__title">${name}</p>
-        <img class="closet__detail__color" src="${colorImg}" alt="옷 색상" />
+        <img class="closet__detail__color" src="${colorImg}" alt="color ${color}" />
       </div>
       
     </div>
@@ -179,7 +179,7 @@ function renderClosetDetail(item, detailEl) {
   // 공통 브랜드, 구매일, 사이즈, 핏
   let infoHTML = `
     <li class="closet__detail__info__item">
-      <img class="closet__detail__image" src="${imgPath}" alt="옷 이미지" />
+      <img class="closet__detail__image" src="${imgPath}" alt="${category.sub} icon" />
     </li>
     <li class="closet__detail__info__item">
       <p class="closet__detail__label">브랜드</p>
@@ -260,11 +260,11 @@ function renderClosetDetail(item, detailEl) {
   // 수정/삭제 버튼 추가 - 항상 버튼을 추가하도록 조건 제거
   infoHTML += `<li class="closet__detail__info__item button-group">
       <button class="edit-button" data-id="${id}" style="color: #000 !important; background-color: #fff !important; -webkit-text-fill-color: #000 !important;">
-        수정 <img src="./img/icon/edit.png" alt="수정하기" />
+        수정 <img src="./img/icon/edit.png" alt="" />
       </button>
       <button class="delete-button" data-id="${id}" style="color: #000 !important; background-color: #fff !important; -webkit-text-fill-color: #000 !important;">
         삭제
-        <img src="./img/icon/delete.png" alt="삭제하기" />
+        <img src="./img/icon/delete.png" alt="" />
       </button>
     </li>`;
 
@@ -276,7 +276,7 @@ function renderClosetDetail(item, detailEl) {
 const itemTemplate = (item) => {
   return `
       <p class="closet__item-name">${item.name}</p>
-      <img class="closet__item-image" src="./img/clothes/${item.category.sub}.png" alt="옷 이미지" />
-      <img class="closet__item-line" src="./img/line/${item.color}.png" alt="옷 색상" />
+      <img class="closet__item-image" src="./img/clothes/${item.category.sub}.png" alt="${item.category.sub} icon" />
+      <img class="closet__item-line" src="./img/line/${item.color}.png" alt="color ${item.color}" />
   `;
 };
