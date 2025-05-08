@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
-    <title>Document</title>
+    <title>옷 통계</title>
     <link rel="stylesheet" href="./scss/main.css">
     <link
       rel="stylesheet"
@@ -66,26 +66,26 @@
         </nav>
 
         <div class="statistics__container clothes">
-          <div class="chart-container">
+          <article class="chart-container" aria-label="색상별 의류 분포">
             <h2>색상별 분포</h2>
             <div class="chart-wrapper">
               <canvas id="colorChart"></canvas>
             </div>
-          </div>
+          </article>
 
-          <div class="chart-container">
+          <article class="chart-container" aria-label="카테고리별 의류 분포">
             <h2>카테고리별 분포</h2>
             <div class="chart-wrapper">
               <canvas id="categoryChart"></canvas>
             </div>
-          </div>
+          </article>
 
-          <div class="chart-container">
+          <article class="chart-container" aria-label="브랜드별 의류 분포">
             <h2>브랜드별 분포</h2>
             <div class="chart-wrapper">
               <canvas id="brandChart"></canvas>
             </div>
-          </div>
+          </article>
         </div>
 
         <div class="statistics__container bestfit">bestfit</div>
