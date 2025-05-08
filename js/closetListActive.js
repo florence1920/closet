@@ -40,11 +40,18 @@ export function closetListActive() {
 
   navButtons.forEach((button, index) => {
     button.addEventListener("click", () => {
-      navButtons.forEach((btn) =>
-        btn.classList.remove("closet__nav-button--active")
-      );
+      // 모든 탭 버튼의 상태 초기화
+      navButtons.forEach((btn) => {
+        btn.classList.remove("closet__nav-button--active");
+        btn.setAttribute("aria-selected", "false");
+      });
+      
+      // 모든 패널 숨기기
       lists.forEach((list) => list.classList.remove("closet__list--active"));
+      
+      // 선택된 탭 활성화
       button.classList.add("closet__nav-button--active");
+      button.setAttribute("aria-selected", "true");
 
       const { category, list } = categoryMap[index];
 
@@ -112,6 +119,7 @@ export function closetListActive() {
     });
   });
 
+  // 초기 탭 선택
   navButtons[0].click();
 
   // 모달 오버레이 클릭 이벤트

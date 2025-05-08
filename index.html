@@ -14,7 +14,7 @@
       <a href="./index.html">
         <img src="./img/logo.png" alt="Closet 로고">
       </a>
-      <nav>
+      <nav aria-label="메인 메뉴">
         <ul class="desktop-nav">
           <li><a href="./index.html">Home</a></li>
           <li><a href="./add.html">Add</a></li>
@@ -22,7 +22,10 @@
         </ul>
 
         <div class="mobile-nav-container">
-          <button class="mobile-nav-toggle">
+          <button class="mobile-nav-toggle" 
+                  aria-expanded="false"
+                  aria-controls="mobile-menu"
+                  aria-label="모바일 메뉴 열기/닫기">
             <img
               class="mobile-nav--open"
               src="./img/icon/menu.png"
@@ -32,7 +35,7 @@
               src="./img/icon/close.png"
               alt="메뉴 닫기">
           </button>
-          <ul class="mobile-nav">
+          <ul class="mobile-nav" id="mobile-menu" aria-label="모바일 메뉴">
             <li><a href="./index.html">Home</a></li>
             <li><a href="./add.html">Add</a></li>
             <li><a href="./stat.html">Statistics</a></li>
@@ -49,9 +52,13 @@
             src="./img/icon/closet.png"
             alt="">
         </div>
-        <nav class="closet__nav">
+        <nav class="closet__nav" role="tablist" aria-label="의류 카테고리">
           <button
             class="closet__nav-button closet__nav-button--active"
+            role="tab"
+            aria-selected="true"
+            aria-controls="outer-panel"
+            id="outer-tab"
             style="
               color: #000 !important;
               background-color: #fff !important;
@@ -62,6 +69,10 @@
           </button>
           <button
             class="closet__nav-button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tops-panel"
+            id="tops-tab"
             style="
               color: #000 !important;
               background-color: #fff !important;
@@ -72,6 +83,10 @@
           </button>
           <button
             class="closet__nav-button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="bottoms-panel"
+            id="bottoms-tab"
             style="
               color: #000 !important;
               background-color: #fff !important;
@@ -82,6 +97,10 @@
           </button>
           <button
             class="closet__nav-button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="shoes-panel"
+            id="shoes-tab"
             style="
               color: #000 !important;
               background-color: #fff !important;
@@ -92,15 +111,31 @@
           </button>
         </nav>
         <div class="closet__box">
-          <ul class="closet__list closet__list-outer closet__list--active">
+          <ul class="closet__list closet__list-outer closet__list--active" 
+              role="tabpanel"
+              id="outer-panel"
+              aria-labelledby="outer-tab"
+              aria-label="외투 목록">
           </ul>
-          <ul class="closet__list closet__list-tops">
+          <ul class="closet__list closet__list-tops"
+              role="tabpanel"
+              id="tops-panel"
+              aria-labelledby="tops-tab"
+              aria-label="상의 목록">
           </ul>
-          <ul class="closet__list closet__list-bottoms">
+          <ul class="closet__list closet__list-bottoms"
+              role="tabpanel"
+              id="bottoms-panel"
+              aria-labelledby="bottoms-tab"
+              aria-label="하의 목록">
           </ul>
-          <ul class="closet__list closet__list-shoes">
+          <ul class="closet__list closet__list-shoes"
+              role="tabpanel"
+              id="shoes-panel"
+              aria-labelledby="shoes-tab"
+              aria-label="신발 목록">
           </ul>
-          <div class="closet__detail">
+          <div class="closet__detail" aria-label="선택한 옷 상세 정보">
           </div>
         </div>
         <div class="modal-overlay"></div>

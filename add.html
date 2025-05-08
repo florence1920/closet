@@ -12,7 +12,7 @@
   <body>
     <header>
       <a href="./index.html"> <img src="./img/logo.png" alt="Closet 로고"> </a>
-      <nav>
+      <nav aria-label="메인 메뉴">
         <ul class="desktop-nav">
           <li><a href="./index.html">Home</a></li>
           <li><a href="./add.html">Add</a></li>
@@ -20,7 +20,10 @@
         </ul>
 
         <div class="mobile-nav-container">
-          <button class="mobile-nav-toggle">
+          <button class="mobile-nav-toggle" 
+                  aria-expanded="false"
+                  aria-controls="mobile-menu"
+                  aria-label="모바일 메뉴 열기/닫기">
             <img
               class="mobile-nav--open"
               src="./img/icon/menu.png"
@@ -30,7 +33,7 @@
               src="./img/icon/close.png"
               alt="메뉴 닫기">
           </button>
-          <ul class="mobile-nav">
+          <ul class="mobile-nav" id="mobile-menu" aria-label="모바일 메뉴">
             <li><a href="./index.html">Home</a></li>
             <li><a href="./add.html">Add</a></li>
             <li><a href="./stat.html">Statistics</a></li>
@@ -50,17 +53,36 @@
         <form class="add-form">
           <div class="add-form__left">
             <div class="add-form__item">
-              <div class="custom-select" id="main-category-select">
+              <div class="custom-select" 
+                   id="main-category-select"
+                   role="combobox"
+                   aria-expanded="false"
+                   aria-controls="main-category-options"
+                   aria-haspopup="listbox">
                 <label for="main-category-hidden" class="add-form__item-title">카테고리 선택</label>
                 <div class="custom-select__selected">
                   대분류 선택
                   <img src="./img/icon/arrow.png" alt="">
                 </div>
-                <ul class="custom-select__options">
-                  <li class="custom-select__option" data-value="outer">Outer</li>
-                  <li class="custom-select__option" data-value="tops">Tops</li>
-                  <li class="custom-select__option" data-value="bottoms">Bottoms</li>
-                  <li class="custom-select__option" data-value="shoes">Shoes</li>
+                <ul class="custom-select__options" 
+                    id="main-category-options"
+                    role="listbox">
+                  <li class="custom-select__option" 
+                      role="option"
+                      aria-selected="false"
+                      data-value="outer">Outer</li>
+                  <li class="custom-select__option" 
+                      role="option"
+                      aria-selected="false"
+                      data-value="tops">Tops</li>
+                  <li class="custom-select__option" 
+                      role="option"
+                      aria-selected="false"
+                      data-value="bottoms">Bottoms</li>
+                  <li class="custom-select__option" 
+                      role="option"
+                      aria-selected="false"
+                      data-value="shoes">Shoes</li>
                 </ul>
                 <input
                   type="hidden"
@@ -68,13 +90,20 @@
                   id="main-category-hidden">
               </div>
 
-              <div class="custom-select" id="sub-category-select">
+              <div class="custom-select" 
+                   id="sub-category-select"
+                   role="combobox"
+                   aria-expanded="false"
+                   aria-controls="sub-category-options"
+                   aria-haspopup="listbox">
                 <label for="sub-category-hidden" class="add-form__item-title">하위 카테고리 선택</label>
                 <div class="custom-select__selected">
                   소분류 선택
                   <img src="./img/icon/arrow.png" alt="">
                 </div>
-                <ul class="custom-select__options"></ul>
+                <ul class="custom-select__options"
+                    id="sub-category-options"
+                    role="listbox"></ul>
                 <input
                   type="hidden"
                   name="category-sub"
@@ -84,84 +113,111 @@
 
             <div class="add-form__item">
               <label for="color-hidden" class="add-form__item-title">색상 선택</label>
-              <div class="color-select">
+              <div class="color-select" 
+                   role="radiogroup" 
+                   aria-label="색상 선택">
                 <button
                   type="button"
                   class="color-select__item"
                   data-color="black"
+                  role="radio"
+                  aria-checked="false"
                   aria-label="검정색"
                   style="background-color: #000 !important"></button>
                 <button
                   type="button"
                   class="color-select__item"
                   data-color="white"
+                  role="radio"
+                  aria-checked="false"
                   aria-label="흰색"
                   style="background-color: #fff !important"></button>
                 <button
                   type="button"
                   class="color-select__item"
                   data-color="charcoal"
+                  role="radio"
+                  aria-checked="false"
                   aria-label="차콜색"
                   style="background-color: #585858 !important"></button>
                 <button
                   type="button"
                   class="color-select__item"
                   data-color="gray"
+                  role="radio"
+                  aria-checked="false"
                   aria-label="회색"
                   style="background-color: #cecece !important"></button>
                 <button
                   type="button"
                   class="color-select__item"
                   data-color="beige"
+                  role="radio"
+                  aria-checked="false"
                   aria-label="베이지색"
                   style="background-color: #f4d4a0 !important"></button>
-
                 <button
                   type="button"
                   class="color-select__item"
                   data-color="khaki"
+                  role="radio"
+                  aria-checked="false"
                   aria-label="카키색"
                   style="background-color: #197727 !important"></button>
                 <button
                   type="button"
                   class="color-select__item"
                   data-color="light-blue"
+                  role="radio"
+                  aria-checked="false"
                   aria-label="하늘색"
                   style="background-color: #a8aff8 !important"></button>
                 <button
                   type="button"
                   class="color-select__item"
                   data-color="navy"
+                  role="radio"
+                  aria-checked="false"
                   aria-label="네이비색"
                   style="background-color: #2a11b8 !important"></button>
                 <button
                   type="button"
                   class="color-select__item"
                   data-color="brown"
+                  role="radio"
+                  aria-checked="false"
                   aria-label="갈색"
                   style="background-color: #8f6b31 !important"></button>
                 <button
                   type="button"
                   class="color-select__item"
                   data-color="red"
+                  role="radio"
+                  aria-checked="false"
                   aria-label="빨간색"
                   style="background-color: #ff0004 !important"></button>
                 <button
                   type="button"
                   class="color-select__item"
                   data-color="blue"
+                  role="radio"
+                  aria-checked="false"
                   aria-label="파란색"
                   style="background-color: #4d00ff !important"></button>
                 <button
                   type="button"
                   class="color-select__item"
                   data-color="yellow"
+                  role="radio"
+                  aria-checked="false"
                   aria-label="노란색"
                   style="background-color: #fff600 !important"></button>
                 <button
                   type="button"
                   class="color-select__item"
                   data-color="green"
+                  role="radio"
+                  aria-checked="false"
                   aria-label="초록색"
                   style="background-color: #17d033 !important"></button>
                 <input type="hidden" name="color" id="color-hidden">

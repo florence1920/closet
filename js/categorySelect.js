@@ -55,10 +55,12 @@ export function setupCategorySelect() {
     allSelects.forEach((select) => {
       if (select !== mainSelect) {
         select.classList.remove("open");
+        select.setAttribute("aria-expanded", "false");
       }
     });
 
-    mainSelect.classList.toggle("open");
+    const isOpen = mainSelect.classList.toggle("open");
+    mainSelect.setAttribute("aria-expanded", isOpen ? "true" : "false");
   }
 
   function toggleSubOptions() {
@@ -73,10 +75,12 @@ export function setupCategorySelect() {
     allSelects.forEach((select) => {
       if (select !== subSelect) {
         select.classList.remove("open");
+        select.setAttribute("aria-expanded", "false");
       }
     });
 
-    subSelect.classList.toggle("open");
+    const isOpen = subSelect.classList.toggle("open");
+    subSelect.setAttribute("aria-expanded", isOpen ? "true" : "false");
   }
 
   function updateDetailSizeOptions(category) {
@@ -131,6 +135,18 @@ export function setupCategorySelect() {
 
     mainHiddenInput.value = value;
     mainSelect.classList.remove("open");
+    mainSelect.setAttribute("aria-expanded", "false");
+
+    // 이전 선택 옵션의 aria-selected 제거
+    mainSelect.querySelectorAll('[role="option"]').forEach(option => {
+      option.setAttribute("aria-selected", "false");
+    });
+
+    // 새로 선택된 옵션의 aria-selected 설정
+    const selectedOption = mainSelect.querySelector(`[data-value="${value}"]`);
+    if (selectedOption) {
+      selectedOption.setAttribute("aria-selected", "true");
+    }
 
     // 상세 사이즈 옵션 업데이트
     updateDetailSizeOptions(value);
@@ -174,6 +190,18 @@ export function setupCategorySelect() {
 
     subHiddenInput.value = value;
     subSelect.classList.remove("open");
+    subSelect.setAttribute("aria-expanded", "false");
+
+    // 이전 선택 옵션의 aria-selected 제거
+    subSelect.querySelectorAll('[role="option"]').forEach(option => {
+      option.setAttribute("aria-selected", "false");
+    });
+
+    // 새로 선택된 옵션의 aria-selected 설정
+    const selectedOption = subSelect.querySelector(`[data-value="${value}"]`);
+    if (selectedOption) {
+      selectedOption.setAttribute("aria-selected", "true");
+    }
   }
 
   // 메인 카테고리 선택

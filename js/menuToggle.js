@@ -9,19 +9,22 @@ export const menuToggle = () => {
   // 초기 상태 설정
   openIcon.style.display = "block";
   closeIcon.style.display = "none";
+  menuToggle.setAttribute("aria-expanded", "false");
 
   menuToggle.addEventListener("click", () => {
     isOpen = !isOpen;
 
-    // 아이콘 변경
+    // 아이콘 변경 및 aria-expanded 업데이트
     if (isOpen) {
       mobileNav.classList.add("active");
       openIcon.style.display = "none";
       closeIcon.style.display = "block";
+      menuToggle.setAttribute("aria-expanded", "true");
     } else {
       mobileNav.classList.remove("active");
       openIcon.style.display = "block";
       closeIcon.style.display = "none";
+      menuToggle.setAttribute("aria-expanded", "false");
     }
   });
 
@@ -33,6 +36,7 @@ export const menuToggle = () => {
       mobileNav.classList.remove("active");
       openIcon.style.display = "block";
       closeIcon.style.display = "none";
+      menuToggle.setAttribute("aria-expanded", "false");
     }
   });
 

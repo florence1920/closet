@@ -10,10 +10,12 @@ export function setupColorSelect() {
       );
       if (previousSelected) {
         previousSelected.classList.remove("selected");
+        previousSelected.setAttribute("aria-checked", "false");
       }
 
       // 현재 버튼 선택 상태로 변경
       button.classList.add("selected");
+      button.setAttribute("aria-checked", "true");
 
       // hidden input에 선택된 색상 값 설정
       hiddenInput.value = button.dataset.color;

@@ -25,6 +25,8 @@ export function navSelect() {
   // 초기 상태 설정
   clothesContainer.style.display = "flex";
   bestfitContainer.style.display = "none";
+  clothesContainer.removeAttribute("aria-hidden");
+  bestfitContainer.setAttribute("aria-hidden", "true");
 
   // 페이지 로드 시 초기 선택된 탭 확인
   const initialSelectedItem = nav.querySelector(
@@ -256,8 +258,17 @@ export function navSelect() {
     const clickedItem = e.target.closest(".statistics__nav-item");
     if (!clickedItem) return;
 
-    navItems.forEach((item) => item.classList.remove("selected"));
+    // 모든 탭 초기화
+    navItems.forEach((item) => {
+      item.classList.remove("selected");
+      const tabButton = item.querySelector("[role='tab']");
+      tabButton.setAttribute("aria-selected", "false");
+    });
+
+    // 선택된 탭 활성화
     clickedItem.classList.add("selected");
+    const selectedTabButton = clickedItem.querySelector("[role='tab']");
+    selectedTabButton.setAttribute("aria-selected", "true");
 
     const isClothesTab =
       clickedItem.querySelector(".statistics__nav-item-title").textContent ===
@@ -266,12 +277,14 @@ export function navSelect() {
     if (isClothesTab) {
       clothesContainer.style.display = "flex";
       bestfitContainer.style.display = "none";
-      // 옷 통계 탭 선택 시 패딩 복원
+      clothesContainer.removeAttribute("aria-hidden");
+      bestfitContainer.setAttribute("aria-hidden", "true");
       nav.classList.remove("no-bottom-padding");
     } else {
       clothesContainer.style.display = "none";
       bestfitContainer.style.display = "flex";
-      // 베스트핏 탭 선택 시 아래쪽 패딩 제거
+      clothesContainer.setAttribute("aria-hidden", "true");
+      bestfitContainer.removeAttribute("aria-hidden");
       nav.classList.add("no-bottom-padding");
       renderBestFitItems();
     }
