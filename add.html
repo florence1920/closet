@@ -51,7 +51,7 @@
           <div class="add-form__left">
             <div class="add-form__item">
               <div class="custom-select" id="main-category-select">
-                <p class="add-form__item-title">카테고리 선택</p>
+                <label for="main-category-hidden" class="add-form__item-title">카테고리 선택</label>
                 <div class="custom-select__selected">
                   대분류 선택
                   <img src="./img/icon/arrow.png" alt="">
@@ -69,6 +69,7 @@
               </div>
 
               <div class="custom-select" id="sub-category-select">
+                <label for="sub-category-hidden" class="add-form__item-title">하위 카테고리 선택</label>
                 <div class="custom-select__selected">
                   소분류 선택
                   <img src="./img/icon/arrow.png" alt="">
@@ -82,7 +83,7 @@
             </div>
 
             <div class="add-form__item">
-              <p class="add-form__item-title">색상 선택</p>
+              <label for="color-hidden" class="add-form__item-title">색상 선택</label>
               <div class="color-select">
                 <button
                   type="button"
@@ -156,25 +157,25 @@
 
             <div class="add-form__item add-form__items">
               <div>
-                <p class="add-form__item-title">브랜드</p>
-                <input type="text" placeholder="브랜드를 입력">
+                <label for="brand" class="add-form__item-title">브랜드</label>
+                <input type="text" id="brand" name="brand" placeholder="브랜드를 입력">
               </div>
               <div>
-                <p class="add-form__item-title">닉네임</p>
-                <input type="text" placeholder="닉네임을 입력">
+                <label for="nickname" class="add-form__item-title">닉네임</label>
+                <input type="text" id="nickname" name="nickname" placeholder="닉네임을 입력">
               </div>
             </div>
 
             <div class="add-form__item">
-              <p class="add-form__item-title">구매일</p>
-              <input type="date">
+              <label for="purchase-date" class="add-form__item-title">구매일</label>
+              <input type="date" id="purchase-date" name="purchase-date">
             </div>
           </div>
 
           <div class="add-form__right">
             <div class="add-form__item add-form__items">
               <div>
-                <p class="add-form__item-title">표기 사이즈</p>
+                <label for="size-hidden" class="add-form__item-title">표기 사이즈</label>
                 <div class="custom-select" id="size-select">
                   <div class="custom-select__selected">
                     사이즈 선택
@@ -194,7 +195,7 @@
                 </div>
               </div>
               <div>
-                <p class="add-form__item-title">핏</p>
+                <label for="fit-hidden" class="add-form__item-title">핏</label>
                 <div class="custom-select" id="fit-select">
                   <div class="custom-select__selected">
                     핏 선택
@@ -220,26 +221,26 @@
               <p class="add-form__item-title">상세 사이즈</p>
               <ul class="add-form__item-detail">
                 <li>
-                  <p>총 기장</p>
-                  <input type="text" placeholder="cm" class="input-detail">
+                  <label for="total-length">총 기장</label>
+                  <input type="text" id="total-length" name="total-length" placeholder="cm" class="input-detail">
                 </li>
                 <li>
-                  <p>어깨 넓이</p>
-                  <input type="text" placeholder="cm" class="input-detail">
+                  <label for="shoulder-width">어깨 넓이</label>
+                  <input type="text" id="shoulder-width" name="shoulder-width" placeholder="cm" class="input-detail">
                 </li>
                 <li>
-                  <p>가슴 단면</p>
-                  <input type="text" placeholder="cm" class="input-detail">
+                  <label for="chest-width">가슴 단면</label>
+                  <input type="text" id="chest-width" name="chest-width" placeholder="cm" class="input-detail">
                 </li>
                 <li>
-                  <p>소매 길이</p>
-                  <input type="text" placeholder="cm" class="input-detail">
+                  <label for="sleeve-length">소매 길이</label>
+                  <input type="text" id="sleeve-length" name="sleeve-length" placeholder="cm" class="input-detail">
                 </li>
               </ul>
             </div>
 
             <div class="add-form__item">
-              <p class="add-form__item-title">옷 설명</p>
+              <label for="description" class="add-form__item-title">옷 설명</label>
               <textarea
                 name="description"
                 id="description"

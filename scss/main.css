@@ -155,6 +155,10 @@ button {
   appearance: none !important;
 }
 
+label {
+  display: block;
+}
+
 input {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -203,7 +207,7 @@ input[type=date] {
   align-items: baseline;
   gap: 10px;
 }
-.add-form__item-detail > li > p {
+.add-form__item-detail > li > label {
   width: 74px;
 }
 .add-form__item-detail .input-detail {

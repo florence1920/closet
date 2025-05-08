@@ -86,12 +86,15 @@ export function setupCategorySelect() {
     const options = detailSizeOptions[category] || [];
     detailSizeList.innerHTML = options
       .map(
-        (option) => `
+        (option, index) => `
       <li>
-        <p>${option}</p>
-        <input type="text" placeholder="${
-          category === "shoes" ? "mm" : "cm"
-        }" class="input-detail" />
+        <label for="detail-size-${index}">${option}</label>
+        <input 
+          type="text" 
+          id="detail-size-${index}" 
+          name="detail-size-${index}" 
+          placeholder="${category === "shoes" ? "mm" : "cm"}" 
+          class="input-detail" />
       </li>
     `
       )
