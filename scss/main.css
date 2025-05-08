@@ -179,10 +179,10 @@ input {
   }
 }
 input::-moz-placeholder {
-  color: #aaa;
+  color: #767676;
 }
 input::placeholder {
-  color: #aaa;
+  color: #767676;
 }
 @media (max-width: 767px) {
   input::-moz-placeholder {
@@ -302,7 +302,7 @@ button[type=submit] {
   align-items: center;
 }
 .custom-select__selected.disabled {
-  color: #aaa;
+  color: #767676;
   cursor: default;
 }
 @media (max-width: 1439px) {
@@ -959,14 +959,14 @@ main .section-header__icon {
   }
 }
 .statistics__nav ul .statistics__nav-item.selected {
-  color: #73a3eb;
+  color: #6B98FF;
 }
 .statistics__nav ul .statistics__nav-item.selected::after {
   width: 100%;
-  background-color: #73a3eb;
+  background-color: #6B98FF;
 }
 .statistics__nav ul .statistics__nav-item.selected button {
-  color: #73a3eb;
+  color: #6B98FF;
 }
 .statistics__nav ul .statistics__nav-item.selected button img {
   opacity: 1;

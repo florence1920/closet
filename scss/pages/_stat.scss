@@ -49,13 +49,13 @@
       }
 
       &.selected {
-        color: #73a3eb;
+        color: #6B98FF;
         &::after {
           width: 100%;
-          background-color: #73a3eb;
+          background-color: #6B98FF;
         }
         button {
-          color: #73a3eb;
+          color: #6B98FF;
           img {
             opacity: 1;
             transform: translateY(0);
