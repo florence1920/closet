@@ -12,7 +12,6 @@ export function setupFormValidation() {
     element.style.color = "";
   }
 
-  // 실시간 검증
   function setupRealtimeValidation() {
     const mainCategorySelect = document.getElementById("main-category-select");
     const subCategorySelect = document.getElementById("sub-category-select");
@@ -23,7 +22,6 @@ export function setupFormValidation() {
     const sizeSelect = document.getElementById("size-select");
     const fitSelect = document.getElementById("fit-select");
 
-    // 카테고리 선택 시 검증
     function checkCategorySelection() {
       const mainCategory = document.getElementById(
         "main-category-hidden"
@@ -58,7 +56,6 @@ export function setupFormValidation() {
       }
     });
 
-    // 색상 선택 시
     colorSelect.addEventListener("click", (e) => {
       if (
         !isFirstValidation &&
@@ -74,7 +71,6 @@ export function setupFormValidation() {
       }
     });
 
-    // 브랜드 입력 시
     brand.addEventListener("input", () => {
       if (!isFirstValidation) {
         const element = brand.previousElementSibling;
@@ -86,7 +82,6 @@ export function setupFormValidation() {
       }
     });
 
-    // 닉네임 입력 시
     nickname.addEventListener("input", () => {
       if (!isFirstValidation) {
         const element = nickname.previousElementSibling;
@@ -98,13 +93,10 @@ export function setupFormValidation() {
       }
     });
 
-    // 구매일 선택 시 (선택 사항으로 변경)
     purchaseDate.addEventListener("change", () => {
-      // 항상 에러 표시 제거 (필수 항목이 아니므로)
       removeError(purchaseDate.previousElementSibling);
     });
 
-    // 사이즈 선택 시
     sizeSelect.addEventListener("click", (e) => {
       if (
         !isFirstValidation &&
@@ -125,7 +117,6 @@ export function setupFormValidation() {
       }
     });
 
-    // 핏 선택 시
     fitSelect.addEventListener("click", (e) => {
       if (
         !isFirstValidation &&
@@ -147,7 +138,6 @@ export function setupFormValidation() {
     });
   }
 
-  // validateForm 함수를 모듈 스코프로 이동
   window.validateForm = function () {
     let isValid = true;
     const errorMessages = [];
@@ -161,7 +151,6 @@ export function setupFormValidation() {
     const size = document.getElementById("size-hidden").value;
     const fit = document.getElementById("fit-hidden").value;
 
-    // 모든 에러 표시 초기화
     const allTitles = form.querySelectorAll(".add-form__item-title");
     allTitles.forEach((title) => removeError(title));
 
@@ -200,9 +189,6 @@ export function setupFormValidation() {
       isValid = false;
     }
 
-    // 구매일 검증 (선택 사항으로 변경)
-    // 구매일이 입력되지 않아도 유효성 검사를 통과하도록 제거
-    // 실시간 검증에서 에러 표시 제거
     removeError(purchaseDate.previousElementSibling);
 
     // shoes가 아닌 경우에만 사이즈와 핏 검증
@@ -240,6 +226,4 @@ export function setupFormValidation() {
   // 실시간 검증 이벤트 리스너 설정
   setupRealtimeValidation();
 
-  // 폼 제출 이벤트 처리 - 이 부분은 더 이상 필요하지 않음
-  // formSave.js에서 검증 결과를 확인하도록 변경할 것이므로 제거
 }

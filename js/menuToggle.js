@@ -30,7 +30,6 @@ export const menuToggle = () => {
 
   // 영역 외 클릭 시 메뉴 닫기
   document.addEventListener("click", (e) => {
-    // 클릭된 요소가 mobile-nav-container 내부가 아니라면 메뉴 닫기
     if (isOpen && !mobileNavContainer.contains(e.target)) {
       isOpen = false;
       mobileNav.classList.remove("active");
@@ -40,7 +39,6 @@ export const menuToggle = () => {
     }
   });
 
-  // 이벤트 전파 방지 (메뉴 내부 클릭 시 메뉴가 닫히지 않도록)
   mobileNavContainer.addEventListener("click", (e) => {
     e.stopPropagation();
   });

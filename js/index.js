@@ -21,14 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 네비게이션 하이라이트 즉시 적용
   navHighlight();
-
   navSelect();
   menuToggle();
   initializeClosetData().then(() => {
-    // 기존 데이터에 ID 추가 (처음 한 번만 실행)
     addIdsToExistingData();
 
-    // closet__box 요소가 있는 경우에만 closetListActive 함수 실행
     if (document.querySelector(".closet__box")) {
       closetListActive();
       setupItemActions();
@@ -43,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupFormSave();
 });
 
-// 페이지가 완전히 로드된 후에도 navHighlight 실행
 window.addEventListener("load", () => {
   navHighlight();
 });

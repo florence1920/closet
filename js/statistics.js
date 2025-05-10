@@ -1,8 +1,6 @@
 // 통계 페이지 차트 생성 및 데이터 처리
 
-// 문서 로드 후 실행
 document.addEventListener("DOMContentLoaded", () => {
-  // 데이터 가져오기
   const closetData = JSON.parse(localStorage.getItem("closet")) || [];
 
   if (closetData.length === 0) {
@@ -10,11 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // 차트 초기화
   initializeCharts(closetData);
 });
 
-// 데이터가 없을 때 메시지 표시
 function showNoDataMessage() {
   const containers = document.querySelectorAll(".chart-container");
   containers.forEach((container) => {
@@ -32,7 +28,6 @@ function initializeCharts(data) {
 
 // 카테고리별 분포 차트
 function createCategoryChart(data) {
-  // 메인 카테고리별 데이터 집계
   const mainCategories = {
     outer: 0,
     tops: 0,
@@ -42,7 +37,6 @@ function createCategoryChart(data) {
 
   data.forEach((item) => {
     const mainCategory = item.category?.main;
-    // 유효한 카테고리인 경우에만 카운트
     if (mainCategory && mainCategories.hasOwnProperty(mainCategory)) {
       mainCategories[mainCategory] += 1;
     }
@@ -100,13 +94,11 @@ function createCategoryChart(data) {
 
 // 색상별 분포 차트
 function createColorChart(data) {
-  // 색상별 데이터 집계
   const colors = {};
 
   data.forEach((item) => {
     const color = item.color || "";
     if (color) {
-      // 빈 값이나 undefined는 무시
       colors[color] = (colors[color] || 0) + 1;
     }
   });
@@ -114,7 +106,7 @@ function createColorChart(data) {
   // 데이터 정렬 (상위 10개만 표시)
   const sortedColors = Object.entries(colors)
     .sort((a, b) => b[1] - a[1])
-    .slice(0, 10); // 상위 10개만 선택
+    .slice(0, 10);
 
   const labels = sortedColors.map((entry) => entry[0]);
   const counts = sortedColors.map((entry) => entry[1]);
@@ -143,7 +135,6 @@ function createColorChart(data) {
 
   // 테두리 색상 생성
   const borderColor = labels.map((color) => {
-    // 흰색일 경우 검은색 테두리, 그 외에는 배경색과 동일하게
     return color === "white" ? "#000000" : colorMap[color] || "#777777";
   });
 
@@ -191,7 +182,6 @@ function createColorChart(data) {
 
 // 브랜드별 분포 차트
 function createBrandChart(data) {
-  // 브랜드별 데이터 집계
   const brands = {};
 
   data.forEach((item) => {

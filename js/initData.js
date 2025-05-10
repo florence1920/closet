@@ -20,7 +20,6 @@ export function initializeClosetData() {
     })
     .catch((err) => {
       console.error("데이터 초기화 중 오류 발생:", err);
-      // 오류 발생 시 빈 배열 초기화
       localStorage.setItem("closet", JSON.stringify([]));
     });
 }

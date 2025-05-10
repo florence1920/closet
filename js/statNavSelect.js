@@ -1,7 +1,6 @@
 export function navSelect() {
   const nav = document.querySelector(".statistics__nav");
 
-  // 요소가 존재하지 않으면 함수 종료
   if (!nav) {
     return;
   }
@@ -14,7 +13,6 @@ export function navSelect() {
     ".statistics__container.bestfit"
   );
 
-  // 필요한 컨테이너가 없으면 함수 종료
   if (!clothesContainer || !bestfitContainer) {
     console.warn(
       "Required containers not found. Skipping navSelect initialization."
@@ -135,7 +133,6 @@ export function navSelect() {
       note,
     } = item;
 
-    // 필수 데이터가 없는 경우 기본값 사용
     if (!category || !category.sub || !category.main) {
       card.innerHTML = "<p>데이터 오류: 카테고리 정보가 없습니다.</p>";
       return card;

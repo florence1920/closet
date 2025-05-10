@@ -4,7 +4,6 @@ export function setupColorSelect() {
 
   colorButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      // 이전에 선택된 버튼의 선택 상태 제거
       const previousSelected = document.querySelector(
         ".color-select__item.selected"
       );
@@ -13,11 +12,9 @@ export function setupColorSelect() {
         previousSelected.setAttribute("aria-checked", "false");
       }
 
-      // 현재 버튼 선택 상태로 변경
       button.classList.add("selected");
       button.setAttribute("aria-checked", "true");
 
-      // hidden input에 선택된 색상 값 설정
       hiddenInput.value = button.dataset.color;
     });
   });

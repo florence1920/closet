@@ -114,11 +114,9 @@ export function setupCategorySelect() {
     const fitSelectedDiv = fitSelect?.querySelector(".custom-select__selected");
 
     if (category === "shoes") {
-      // shoes 선택 시 비활성화
       sizeSelectedDiv?.classList.add("disabled");
       fitSelectedDiv?.classList.add("disabled");
     } else {
-      // 다른 카테고리 선택 시 활성화
       sizeSelectedDiv?.classList.remove("disabled");
       fitSelectedDiv?.classList.remove("disabled");
     }
@@ -137,12 +135,10 @@ export function setupCategorySelect() {
     mainSelect.classList.remove("open");
     mainSelect.setAttribute("aria-expanded", "false");
 
-    // 이전 선택 옵션의 aria-selected 제거
     mainSelect.querySelectorAll('[role="option"]').forEach(option => {
       option.setAttribute("aria-selected", "false");
     });
 
-    // 새로 선택된 옵션의 aria-selected 설정
     const selectedOption = mainSelect.querySelector(`[data-value="${value}"]`);
     if (selectedOption) {
       selectedOption.setAttribute("aria-selected", "true");
@@ -192,12 +188,10 @@ export function setupCategorySelect() {
     subSelect.classList.remove("open");
     subSelect.setAttribute("aria-expanded", "false");
 
-    // 이전 선택 옵션의 aria-selected 제거
     subSelect.querySelectorAll('[role="option"]').forEach(option => {
       option.setAttribute("aria-selected", "false");
     });
 
-    // 새로 선택된 옵션의 aria-selected 설정
     const selectedOption = subSelect.querySelector(`[data-value="${value}"]`);
     if (selectedOption) {
       selectedOption.setAttribute("aria-selected", "true");

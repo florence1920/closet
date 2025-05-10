@@ -87,7 +87,6 @@ function handleEditClick(event) {
     return;
   }
 
-  // 환경에 맞는 경로 생성 (쿼리 스트링은 getCorrectPath 이후에 추가)
   const editUrl = getCorrectPath("add.html") + `?mode=edit&id=${itemId}`;
 
   // add.html 페이지로 이동하면서 수정할 아이템 ID를 쿼리 파라미터로 전달
@@ -111,7 +110,6 @@ function handleDeleteClick(event) {
     return;
   }
 
-  // 사용자에게 삭제 확인
   if (confirm("정말 이 아이템을 삭제하시겠습니까?")) {
     deleteItem(itemId);
   }
@@ -120,10 +118,8 @@ function handleDeleteClick(event) {
 // 아이템 삭제 처리
 function deleteItem(itemId) {
   try {
-    // localStorage에서 현재 데이터 가져오기
     let closetData = JSON.parse(localStorage.getItem("closet")) || [];
 
-    // 삭제할 아이템의 인덱스 찾기
     const itemIndex = closetData.findIndex((item) => item.id === itemId);
 
     if (itemIndex === -1) {
