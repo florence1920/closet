@@ -185,8 +185,9 @@ function createBrandChart(data) {
   const brands = {};
 
   data.forEach((item) => {
-    const brand = item.brand || "미지정";
-    if (brand === "-") return; // 미지정 브랜드 제외
+    const brand = item.brand;
+    // 브랜드가 없거나 '-'인 경우 제외
+    if (!brand || brand === "-") return;
 
     brands[brand] = (brands[brand] || 0) + 1;
   });
